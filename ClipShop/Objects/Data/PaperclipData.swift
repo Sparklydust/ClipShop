@@ -4,7 +4,7 @@
 
 import Foundation
 
-/// Data representing the paperclips to be populated within the app shopping views.
+/// Data representing paperclip items to be populated within the app shopping views.
 struct PaperclipData: Codable {
 
   let id: Int
