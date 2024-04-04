@@ -12,6 +12,8 @@
 		2A4237CB2BBE8D2E00C94A0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4237CA2BBE8D2E00C94A0B /* ViewController.swift */; };
 		2A4237D02BBE8D2F00C94A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4237CF2BBE8D2F00C94A0B /* Assets.xcassets */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
+		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
+		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		2A4237D92BBE8D3000C94A0B /* ClipShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClipShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
+		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegateTests.swift; path = ClipShop/Features/Main/AppDelegateTests.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F80E2BBE90B000479E54 /* Base */,
+				2AF5F8222BBED12200479E54 /* Cases */,
 			);
 			path = ClipShopTests;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2A4237C62BBE8D2E00C94A0B /* AppDelegate.swift */,
+				2AF5F81E2BBED05900479E54 /* main.swift */,
 				2A4237C82BBE8D2E00C94A0B /* SceneDelegate.swift */,
 			);
 			path = Main;
@@ -139,6 +145,30 @@
 				2A4237D42BBE8D2F00C94A0B /* Info.plist */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		2AF5F8202BBED11300479E54 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8212BBED11C00479E54 /* Main */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		2AF5F8212BBED11C00479E54 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2AF5F8222BBED12200479E54 /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8202BBED11300479E54 /* Features */,
+			);
+			path = Cases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +272,7 @@
 			files = (
 				2A4237CB2BBE8D2E00C94A0B /* ViewController.swift in Sources */,
 				2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */,
+				2AF5F81F2BBED05900479E54 /* main.swift in Sources */,
 				2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */,
 				2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
