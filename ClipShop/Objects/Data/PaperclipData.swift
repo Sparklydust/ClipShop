@@ -4,6 +4,30 @@
 
 import Foundation
 
-struct PaperclipData {
-  // Intentionally empty
+/// Data representing the paperclips to be populated within the app shopping views.
+struct PaperclipData: Codable {
+
+  let id: Int
+  let categoryID: Int
+  let title: String
+  let description: String
+  let price: Decimal
+  let imageURLs: ImageURLs
+  let creationDate: String
+  let isUrgent: Bool
+  let siret: String? 
+
+  enum CodingKeys: String, CodingKey {
+    case id, title, description, price, siret
+    case categoryID = "category_id"
+    case imageURLs = "images_url"
+    case creationDate = "creation_date"
+    case isUrgent = "is_urgent"
+  }
+
+  struct ImageURLs: Codable {
+
+    let small: String?
+    let thumb: String?
+  }
 }
