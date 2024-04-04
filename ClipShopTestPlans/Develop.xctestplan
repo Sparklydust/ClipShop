@@ -9,7 +9,9 @@
     }
   ],
   "defaultOptions" : {
-    "testTimeoutsEnabled" : true
+    "testExecutionOrdering" : "random",
+    "testTimeoutsEnabled" : true,
+    "uiTestingScreenshotsLifetime" : "keepNever"
   },
   "testTargets" : [
     {
