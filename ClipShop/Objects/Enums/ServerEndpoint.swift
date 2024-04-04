@@ -7,11 +7,15 @@ import Foundation
 /// Enumeration of all the application's URL endpoints.
 @frozen enum ServerEndpoint {
 
+  case paperclipCategories
   case paperclipsList
 
   var url: URL {
     switch self {
-    case .paperclipsList: URL(string: "https://raw.githubusercontent.com/leboncoin/paperclip/master/listing.json")!
+    case .paperclipCategories: 
+      URL(string: "https://raw.githubusercontent.com/leboncoin/paperclip/master/categories.json")!
+    case .paperclipsList: 
+      URL(string: "https://raw.githubusercontent.com/leboncoin/paperclip/master/listing.json")!
     }
   }
 }
