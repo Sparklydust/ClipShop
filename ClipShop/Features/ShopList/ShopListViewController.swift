@@ -9,6 +9,6 @@ class ShopListViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Intentionally empty
+    view.backgroundColor = .red
   }
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4237C62BBE8D2E00C94A0B /* AppDelegate.swift */; };
 		2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4237C82BBE8D2E00C94A0B /* SceneDelegate.swift */; };
-		2A4237CB2BBE8D2E00C94A0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4237CA2BBE8D2E00C94A0B /* ViewController.swift */; };
 		2A4237D02BBE8D2F00C94A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4237CF2BBE8D2F00C94A0B /* Assets.xcassets */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
@@ -32,7 +31,6 @@
 		2A4237C32BBE8D2E00C94A0B /* ClipShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A4237C62BBE8D2E00C94A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A4237C82BBE8D2E00C94A0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A4237CA2BBE8D2E00C94A0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A4237CF2BBE8D2F00C94A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A4237D42BBE8D2F00C94A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A4237D92BBE8D3000C94A0B /* ClipShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClipShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +85,6 @@
 				2AF5F8132BBE926100479E54 /* Assets */,
 				2AF5F8162BBE92D000479E54 /* Configurations */,
 				2AF5F8142BBE92B600479E54 /* Features */,
-				2A4237CA2BBE8D2E00C94A0B /* ViewController.swift */,
 			);
 			path = ClipShop;
 			sourceTree = "<group>";
@@ -292,7 +289,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A4237CB2BBE8D2E00C94A0B /* ViewController.swift in Sources */,
 				2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */,
 				2AF5F81F2BBED05900479E54 /* main.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
