@@ -17,6 +17,8 @@
 		2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8292BBED35100479E54 /* ShopListViewController.swift */; };
 		2AF5F82C2BBEE91A00479E54 /* ShopListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F82B2BBEE91A00479E54 /* ShopListViewModelTests.swift */; };
 		2AF5F82E2BBEE94700479E54 /* ShopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F82D2BBEE94700479E54 /* ShopListViewModel.swift */; };
+		2AF5F8322BBF077200479E54 /* ServerEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8312BBF077200479E54 /* ServerEndpointTests.swift */; };
+		2AF5F8362BBF07FE00479E54 /* ServerEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		2AF5F8292BBED35100479E54 /* ShopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
 		2AF5F82B2BBEE91A00479E54 /* ShopListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShopListViewModelTests.swift; path = ClipShopTests/Cases/Features/ShopList/ShopListViewModelTests.swift; sourceTree = SOURCE_ROOT; };
 		2AF5F82D2BBEE94700479E54 /* ShopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewModel.swift; sourceTree = "<group>"; };
+		2AF5F8312BBF077200479E54 /* ServerEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEndpointTests.swift; sourceTree = "<group>"; };
+		2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 				2AF5F8132BBE926100479E54 /* Assets */,
 				2AF5F8162BBE92D000479E54 /* Configurations */,
 				2AF5F8142BBE92B600479E54 /* Features */,
+				2AF5F8332BBF07E400479E54 /* Objects */,
 			);
 			path = ClipShop;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8202BBED11300479E54 /* Features */,
+				2AF5F82F2BBF06C700479E54 /* Objects */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -194,6 +200,38 @@
 				2AF5F8272BBED26900479E54 /* ShopListViewControllerTests.swift */,
 			);
 			path = ShopList;
+			sourceTree = "<group>";
+		};
+		2AF5F82F2BBF06C700479E54 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8302BBF06D900479E54 /* Enums */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		2AF5F8302BBF06D900479E54 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8312BBF077200479E54 /* ServerEndpointTests.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		2AF5F8332BBF07E400479E54 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8342BBF07EE00479E54 /* Enums */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		2AF5F8342BBF07EE00479E54 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AF5F82E2BBEE94700479E54 /* ShopListViewModel.swift in Sources */,
+				2AF5F8362BBF07FE00479E54 /* ServerEndpoint.swift in Sources */,
 				2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */,
 				2AF5F81F2BBED05900479E54 /* main.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
@@ -308,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AF5F82C2BBEE91A00479E54 /* ShopListViewModelTests.swift in Sources */,
+				2AF5F8322BBF077200479E54 /* ServerEndpointTests.swift in Sources */,
 				2AF5F8282BBED26900479E54 /* ShopListViewControllerTests.swift in Sources */,
 				2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */,
 				2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */,

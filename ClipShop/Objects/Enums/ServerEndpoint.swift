@@ -1,0 +1,17 @@
+//
+// Copyright © 2024 and confidential to ClipShop. All rights reserved.
+//
+
+import Foundation
+
+/// Enumeration of all the application's URL endpoints.
+@frozen enum ServerEndpoint {
+
+  case paperclipsList
+
+  var url: URL {
+    switch self {
+    case .paperclipsList: URL(string: "https://raw.githubusercontent.com/leboncoin/paperclip/master/listing.json")!
+    }
+  }
+}
