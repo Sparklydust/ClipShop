@@ -19,6 +19,12 @@
 		2AF5F82E2BBEE94700479E54 /* ShopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F82D2BBEE94700479E54 /* ShopListViewModel.swift */; };
 		2AF5F8322BBF077200479E54 /* ServerEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8312BBF077200479E54 /* ServerEndpointTests.swift */; };
 		2AF5F8362BBF07FE00479E54 /* ServerEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */; };
+		2AF5F83A2BBF208500479E54 /* PaperclipDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8392BBF208500479E54 /* PaperclipDataTests.swift */; };
+		2AF5F83C2BBF20BB00479E54 /* PaperclipData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F83B2BBF20BB00479E54 /* PaperclipData.swift */; };
+		2AF5F8402BBF215E00479E54 /* PaperclipsData+Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F83F2BBF215E00479E54 /* PaperclipsData+Fakes.swift */; };
+		2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8412BBF718300479E54 /* CategoryDataTests.swift */; };
+		2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8432BBF71DE00479E54 /* CategoryData.swift */; };
+		2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,12 @@
 		2AF5F82D2BBEE94700479E54 /* ShopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewModel.swift; sourceTree = "<group>"; };
 		2AF5F8312BBF077200479E54 /* ServerEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEndpointTests.swift; sourceTree = "<group>"; };
 		2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEndpoint.swift; sourceTree = "<group>"; };
+		2AF5F8392BBF208500479E54 /* PaperclipDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperclipDataTests.swift; sourceTree = "<group>"; };
+		2AF5F83B2BBF20BB00479E54 /* PaperclipData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperclipData.swift; sourceTree = "<group>"; };
+		2AF5F83F2BBF215E00479E54 /* PaperclipsData+Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaperclipsData+Fakes.swift"; sourceTree = "<group>"; };
+		2AF5F8412BBF718300479E54 /* CategoryDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataTests.swift; sourceTree = "<group>"; };
+		2AF5F8432BBF71DE00479E54 /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
+		2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryData+Fakes.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,7 @@
 			children = (
 				2AF5F80E2BBE90B000479E54 /* Base */,
 				2AF5F8222BBED12200479E54 /* Cases */,
+				2AF5F83D2BBF214700479E54 /* Doubles */,
 			);
 			path = ClipShopTests;
 			sourceTree = "<group>";
@@ -205,6 +218,7 @@
 		2AF5F82F2BBF06C700479E54 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				2AF5F8382BBF202F00479E54 /* Data */,
 				2AF5F8302BBF06D900479E54 /* Enums */,
 			);
 			path = Objects;
@@ -221,6 +235,7 @@
 		2AF5F8332BBF07E400479E54 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				2AF5F8372BBF202500479E54 /* Data */,
 				2AF5F8342BBF07EE00479E54 /* Enums */,
 			);
 			path = Objects;
@@ -232,6 +247,41 @@
 				2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		2AF5F8372BBF202500479E54 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8432BBF71DE00479E54 /* CategoryData.swift */,
+				2AF5F83B2BBF20BB00479E54 /* PaperclipData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2AF5F8382BBF202F00479E54 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8412BBF718300479E54 /* CategoryDataTests.swift */,
+				2AF5F8392BBF208500479E54 /* PaperclipDataTests.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2AF5F83D2BBF214700479E54 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F83E2BBF215200479E54 /* Objects */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		2AF5F83E2BBF215200479E54 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */,
+				2AF5F83F2BBF215E00479E54 /* PaperclipsData+Fakes.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,10 +383,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF5F83C2BBF20BB00479E54 /* PaperclipData.swift in Sources */,
 				2AF5F82E2BBEE94700479E54 /* ShopListViewModel.swift in Sources */,
 				2AF5F8362BBF07FE00479E54 /* ServerEndpoint.swift in Sources */,
 				2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */,
 				2AF5F81F2BBED05900479E54 /* main.swift in Sources */,
+				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
 				2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */,
 			);
@@ -348,8 +400,12 @@
 			files = (
 				2AF5F82C2BBEE91A00479E54 /* ShopListViewModelTests.swift in Sources */,
 				2AF5F8322BBF077200479E54 /* ServerEndpointTests.swift in Sources */,
+				2AF5F8402BBF215E00479E54 /* PaperclipsData+Fakes.swift in Sources */,
+				2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */,
 				2AF5F8282BBED26900479E54 /* ShopListViewControllerTests.swift in Sources */,
 				2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */,
+				2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */,
+				2AF5F83A2BBF208500479E54 /* PaperclipDataTests.swift in Sources */,
 				2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
