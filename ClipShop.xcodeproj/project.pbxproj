@@ -39,10 +39,10 @@
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegateTests.swift; path = ClipShop/Features/Main/AppDelegateTests.swift; sourceTree = SOURCE_ROOT; };
-		2AF5F8272BBED26900479E54 /* ShopListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShopListViewControllerTests.swift; path = ClipShop/Features/Main/ShopListViewControllerTests.swift; sourceTree = SOURCE_ROOT; };
+		2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegateTests.swift; path = ClipShopTests/Cases/Features/Main/AppDelegateTests.swift; sourceTree = SOURCE_ROOT; };
+		2AF5F8272BBED26900479E54 /* ShopListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShopListViewControllerTests.swift; path = ClipShopTests/Cases/Features/ShopList/ShopListViewControllerTests.swift; sourceTree = SOURCE_ROOT; };
 		2AF5F8292BBED35100479E54 /* ShopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
-		2AF5F82B2BBEE91A00479E54 /* ShopListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShopListViewModelTests.swift; path = ClipShop/Features/ShopList/ShopListViewModelTests.swift; sourceTree = SOURCE_ROOT; };
+		2AF5F82B2BBEE91A00479E54 /* ShopListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShopListViewModelTests.swift; path = ClipShopTests/Cases/Features/ShopList/ShopListViewModelTests.swift; sourceTree = SOURCE_ROOT; };
 		2AF5F82D2BBEE94700479E54 /* ShopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,8 +190,8 @@
 		2AF5F8262BBED24700479E54 /* ShopList */ = {
 			isa = PBXGroup;
 			children = (
-				2AF5F8272BBED26900479E54 /* ShopListViewControllerTests.swift */,
 				2AF5F82B2BBEE91A00479E54 /* ShopListViewModelTests.swift */,
+				2AF5F8272BBED26900479E54 /* ShopListViewControllerTests.swift */,
 			);
 			path = ShopList;
 			sourceTree = "<group>";
