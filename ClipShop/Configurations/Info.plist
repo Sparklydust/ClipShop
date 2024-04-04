@@ -22,9 +22,9 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>
-		<string></string>
+		<string>AccentColor</string>
 		<key>UIImageName</key>
-		<string></string>
+		<string>launchScreen</string>
 	</dict>
 </dict>
 </plist>
