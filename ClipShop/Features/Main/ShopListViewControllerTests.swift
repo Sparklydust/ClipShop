@@ -18,4 +18,12 @@ final class ShopListViewControllerTests: XCTestCase {
     sut = .none
     try await super.tearDown()
   }
+
+  func testInitialization_viewBackgroundColor_isEqualToSystemBackground() {
+    let expected: UIColor = .systemBackground
+
+    let result = sut.view.backgroundColor
+
+    XCTAssertEqual(result, expected, "View `backgroundColor` must be equal to `\(expected)`.")
+  }
 }
