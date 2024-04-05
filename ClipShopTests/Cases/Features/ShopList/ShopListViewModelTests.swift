@@ -18,4 +18,28 @@ final class ShopListViewModelTests: BaseXCTestCase {
     sut = .none
     try await super.tearDown()
   }
+
+  func testServerService_requestListOfPaperclipDataIsTriggered_isLoadingIsTrue() {
+    XCTAssert(false, "Test not yet implemented")
+  }
+
+  func testServerService_requestListOfPaperclipDataIsSuccessful_isLoadingIsFalse() {
+    XCTAssert(false, "Test not yet implemented")
+  }
+
+  func testServerService_requestListOfPaperclipDataIsSuccessful_paperlicpsValueIsNotEmpty() {
+    XCTAssert(false, "Test not yet implemented")
+  }
+
+  func testServerService_requestListOfPaperclipDataIsNotSuccessful_paperlicpsValueIsEmpty() {
+    XCTAssert(false, "Test not yet implemented")
+  }
+
+  func testServerService_requestListOfPaperclipDataFailsWithError_showErrorValueIsTrue() {
+    XCTAssert(false, "Test not yet implemented")
+  }
+
+  func testServerService_requestListOfPaperclipDataIsSuccessful_showErrorValueIsFalse() {
+    XCTAssert(false, "Test not yet implemented")
+  }
 }

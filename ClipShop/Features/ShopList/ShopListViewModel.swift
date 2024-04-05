@@ -13,3 +13,8 @@ final class ShopListViewModel {
     self.server = server
   }
 }
+
+// MARK: - ServerService
+extension ShopListViewModel {
+  // Intentionally empty
+}

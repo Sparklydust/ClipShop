@@ -30,4 +30,20 @@ final class ShopListViewControllerTests: BaseXCTestCase {
 
     XCTAssertEqual(result, expected, "View `backgroundColor` must be equal to `\(expected)`.")
   }
+
+  func testViewDidLoad_requestPaperclipDataListFromViewModel_paperclipsValueIsNotEmpty() {
+    XCTAssert(false, "Test not yet implemented")
+  }
+
+  func testViewDidLoad_requestPaperclipDataListIsLoading_isLoadingValueIsTrue() {
+    XCTAssert(false, "Test not yet implemented")
+  }
+
+  func testViewDidLoad_requestPaperclipDataListLoaded_isLoadingValueIsFalse() {
+    XCTAssert(false, "Test not yet implemented")
+  }
+
+  func testViewDidLoad_requestPaperclipsDataListFails_showErrorValueIsTrue() {
+    XCTAssert(false, "Test not yet implemented")
+  }
 }
