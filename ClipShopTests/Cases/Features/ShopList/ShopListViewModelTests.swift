@@ -5,13 +5,13 @@
 import XCTest
 @testable import ClipShop
 
-final class ShopListViewModelTests: XCTestCase {
+final class ShopListViewModelTests: BaseXCTestCase {
 
   var sut: ShopListViewModel!
 
   override func setUp() async throws {
     try await super.setUp()
-    sut = ShopListViewModel()
+    sut = ShopListViewModel(server: serverSpy)
   }
 
   override func tearDown() async throws {

@@ -4,6 +4,12 @@
 
 import Foundation
 
+/// Responsible of handling the logic of the ``ShopListViewController``.
 final class ShopListViewModel {
-  // Intentionally empty
+
+  private var server: ServerProtocol
+
+  init(server: ServerProtocol = ServerService()) {
+    self.server = server
+  }
 }
