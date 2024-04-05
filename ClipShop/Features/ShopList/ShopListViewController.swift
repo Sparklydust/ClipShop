@@ -11,14 +11,14 @@ class ShopListViewController: UIViewController {
   var cancellables = Set<AnyCancellable>()
 
   // MARK: - View Objects
-  private(set) var activityIndicator: UIActivityIndicatorView = {
+  private(set) var progressView: UIActivityIndicatorView = {
     let indicator = UIActivityIndicatorView(style: .large)
     indicator.translatesAutoresizingMaskIntoConstraints = false
     indicator.color = .accent
     return indicator
   }()
 
-  private(set) var alertController: UIAlertController = {
+  private(set) var errorAlertView: UIAlertController = {
     let alert = UIAlertController(
       title: "Server Error",
       message: "Check your internet connection.",
@@ -28,6 +28,7 @@ class ShopListViewController: UIViewController {
     return alert
   }()
 
+  private var paperclips = [PaperclipModel]()
   private var viewModel: ShopListViewModel
 
   init(viewModel: ShopListViewModel = ShopListViewModel()) {
@@ -61,32 +62,36 @@ extension ShopListViewController {
     viewModel.$showError
       .sink { [weak self] showError in
         guard showError, let self else { return }
-        self.present(self.alertController, animated: true)
+        self.present(self.errorAlertView, animated: true)
       }
+      .store(in: &cancellables)
+
+    viewModel.$paperclips
+      .sink { [weak self] newValues in self?.paperclips = newValues }
       .store(in: &cancellables)
   }
 
   private func activityIndicator(isLoading: Bool) {
     view.isUserInteractionEnabled = !isLoading
     isLoading
-    ? activityIndicator.startAnimating()
-    : activityIndicator.stopAnimating()
+    ? progressView.startAnimating()
+    : progressView.stopAnimating()
   }
 }
 
-// MARK: - View Constraints
+// MARK: - View Components Constraints
 extension ShopListViewController {
 
   private func setupViewController() {
     view.backgroundColor = .systemBackground
-    activityIndicatorConstraints()
+    progressViewConstraints()
   }
 
-  private func activityIndicatorConstraints() {
-    view.addSubview(activityIndicator)
+  private func progressViewConstraints() {
+    view.addSubview(progressView)
     NSLayoutConstraint.activate([
-      activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+      progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      progressView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
     ])
   }
 }

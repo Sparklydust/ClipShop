@@ -31,19 +31,19 @@ final class ShopListViewControllerTests: BaseXCTestCase {
     XCTAssertEqual(result, expected, "View `backgroundColor` must be equal to `\(expected)`.")
   }
 
-  func testInitialization_activityIndicatorColor_isEqualToAccent() {
+  func testInitialization_progressView_isEqualToAccent() {
     let expected: UIColor = .accent
 
-    let result = sut.activityIndicator.color
+    let result = sut.progressView.color
 
-    XCTAssertEqual(result, expected, "`activityIndicator` color must be equal to `\(expected)`.")
+    XCTAssertEqual(result, expected, "`progressView` color must be equal to `\(expected)`.")
   }
 
-  func testInitialization_alertControllerTitle_isEqualToServerError() {
+  func testInitialization_errorAlertView_isEqualToServerError() {
     let expected = "Server Error"
 
-    let result = sut.alertController.title
+    let result = sut.errorAlertView.title
 
-    XCTAssertEqual(result, expected, "`alertController` title must be equal to `\(expected)`.")
+    XCTAssertEqual(result, expected, "`errorAlertView` title must be equal to `\(expected)`.")
   }
 }
