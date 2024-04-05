@@ -5,7 +5,7 @@
 import Foundation
 
 /// Data representing paperclip items to be populated within the app shopping views.
-struct PaperclipData: Codable {
+struct PaperclipData: Codable, Equatable {
 
   let id: Int
   let categoryID: Int
@@ -25,7 +25,7 @@ struct PaperclipData: Codable {
     case isUrgent = "is_urgent"
   }
 
-  struct ImageURLs: Codable {
+  struct ImageURLs: Codable, Equatable {
 
     let small: String?
     let thumb: String?

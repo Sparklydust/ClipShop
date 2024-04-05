@@ -21,10 +21,26 @@
 		2AF5F8362BBF07FE00479E54 /* ServerEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */; };
 		2AF5F83A2BBF208500479E54 /* PaperclipDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8392BBF208500479E54 /* PaperclipDataTests.swift */; };
 		2AF5F83C2BBF20BB00479E54 /* PaperclipData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F83B2BBF20BB00479E54 /* PaperclipData.swift */; };
-		2AF5F8402BBF215E00479E54 /* PaperclipsData+Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F83F2BBF215E00479E54 /* PaperclipsData+Fakes.swift */; };
+		2AF5F8402BBF215E00479E54 /* PaperclipData+Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F83F2BBF215E00479E54 /* PaperclipData+Fakes.swift */; };
 		2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8412BBF718300479E54 /* CategoryDataTests.swift */; };
 		2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8432BBF71DE00479E54 /* CategoryData.swift */; };
 		2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */; };
+		2AF5F8492BBFDFAF00479E54 /* ServerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8482BBFDFAF00479E54 /* ServerProtocol.swift */; };
+		2AF5F84C2BBFE27200479E54 /* ServerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F84B2BBFE27200479E54 /* ServerServiceTests.swift */; };
+		2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F84E2BBFE32700479E54 /* ServerService.swift */; };
+		2AF5F8532BBFE7BF00479E54 /* ServerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8522BBFE7BF00479E54 /* ServerSpy.swift */; };
+		2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */; };
+		2AF5F8572BBFE9E400479E54 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8562BBFE9E400479E54 /* ServerError.swift */; };
+		2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */; };
+		2AF5F85D2BBFEB8200479E54 /* ServerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */; };
+		2AF5F85F2BBFEC4500479E54 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F85E2BBFEC4500479E54 /* URLSessionProtocol.swift */; };
+		2AF5F8612BBFF04B00479E54 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8602BBFF04B00479E54 /* URLSessionMock.swift */; };
+		2AF5F8642BC00BD500479E54 /* XCTestCase+ServerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8632BC00BD500479E54 /* XCTestCase+ServerMock.swift */; };
+		2AF5F8672BC00D0300479E54 /* JsonFileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8662BC00D0300479E54 /* JsonFileName.swift */; };
+		2AF5F86A2BC00E6900479E54 /* CategoryData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5F8692BC00E6900479E54 /* CategoryData.json */; };
+		2AF5F86C2BC00EE400479E54 /* PaperclipData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5F86B2BC00EE400479E54 /* PaperclipData.json */; };
+		2AF5F8702BC0102400479E54 /* XCTestCase+JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F86F2BC0102400479E54 /* XCTestCase+JsonParser.swift */; };
+		2AF5F8722BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8712BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +72,26 @@
 		2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEndpoint.swift; sourceTree = "<group>"; };
 		2AF5F8392BBF208500479E54 /* PaperclipDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperclipDataTests.swift; sourceTree = "<group>"; };
 		2AF5F83B2BBF20BB00479E54 /* PaperclipData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperclipData.swift; sourceTree = "<group>"; };
-		2AF5F83F2BBF215E00479E54 /* PaperclipsData+Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaperclipsData+Fakes.swift"; sourceTree = "<group>"; };
+		2AF5F83F2BBF215E00479E54 /* PaperclipData+Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaperclipData+Fakes.swift"; sourceTree = "<group>"; };
 		2AF5F8412BBF718300479E54 /* CategoryDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataTests.swift; sourceTree = "<group>"; };
 		2AF5F8432BBF71DE00479E54 /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
 		2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryData+Fakes.swift"; sourceTree = "<group>"; };
+		2AF5F8482BBFDFAF00479E54 /* ServerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProtocol.swift; sourceTree = "<group>"; };
+		2AF5F84B2BBFE27200479E54 /* ServerServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerServiceTests.swift; sourceTree = "<group>"; };
+		2AF5F84E2BBFE32700479E54 /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
+		2AF5F8522BBFE7BF00479E54 /* ServerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSpy.swift; sourceTree = "<group>"; };
+		2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerErrorTests.swift; sourceTree = "<group>"; };
+		2AF5F8562BBFE9E400479E54 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
+		2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDummy.swift; sourceTree = "<group>"; };
+		2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerMock.swift; sourceTree = "<group>"; };
+		2AF5F85E2BBFEC4500479E54 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		2AF5F8602BBFF04B00479E54 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		2AF5F8632BC00BD500479E54 /* XCTestCase+ServerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+ServerMock.swift"; sourceTree = "<group>"; };
+		2AF5F8662BC00D0300479E54 /* JsonFileName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFileName.swift; sourceTree = "<group>"; };
+		2AF5F8692BC00E6900479E54 /* CategoryData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoryData.json; sourceTree = "<group>"; };
+		2AF5F86B2BC00EE400479E54 /* PaperclipData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PaperclipData.json; sourceTree = "<group>"; };
+		2AF5F86F2BC0102400479E54 /* XCTestCase+JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+JsonParser.swift"; sourceTree = "<group>"; };
+		2AF5F8712BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+URLSessionMock.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +138,8 @@
 				2AF5F8162BBE92D000479E54 /* Configurations */,
 				2AF5F8142BBE92B600479E54 /* Features */,
 				2AF5F8332BBF07E400479E54 /* Objects */,
+				2AF5F8472BBFDF9B00479E54 /* Protocols */,
+				2AF5F84D2BBFE2F500479E54 /* Services */,
 			);
 			path = ClipShop;
 			sourceTree = "<group>";
@@ -116,6 +150,7 @@
 				2AF5F80E2BBE90B000479E54 /* Base */,
 				2AF5F8222BBED12200479E54 /* Cases */,
 				2AF5F83D2BBF214700479E54 /* Doubles */,
+				2AF5F8622BC00BA600479E54 /* Helpers */,
 			);
 			path = ClipShopTests;
 			sourceTree = "<group>";
@@ -193,6 +228,7 @@
 			children = (
 				2AF5F8202BBED11300479E54 /* Features */,
 				2AF5F82F2BBF06C700479E54 /* Objects */,
+				2AF5F84A2BBFE24300479E54 /* Services */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -228,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8312BBF077200479E54 /* ServerEndpointTests.swift */,
+				2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -245,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */,
+				2AF5F8562BBFE9E400479E54 /* ServerError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -270,7 +308,10 @@
 		2AF5F83D2BBF214700479E54 /* Doubles */ = {
 			isa = PBXGroup;
 			children = (
+				2AF5F8582BBFEAAD00479E54 /* Dummies */,
+				2AF5F85B2BBFEB6C00479E54 /* Mock */,
 				2AF5F83E2BBF215200479E54 /* Objects */,
+				2AF5F8512BBFE7B200479E54 /* Spies */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
@@ -278,10 +319,97 @@
 		2AF5F83E2BBF215200479E54 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */,
-				2AF5F83F2BBF215E00479E54 /* PaperclipsData+Fakes.swift */,
+				2AF5F8652BC00CE800479E54 /* Data */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		2AF5F8472BBFDF9B00479E54 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8482BBFDFAF00479E54 /* ServerProtocol.swift */,
+				2AF5F85E2BBFEC4500479E54 /* URLSessionProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2AF5F84A2BBFE24300479E54 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F84B2BBFE27200479E54 /* ServerServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2AF5F84D2BBFE2F500479E54 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F84E2BBFE32700479E54 /* ServerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2AF5F8512BBFE7B200479E54 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8522BBFE7BF00479E54 /* ServerSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
+		2AF5F8582BBFEAAD00479E54 /* Dummies */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */,
+			);
+			path = Dummies;
+			sourceTree = "<group>";
+		};
+		2AF5F85B2BBFEB6C00479E54 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */,
+				2AF5F8602BBFF04B00479E54 /* URLSessionMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		2AF5F8622BC00BA600479E54 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F86F2BC0102400479E54 /* XCTestCase+JsonParser.swift */,
+				2AF5F8632BC00BD500479E54 /* XCTestCase+ServerMock.swift */,
+				2AF5F8712BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2AF5F8652BC00CE800479E54 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F86D2BC00F8300479E54 /* CategoryData */,
+				2AF5F86E2BC00F9100479E54 /* PaperclipData */,
+				2AF5F8662BC00D0300479E54 /* JsonFileName.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2AF5F86D2BC00F8300479E54 /* CategoryData */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8692BC00E6900479E54 /* CategoryData.json */,
+				2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */,
+			);
+			path = CategoryData;
+			sourceTree = "<group>";
+		};
+		2AF5F86E2BC00F9100479E54 /* PaperclipData */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F86B2BC00EE400479E54 /* PaperclipData.json */,
+				2AF5F83F2BBF215E00479E54 /* PaperclipData+Fakes.swift */,
+			);
+			path = PaperclipData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +501,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF5F86C2BC00EE400479E54 /* PaperclipData.json in Resources */,
+				2AF5F86A2BC00E6900479E54 /* CategoryData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,14 +513,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF5F85F2BBFEC4500479E54 /* URLSessionProtocol.swift in Sources */,
 				2AF5F83C2BBF20BB00479E54 /* PaperclipData.swift in Sources */,
 				2AF5F82E2BBEE94700479E54 /* ShopListViewModel.swift in Sources */,
 				2AF5F8362BBF07FE00479E54 /* ServerEndpoint.swift in Sources */,
 				2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */,
 				2AF5F81F2BBED05900479E54 /* main.swift in Sources */,
+				2AF5F8492BBFDFAF00479E54 /* ServerProtocol.swift in Sources */,
+				2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */,
 				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
 				2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */,
+				2AF5F8572BBFE9E400479E54 /* ServerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,14 +532,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF5F8612BBFF04B00479E54 /* URLSessionMock.swift in Sources */,
 				2AF5F82C2BBEE91A00479E54 /* ShopListViewModelTests.swift in Sources */,
+				2AF5F8532BBFE7BF00479E54 /* ServerSpy.swift in Sources */,
 				2AF5F8322BBF077200479E54 /* ServerEndpointTests.swift in Sources */,
-				2AF5F8402BBF215E00479E54 /* PaperclipsData+Fakes.swift in Sources */,
+				2AF5F8402BBF215E00479E54 /* PaperclipData+Fakes.swift in Sources */,
 				2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */,
+				2AF5F8722BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift in Sources */,
+				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
+				2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */,
+				2AF5F8672BC00D0300479E54 /* JsonFileName.swift in Sources */,
 				2AF5F8282BBED26900479E54 /* ShopListViewControllerTests.swift in Sources */,
+				2AF5F8642BC00BD500479E54 /* XCTestCase+ServerMock.swift in Sources */,
+				2AF5F8702BC0102400479E54 /* XCTestCase+JsonParser.swift in Sources */,
+				2AF5F85D2BBFEB8200479E54 /* ServerMock.swift in Sources */,
 				2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */,
 				2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */,
 				2AF5F83A2BBF208500479E54 /* PaperclipDataTests.swift in Sources */,
+				2AF5F84C2BBFE27200479E54 /* ServerServiceTests.swift in Sources */,
 				2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
