@@ -26,6 +26,8 @@
 		2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8432BBF71DE00479E54 /* CategoryData.swift */; };
 		2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */; };
 		2AF5F8492BBFDFAF00479E54 /* ServerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8482BBFDFAF00479E54 /* ServerServiceProtocol.swift */; };
+		2AF5F84C2BBFE27200479E54 /* ServerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F84B2BBFE27200479E54 /* ServerServiceTests.swift */; };
+		2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F84E2BBFE32700479E54 /* ServerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		2AF5F8432BBF71DE00479E54 /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
 		2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryData+Fakes.swift"; sourceTree = "<group>"; };
 		2AF5F8482BBFDFAF00479E54 /* ServerServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerServiceProtocol.swift; sourceTree = "<group>"; };
+		2AF5F84B2BBFE27200479E54 /* ServerServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerServiceTests.swift; sourceTree = "<group>"; };
+		2AF5F84E2BBFE32700479E54 /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				2AF5F8142BBE92B600479E54 /* Features */,
 				2AF5F8332BBF07E400479E54 /* Objects */,
 				2AF5F8472BBFDF9B00479E54 /* Protocols */,
+				2AF5F84D2BBFE2F500479E54 /* Services */,
 			);
 			path = ClipShop;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			children = (
 				2AF5F8202BBED11300479E54 /* Features */,
 				2AF5F82F2BBF06C700479E54 /* Objects */,
+				2AF5F84A2BBFE24300479E54 /* Services */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -293,6 +299,22 @@
 				2AF5F8482BBFDFAF00479E54 /* ServerServiceProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2AF5F84A2BBFE24300479E54 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F84B2BBFE27200479E54 /* ServerServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2AF5F84D2BBFE2F500479E54 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F84E2BBFE32700479E54 /* ServerService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +422,7 @@
 				2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */,
 				2AF5F81F2BBED05900479E54 /* main.swift in Sources */,
 				2AF5F8492BBFDFAF00479E54 /* ServerServiceProtocol.swift in Sources */,
+				2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */,
 				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
 				2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */,
@@ -418,6 +441,7 @@
 				2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */,
 				2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */,
 				2AF5F83A2BBF208500479E54 /* PaperclipDataTests.swift in Sources */,
+				2AF5F84C2BBFE27200479E54 /* ServerServiceTests.swift in Sources */,
 				2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
