@@ -34,6 +34,7 @@
 		2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */; };
 		2AF5F85D2BBFEB8200479E54 /* ServerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */; };
 		2AF5F85F2BBFEC4500479E54 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F85E2BBFEC4500479E54 /* URLSessionProtocol.swift */; };
+		2AF5F8612BBFF04B00479E54 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8602BBFF04B00479E54 /* URLSessionMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDummy.swift; sourceTree = "<group>"; };
 		2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerMock.swift; sourceTree = "<group>"; };
 		2AF5F85E2BBFEC4500479E54 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		2AF5F8602BBFF04B00479E54 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */,
+				2AF5F8602BBFF04B00479E54 /* URLSessionMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF5F8612BBFF04B00479E54 /* URLSessionMock.swift in Sources */,
 				2AF5F82C2BBEE91A00479E54 /* ShopListViewModelTests.swift in Sources */,
 				2AF5F8532BBFE7BF00479E54 /* ServerSpy.swift in Sources */,
 				2AF5F8322BBF077200479E54 /* ServerEndpointTests.swift in Sources */,
