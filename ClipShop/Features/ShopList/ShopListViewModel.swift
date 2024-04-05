@@ -7,6 +7,8 @@ import Foundation
 /// Responsible of handling the logic of the ``ShopListViewController``.
 final class ShopListViewModel {
 
+  @Published var isLoading = false
+
   private var server: ServerProtocol
 
   init(server: ServerProtocol = ServerService()) {
@@ -16,5 +18,9 @@ final class ShopListViewModel {
 
 // MARK: - ServerService
 extension ShopListViewModel {
-  // Intentionally empty
+
+  func getPaperclipsList() async {
+    isLoading = true
+    defer { isLoading = false }
+  }
 }

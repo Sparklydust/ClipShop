@@ -19,12 +19,25 @@ final class ShopListViewModelTests: BaseXCTestCase {
     try await super.tearDown()
   }
 
-  func testServerService_requestListOfPaperclipDataIsTriggered_isLoadingIsTrue() {
-    XCTAssert(false, "Test not yet implemented")
+  func testServerService_requestListOfPaperclipDataIsTriggered_isLoadingIsTrue() async {
+    sut = ShopListViewModel(server: serverMock)
+    sut.isLoading = false
+
+    serverMock.onPerformAsyncAwait = {
+      let result = self.sut.isLoading
+
+      XCTAssertTrue(result, "`isLoading` must be true when data are loading.")
+    }
+    await sut.getPaperclipsList()
   }
 
-  func testServerService_requestListOfPaperclipDataIsSuccessful_isLoadingIsFalse() {
-    XCTAssert(false, "Test not yet implemented")
+  func testServerService_requestListOfPaperclipDataIsSuccessful_isLoadingIsFalse() async {
+    sut.isLoading = true
+
+    await sut.getPaperclipsList()
+    let result = sut.isLoading
+
+    XCTAssertFalse(result, "`isLoading` must be false when data loaded.")
   }
 
   func testServerService_requestListOfPaperclipDataIsSuccessful_paperlicpsValueIsNotEmpty() {
