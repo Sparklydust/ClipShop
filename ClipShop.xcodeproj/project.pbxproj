@@ -25,6 +25,7 @@
 		2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8412BBF718300479E54 /* CategoryDataTests.swift */; };
 		2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8432BBF71DE00479E54 /* CategoryData.swift */; };
 		2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */; };
+		2AF5F8492BBFDFAF00479E54 /* ServerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8482BBFDFAF00479E54 /* ServerServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		2AF5F8412BBF718300479E54 /* CategoryDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataTests.swift; sourceTree = "<group>"; };
 		2AF5F8432BBF71DE00479E54 /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
 		2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryData+Fakes.swift"; sourceTree = "<group>"; };
+		2AF5F8482BBFDFAF00479E54 /* ServerServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				2AF5F8162BBE92D000479E54 /* Configurations */,
 				2AF5F8142BBE92B600479E54 /* Features */,
 				2AF5F8332BBF07E400479E54 /* Objects */,
+				2AF5F8472BBFDF9B00479E54 /* Protocols */,
 			);
 			path = ClipShop;
 			sourceTree = "<group>";
@@ -284,6 +287,14 @@
 			path = Objects;
 			sourceTree = "<group>";
 		};
+		2AF5F8472BBFDF9B00479E54 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8482BBFDFAF00479E54 /* ServerServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,6 +399,7 @@
 				2AF5F8362BBF07FE00479E54 /* ServerEndpoint.swift in Sources */,
 				2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */,
 				2AF5F81F2BBED05900479E54 /* main.swift in Sources */,
+				2AF5F8492BBFDFAF00479E54 /* ServerServiceProtocol.swift in Sources */,
 				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
 				2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */,
