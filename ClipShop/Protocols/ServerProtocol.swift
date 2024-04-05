@@ -4,8 +4,8 @@
 
 import Foundation
 
-/// Protocol to make a request data on the ClipShop server.
-protocol ServerServiceProtocol {
+/// Server contract for requesting data on the ClipShop server.
+protocol ServerProtocol {
   
   /// Initiates a network request to the specified server endpoint, expecting a response
   /// of the given data type.
