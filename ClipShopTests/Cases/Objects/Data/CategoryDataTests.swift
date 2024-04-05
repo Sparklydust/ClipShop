@@ -7,31 +7,13 @@ import XCTest
 
 final class CategoryDataTests: XCTestCase {
 
-  var sut: CategoryData!
+  func testCodable_requestCategoryData_jsonResponseIsSuccessfullyDecoded() throws {
+    let expected: CategoryData = .fake()
+    let data = try json(fake: .categoryData)
 
-  override func setUp() async throws {
-    try await super.setUp()
-    sut = .fake()
-  }
+    let result = try JSONDecoder().decode(CategoryData.self, from: data)
 
-  override func tearDown() async throws {
-    sut = .none
-    try await super.tearDown()
-  }
-
-  func testInitialization_id_returnsAssociatedFakeValue() {
-    let expected = CategoryData.fake().id
-
-    let result = sut.id
-
-    XCTAssertEqual(result, expected, "`id` must be equal to `\(expected)` when initialized with its fake value.")
-  }
-
-  func testInitialization_name_returnsAssociatedFakeValue() {
-    let expected = CategoryData.fake().name
-
-    let result = sut.name
-
-    XCTAssertEqual(result, expected, "`name` must be equal to `\(expected)` when initialized with its fake value.")
+    XCTAssertEqual(result, expected, "Decoded `CategoryData` must be equal to the `CategoryData.json` file content."
+    )
   }
 }

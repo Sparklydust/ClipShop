@@ -5,7 +5,7 @@
 import Foundation
 
 /// The category type that a``PaperclipData`` must belong to.
-struct CategoryData: Codable {
+struct CategoryData: Codable, Equatable {
 
   let id: Int
   let name: String
