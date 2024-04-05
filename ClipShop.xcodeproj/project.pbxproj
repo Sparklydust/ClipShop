@@ -31,6 +31,7 @@
 		2AF5F8532BBFE7BF00479E54 /* ServerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8522BBFE7BF00479E54 /* ServerSpy.swift */; };
 		2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */; };
 		2AF5F8572BBFE9E400479E54 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8562BBFE9E400479E54 /* ServerError.swift */; };
+		2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		2AF5F8522BBFE7BF00479E54 /* ServerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSpy.swift; sourceTree = "<group>"; };
 		2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerErrorTests.swift; sourceTree = "<group>"; };
 		2AF5F8562BBFE9E400479E54 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
+		2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDummy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +289,7 @@
 		2AF5F83D2BBF214700479E54 /* Doubles */ = {
 			isa = PBXGroup;
 			children = (
+				2AF5F8582BBFEAAD00479E54 /* Dummies */,
 				2AF5F83E2BBF215200479E54 /* Objects */,
 				2AF5F8512BBFE7B200479E54 /* Spies */,
 			);
@@ -332,6 +335,14 @@
 				2AF5F8522BBFE7BF00479E54 /* ServerSpy.swift */,
 			);
 			path = Spies;
+			sourceTree = "<group>";
+		};
+		2AF5F8582BBFEAAD00479E54 /* Dummies */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */,
+			);
+			path = Dummies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +468,7 @@
 				2AF5F8402BBF215E00479E54 /* PaperclipsData+Fakes.swift in Sources */,
 				2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */,
 				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
+				2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */,
 				2AF5F8282BBED26900479E54 /* ShopListViewControllerTests.swift in Sources */,
 				2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */,
 				2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */,
