@@ -28,6 +28,9 @@
 		2AF5F8492BBFDFAF00479E54 /* ServerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8482BBFDFAF00479E54 /* ServerProtocol.swift */; };
 		2AF5F84C2BBFE27200479E54 /* ServerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F84B2BBFE27200479E54 /* ServerServiceTests.swift */; };
 		2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F84E2BBFE32700479E54 /* ServerService.swift */; };
+		2AF5F8532BBFE7BF00479E54 /* ServerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8522BBFE7BF00479E54 /* ServerSpy.swift */; };
+		2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */; };
+		2AF5F8572BBFE9E400479E54 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8562BBFE9E400479E54 /* ServerError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		2AF5F8482BBFDFAF00479E54 /* ServerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProtocol.swift; sourceTree = "<group>"; };
 		2AF5F84B2BBFE27200479E54 /* ServerServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerServiceTests.swift; sourceTree = "<group>"; };
 		2AF5F84E2BBFE32700479E54 /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
+		2AF5F8522BBFE7BF00479E54 /* ServerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSpy.swift; sourceTree = "<group>"; };
+		2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerErrorTests.swift; sourceTree = "<group>"; };
+		2AF5F8562BBFE9E400479E54 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8312BBF077200479E54 /* ServerEndpointTests.swift */,
+				2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -254,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */,
+				2AF5F8562BBFE9E400479E54 /* ServerError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F83E2BBF215200479E54 /* Objects */,
+				2AF5F8512BBFE7B200479E54 /* Spies */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
@@ -315,6 +324,14 @@
 				2AF5F84E2BBFE32700479E54 /* ServerService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		2AF5F8512BBFE7B200479E54 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8522BBFE7BF00479E54 /* ServerSpy.swift */,
+			);
+			path = Spies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,6 +443,7 @@
 				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
 				2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */,
+				2AF5F8572BBFE9E400479E54 /* ServerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,9 +452,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AF5F82C2BBEE91A00479E54 /* ShopListViewModelTests.swift in Sources */,
+				2AF5F8532BBFE7BF00479E54 /* ServerSpy.swift in Sources */,
 				2AF5F8322BBF077200479E54 /* ServerEndpointTests.swift in Sources */,
 				2AF5F8402BBF215E00479E54 /* PaperclipsData+Fakes.swift in Sources */,
 				2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */,
+				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
 				2AF5F8282BBED26900479E54 /* ShopListViewControllerTests.swift in Sources */,
 				2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */,
 				2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */,
