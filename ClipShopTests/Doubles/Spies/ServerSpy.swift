@@ -10,16 +10,16 @@ final class ServerSpy: ServerProtocol {
   // Spy values
   var isRequestCalled = false
   var endpoint: ServerEndpoint?
-  var dataType: Codable?
+  var data: Codable?
 
   // Protocol requirements
   func get<T: Codable>(
-    atEndpoint endpoint: ServerEndpoint,
-    for dataType: T.Type
+    _ data: T.Type,
+    atEndpoint endpoint: ServerEndpoint
   ) async throws -> T {
     isRequestCalled = true
     self.endpoint = endpoint
-    self.dataType = dataType as? any Codable
+    self.data = data as? any Codable
 
     throw ServerError.requestFails
   }

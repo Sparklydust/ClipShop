@@ -9,8 +9,8 @@ final class ServerDummy: ServerProtocol {
 
   // Protocol requirements
   func get<T: Codable>(
-    atEndpoint endpoint: ServerEndpoint,
-    for dataType: T.Type
+    _ data: T.Type,
+    atEndpoint endpoint: ServerEndpoint
   ) async throws -> T {
     throw ServerError.requestFails
   }

@@ -18,8 +18,8 @@ final class ServerService: ServerProtocol {
 extension ServerService {
 
   func get<T: Codable>(
-    atEndpoint endpoint: ServerEndpoint,
-    for dataType: T.Type
+    _ data: T.Type,
+    atEndpoint endpoint: ServerEndpoint
   ) async throws -> T {
 
     let (data, response) = try await urlSession.data(from: endpoint.url)

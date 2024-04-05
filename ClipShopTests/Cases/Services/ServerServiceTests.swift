@@ -24,7 +24,7 @@ final class ServerServiceTests: BaseXCTestCase {
     urlSessionMock = try urlSessionMock(data: .categoryData)
     sut = ServerService(urlSession: urlSessionMock)
 
-    let result = try await sut.get(atEndpoint: .paperclipCategories, for: CategoryData.self)
+    let result = try await sut.get(CategoryData.self, atEndpoint: .paperclipCategories)
 
     XCTAssertEqual(result, expected, "A successful request must return the `\(expected)` data object.")
   }
@@ -35,7 +35,7 @@ final class ServerServiceTests: BaseXCTestCase {
     sut = ServerService(urlSession: urlSessionMock)
 
     do {
-      _ = try await sut.get(atEndpoint: .paperclipCategories, for: CategoryData.self)
+      _ = try await sut.get(CategoryData.self, atEndpoint: .paperclipCategories)
       XCTFail("Must not response with valid data as an error must be thrown.")
     } catch let error {
       let result = try XCTUnwrap(error as? ServerError)

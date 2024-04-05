@@ -10,12 +10,12 @@ protocol ServerProtocol {
   /// Initiates a network request to the specified server endpoint, expecting a response
   /// of the given data type.
   /// - Parameters:
+  ///   - data: The type of the expected response data.
   ///   - endpoint: The ``ServerEndpoint`` URL to request the data.
-  ///   - dataType: The type of the expected response data.
   /// - Returns: An instance of the requested data.
   /// - Throws: An error if the request fails.
   func get<T: Codable>(
-    atEndpoint endpoint: ServerEndpoint,
-    for dataType: T.Type
+    _ data: T.Type,
+    atEndpoint endpoint: ServerEndpoint
   ) async throws -> T
 }
