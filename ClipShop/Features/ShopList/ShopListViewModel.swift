@@ -26,6 +26,7 @@ extension ShopListViewModel {
 
     do {
       let data = try await server.get([PaperclipData].self, atEndpoint: .paperclipsList)
+      paperclips = data.map { PaperclipModel(with: $0) }
     } catch {
       // Intentionally empty
     }

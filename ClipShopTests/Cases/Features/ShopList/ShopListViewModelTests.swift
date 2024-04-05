@@ -54,17 +54,23 @@ final class ShopListViewModelTests: BaseXCTestCase {
   }
 
   func testServerService_requestListOfPaperclipDataIsSuccessful_paperlicpsValueIsNotEmpty() async throws {
-    serverMock = try serverMock(data: .paperclipsData)
+    sut = ShopListViewModel(server: try serverMock(data: .paperclipsData))
     sut.paperclips.removeAll()
 
     await sut.getPaperclipsList()
     let result = sut.paperclips.isEmpty
 
-    XCTAssertFalse(result, "`paperclips` must not empty when a successful request is made.")
+    XCTAssertFalse(result, "`paperclips` must not empty on a successful request.")
   }
 
-  func testServerService_requestListOfPaperclipDataIsNotSuccessful_paperlicpsValueIsEmpty() {
-    XCTAssert(false, "Test not yet implemented")
+  func testServerService_requestListOfPaperclipDataIsNotSuccessful_paperlicpsValueIsEmpty() async throws {
+    sut = ShopListViewModel(server: try serverMock(data: .errorData))
+    sut.paperclips.removeAll()
+
+    await sut.getPaperclipsList()
+    let result = sut.paperclips.isEmpty
+
+    XCTAssertTrue(result, "`paperclips` must be empty when the serve request fails.")
   }
 
   func testServerService_requestListOfPaperclipDataFailsWithError_showErrorValueIsTrue() {
