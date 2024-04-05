@@ -2,10 +2,13 @@
 // Copyright © 2024 and confidential to ClipShop. All rights reserved.
 //
 
+import Combine
 import UIKit
 
 /// The view that populates a list of paperclips that can be purchased by users.
 class ShopListViewController: UIViewController {
+
+  var cancellables = Set<AnyCancellable>()
 
   // MARK: - View Objects
   private(set) var activityIndicator: UIActivityIndicatorView = {
@@ -29,6 +32,28 @@ class ShopListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupViewController()
+    observeViewModelPipelines()
+    Task { await viewModel.getPaperclipsList() }
+  }
+}
+
+// MARK: - View Model Pipelines
+extension ShopListViewController {
+  
+  /// Listening to Combine pipelines from the `viewModel` observing its changes to update `view`.
+  @MainActor private func observeViewModelPipelines() {
+    viewModel.$isLoading
+      .sink { [weak self] isLoading in
+        self?.activityIndicator(isLoading: isLoading)
+      }
+      .store(in: &cancellables)
+  }
+
+  private func activityIndicator(isLoading: Bool) {
+    view.isUserInteractionEnabled = !isLoading
+    isLoading
+    ? activityIndicator.startAnimating()
+    : activityIndicator.stopAnimating()
   }
 }
 
@@ -42,7 +67,6 @@ extension ShopListViewController {
 
   private func activityIndicatorConstraints() {
     view.addSubview(activityIndicator)
-
     NSLayoutConstraint.activate([
       activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
