@@ -11,7 +11,7 @@ final class ShopListViewModelTests: BaseXCTestCase {
 
   override func setUp() async throws {
     try await super.setUp()
-    sut = ShopListViewModel(server: serverSpy)
+    sut = ShopListViewModel(server: serverDummy)
   }
 
   override func tearDown() async throws {
@@ -19,9 +19,22 @@ final class ShopListViewModelTests: BaseXCTestCase {
     try await super.tearDown()
   }
 
+  func testInitialization_paperclips_isEqualToEmptyArrayOfPaperclipModel() {
+    let expected = [PaperclipModel]()
+
+    let result = sut.paperclips
+
+    XCTAssertEqual(result, expected, "`paperclips` value must be equal to `\(expected)` when initialized.")
+  }
+
+  func testInitialization_isLoading_isFalse() {
+    let result = sut.isLoading
+
+    XCTAssertFalse(result, "`isLoading` must be false when first initialized.")
+  }
+
   func testServerService_requestListOfPaperclipDataIsTriggered_isLoadingIsTrue() async {
     sut = ShopListViewModel(server: serverMock)
-    sut.isLoading = false
 
     serverMock.onPerformAsyncAwait = {
       let result = self.sut.isLoading
@@ -40,8 +53,14 @@ final class ShopListViewModelTests: BaseXCTestCase {
     XCTAssertFalse(result, "`isLoading` must be false when data loaded.")
   }
 
-  func testServerService_requestListOfPaperclipDataIsSuccessful_paperlicpsValueIsNotEmpty() {
-    XCTAssert(false, "Test not yet implemented")
+  func testServerService_requestListOfPaperclipDataIsSuccessful_paperlicpsValueIsNotEmpty() async throws {
+    serverMock = try serverMock(data: .paperclipsData)
+    sut.paperclips.removeAll()
+
+    await sut.getPaperclipsList()
+    let result = sut.paperclips.isEmpty
+
+    XCTAssertFalse(result, "`paperclips` must not empty when a successful request is made.")
   }
 
   func testServerService_requestListOfPaperclipDataIsNotSuccessful_paperlicpsValueIsEmpty() {
