@@ -32,6 +32,7 @@
 		2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */; };
 		2AF5F8572BBFE9E400479E54 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8562BBFE9E400479E54 /* ServerError.swift */; };
 		2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */; };
+		2AF5F85D2BBFEB8200479E54 /* ServerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerErrorTests.swift; sourceTree = "<group>"; };
 		2AF5F8562BBFE9E400479E54 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 		2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDummy.swift; sourceTree = "<group>"; };
+		2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8582BBFEAAD00479E54 /* Dummies */,
+				2AF5F85B2BBFEB6C00479E54 /* Mock */,
 				2AF5F83E2BBF215200479E54 /* Objects */,
 				2AF5F8512BBFE7B200479E54 /* Spies */,
 			);
@@ -343,6 +346,14 @@
 				2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */,
 			);
 			path = Dummies;
+			sourceTree = "<group>";
+		};
+		2AF5F85B2BBFEB6C00479E54 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +481,7 @@
 				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
 				2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */,
 				2AF5F8282BBED26900479E54 /* ShopListViewControllerTests.swift in Sources */,
+				2AF5F85D2BBFEB8200479E54 /* ServerMock.swift in Sources */,
 				2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */,
 				2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */,
 				2AF5F83A2BBF208500479E54 /* PaperclipDataTests.swift in Sources */,
