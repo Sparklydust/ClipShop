@@ -33,6 +33,7 @@
 		2AF5F8572BBFE9E400479E54 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8562BBFE9E400479E54 /* ServerError.swift */; };
 		2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */; };
 		2AF5F85D2BBFEB8200479E54 /* ServerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */; };
+		2AF5F85F2BBFEC4500479E54 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F85E2BBFEC4500479E54 /* URLSessionProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		2AF5F8562BBFE9E400479E54 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 		2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDummy.swift; sourceTree = "<group>"; };
 		2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerMock.swift; sourceTree = "<group>"; };
+		2AF5F85E2BBFEC4500479E54 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8482BBFDFAF00479E54 /* ServerProtocol.swift */,
+				2AF5F85E2BBFEC4500479E54 /* URLSessionProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF5F85F2BBFEC4500479E54 /* URLSessionProtocol.swift in Sources */,
 				2AF5F83C2BBF20BB00479E54 /* PaperclipData.swift in Sources */,
 				2AF5F82E2BBEE94700479E54 /* ShopListViewModel.swift in Sources */,
 				2AF5F8362BBF07FE00479E54 /* ServerEndpoint.swift in Sources */,
