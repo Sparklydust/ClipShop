@@ -21,16 +21,13 @@ extension ServerService {
     atEndpoint endpoint: ServerEndpoint,
     for dataType: T.Type
   ) async throws -> T {
-    return PaperclipData(
-      id: .zero,
-      categoryID: .zero,
-      title: "",
-      description: "",
-      price: .zero,
-      imageURLs: .init(small: .none, thumb: .none),
-      creationDate: "",
-      isUrgent: false,
-      siret: .none
-    ) as! T
+
+    let (data, response) = try await urlSession.data(from: endpoint.url)
+
+    guard let httpResponse = response as? HTTPURLResponse,
+          200..<300 ~= httpResponse.statusCode
+    else { throw ServerError.requestFails }
+
+    return try JSONDecoder().decode(T.self, from: data)
   }
 }

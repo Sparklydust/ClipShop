@@ -19,11 +19,28 @@ final class ServerServiceTests: BaseXCTestCase {
     try await super.tearDown()
   }
 
-  func testRequests_isSuccessfulWhenRequestingCategoryData_requestedDataIsReturned() {
-    XCTAssert(false, "Test not yet implemented")
+  func testRequests_isSuccessfulWhenRequestingCategoryData_requestedDataIsReturned() async throws {
+    let expected: CategoryData = .fake()
+    urlSessionMock = try urlSessionMock(data: .categoryData)
+    sut = ServerService(urlSession: urlSessionMock)
+
+    let result = try await sut.get(atEndpoint: .paperclipCategories, for: CategoryData.self)
+
+    XCTAssertEqual(result, expected, "A successful request must return the `\(expected)` data object.")
   }
 
-  func testRequests_isNotSuccessful_requestFailsServerErrorIsThrown() {
-    XCTAssert(false, "Test not yet implemented")
+  func testRequests_isNotSuccessful_requestFailsServerErrorIsThrown() async throws {
+    let expected: ServerError = .requestFails
+    urlSessionMock = try urlSessionMock(data: .errorData)
+    sut = ServerService(urlSession: urlSessionMock)
+
+    do {
+      _ = try await sut.get(atEndpoint: .paperclipCategories, for: CategoryData.self)
+      XCTFail("Must not response with valid data as an error must be thrown.")
+    } catch let error {
+      let result = try XCTUnwrap(error as? ServerError)
+
+      XCTAssertEqual(result, expected, "Unsuccessful request must throw `\(expected)` error.")
+    }
   }
 }
