@@ -27,6 +27,12 @@ final class ShopListViewModelTests: BaseXCTestCase {
     XCTAssertEqual(result, expected, "`paperclips` value must be equal to `\(expected)` when initialized.")
   }
 
+  func testInitialization_showError_isFalse() {
+    let result = sut.showError
+
+    XCTAssertFalse(result, "`showError` must be false when first initialized.")
+  }
+
   func testInitialization_isLoading_isFalse() {
     let result = sut.isLoading
 
@@ -73,11 +79,21 @@ final class ShopListViewModelTests: BaseXCTestCase {
     XCTAssertTrue(result, "`paperclips` must be empty when the serve request fails.")
   }
 
-  func testServerService_requestListOfPaperclipDataFailsWithError_showErrorValueIsTrue() {
-    XCTAssert(false, "Test not yet implemented")
+  func testServerService_requestListOfPaperclipDataFailsWithError_showErrorValueIsTrue() async throws {
+    sut = ShopListViewModel(server: try serverMock(data: .errorData))
+
+    await sut.getPaperclipsList()
+    let result = sut.showError
+
+    XCTAssertTrue(result, "`showError` must be true when an error is triggered from the server.")
   }
 
-  func testServerService_requestListOfPaperclipDataIsSuccessful_showErrorValueIsFalse() {
-    XCTAssert(false, "Test not yet implemented")
+  func testServerService_requestListOfPaperclipDataIsSuccessful_showErrorValueIsFalse() async throws {
+    sut = ShopListViewModel(server: try serverMock(data: .paperclipsData))
+
+    await sut.getPaperclipsList()
+    let result = sut.showError
+
+    XCTAssertFalse(result, "`showError` must be false when the server request is successful.")
   }
 }

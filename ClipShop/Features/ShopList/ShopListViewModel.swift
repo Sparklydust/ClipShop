@@ -8,6 +8,7 @@ import Foundation
 final class ShopListViewModel {
 
   @Published var isLoading = false
+  @Published var showError = false
   @Published var paperclips = [PaperclipModel]()
 
   private var server: ServerProtocol
@@ -19,7 +20,8 @@ final class ShopListViewModel {
 
 // MARK: - ServerService
 extension ShopListViewModel {
-
+  
+  /// Get the paperclips data from the ClipShop server to be shown to users.
   @MainActor func getPaperclipsList() async {
     isLoading = true
     defer { isLoading = false }
@@ -28,7 +30,7 @@ extension ShopListViewModel {
       let data = try await server.get([PaperclipData].self, atEndpoint: .paperclipsList)
       paperclips = data.map { PaperclipModel(with: $0) }
     } catch {
-      // Intentionally empty
+      showError = true 
     }
   }
 }
