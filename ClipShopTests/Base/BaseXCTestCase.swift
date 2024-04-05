@@ -12,16 +12,22 @@ import XCTest
 final class BaseXCTestCase: XCTestCase {
 
   var serverDummy: ServerDummy!
+  var urlSessionMock: URLSessionMock!
+  var serverMock: ServerMock!
   var serverSpy: ServerSpy!
 
   override func setUp() async throws {
     try await super.setUp()
     serverDummy = ServerDummy()
+    urlSessionMock = try urlSessionMock(data: .categoryData)
+    serverMock = try serverMock(data: .categoryData)
     serverSpy = ServerSpy()
   }
 
   override func tearDown() async throws {
     serverSpy = .none
+    serverMock = .none
+    urlSessionMock = .none
     serverDummy = .none
     try await super.tearDown()
   }

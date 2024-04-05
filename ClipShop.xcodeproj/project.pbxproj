@@ -40,6 +40,7 @@
 		2AF5F86A2BC00E6900479E54 /* CategoryData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5F8692BC00E6900479E54 /* CategoryData.json */; };
 		2AF5F86C2BC00EE400479E54 /* PaperclipData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5F86B2BC00EE400479E54 /* PaperclipData.json */; };
 		2AF5F8702BC0102400479E54 /* XCTestCase+JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F86F2BC0102400479E54 /* XCTestCase+JsonParser.swift */; };
+		2AF5F8722BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8712BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		2AF5F8692BC00E6900479E54 /* CategoryData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoryData.json; sourceTree = "<group>"; };
 		2AF5F86B2BC00EE400479E54 /* PaperclipData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PaperclipData.json; sourceTree = "<group>"; };
 		2AF5F86F2BC0102400479E54 /* XCTestCase+JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+JsonParser.swift"; sourceTree = "<group>"; };
+		2AF5F8712BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+URLSessionMock.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +379,7 @@
 			children = (
 				2AF5F86F2BC0102400479E54 /* XCTestCase+JsonParser.swift */,
 				2AF5F8632BC00BD500479E54 /* XCTestCase+ServerMock.swift */,
+				2AF5F8712BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				2AF5F8322BBF077200479E54 /* ServerEndpointTests.swift in Sources */,
 				2AF5F8402BBF215E00479E54 /* PaperclipData+Fakes.swift in Sources */,
 				2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */,
+				2AF5F8722BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift in Sources */,
 				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
 				2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */,
 				2AF5F8672BC00D0300479E54 /* JsonFileName.swift in Sources */,

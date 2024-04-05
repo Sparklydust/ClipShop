@@ -7,30 +7,23 @@ import XCTest
 
 extension XCTestCase {
   
-  /// Mock ``ServerService`` with needed parameters to create a fake server request.
+  /// Creates a mock implementation of the ``ServerService`` protocol configured with a 
+  /// mocked server response, facilitating the testing of components that interact with
+  /// server services.
   /// - Parameters:
-  ///   - dataFake: The fake data that is expected to come back from the fake api call for
+  ///   - data: The fake data that is expected to come back from the fake api call for
   ///   tests, found in the `JsonFileName.swift` file as a result of a request.
   ///   - file: The file where the test fails.
   ///   - line: The line of code where the test fails.
-  /// - Returns: A fake server response mocked following passed `data` parameter.
+  /// - Returns: An instance conforming to ``ServerProtocol``, mocked with the specified
+  /// `data` parameter.
   func serverMock(
-    data dataFake: JsonFileName,
+    data: JsonFileName,
     file: StaticString = #filePath,
     line: UInt = #line
-  ) throws -> ServerProtocol {
+  ) throws -> ServerMock {
 
-    let data = try json(fake: dataFake, file: file, line: line)
-    let response = try XCTUnwrap(HTTPURLResponse(
-      url: URL(string: "https://fake.api.request.com")!,
-      statusCode: dataFake == .errorData ? 500 : 200,
-      httpVersion: .none,
-      headerFields: .none
-    ))
-    let error: ServerError? = dataFake == .errorData ? .requestFails : .none
-
-    let urlSessionMock = URLSessionMock(data: data, response: response, error: error)
-
+    let urlSessionMock = try urlSessionMock(data: data, file: file, line: line)
     return ServerMock(urlSession: urlSessionMock)
   }
 }
