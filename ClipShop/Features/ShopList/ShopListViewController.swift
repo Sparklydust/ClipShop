@@ -18,6 +18,16 @@ class ShopListViewController: UIViewController {
     return indicator
   }()
 
+  private(set) var alertController: UIAlertController = {
+    let alert = UIAlertController(
+      title: "Server Error",
+      message: "Check your internet connection.",
+      preferredStyle: .alert
+    )
+    alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+    return alert
+  }()
+
   private var viewModel: ShopListViewModel
 
   init(viewModel: ShopListViewModel = ShopListViewModel()) {
@@ -39,12 +49,19 @@ class ShopListViewController: UIViewController {
 
 // MARK: - View Model Pipelines
 extension ShopListViewController {
-  
+
   /// Listening to Combine pipelines from the `viewModel` observing its changes to update `view`.
   @MainActor private func observeViewModelPipelines() {
     viewModel.$isLoading
       .sink { [weak self] isLoading in
         self?.activityIndicator(isLoading: isLoading)
+      }
+      .store(in: &cancellables)
+
+    viewModel.$showError
+      .sink { [weak self] showError in
+        guard showError, let self else { return }
+        self.present(self.alertController, animated: true)
       }
       .store(in: &cancellables)
   }

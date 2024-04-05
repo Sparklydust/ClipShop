@@ -38,4 +38,12 @@ final class ShopListViewControllerTests: BaseXCTestCase {
 
     XCTAssertEqual(result, expected, "`activityIndicator` color must be equal to `\(expected)`.")
   }
+
+  func testInitialization_alertControllerTitle_isEqualToServerError() {
+    let expected = "Server Error"
+
+    let result = sut.alertController.title
+
+    XCTAssertEqual(result, expected, "`alertController` title must be equal to `\(expected)`.")
+  }
 }
