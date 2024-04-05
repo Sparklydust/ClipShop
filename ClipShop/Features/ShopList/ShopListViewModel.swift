@@ -4,6 +4,33 @@
 
 import Foundation
 
+/// Responsible of handling the logic of the ``ShopListViewController``.
 final class ShopListViewModel {
-  // Intentionally empty
+
+  @Published var isLoading = false
+  @Published var showError = false
+  @Published var paperclips = [PaperclipModel]()
+
+  private var server: ServerProtocol
+
+  init(server: ServerProtocol = ServerService()) {
+    self.server = server
+  }
+}
+
+// MARK: - ServerService
+extension ShopListViewModel {
+
+  /// Get the paperclips data from the ClipShop server to be shown to users.
+  @MainActor func getPaperclipsList() async {
+    isLoading = true
+    defer { isLoading = false }
+
+    do {
+      let data = try await server.get([PaperclipData].self, atEndpoint: .paperclipsList)
+      paperclips = data.map { PaperclipModel(with: $0) }
+    } catch {
+      showError = true
+    }
+  }
 }

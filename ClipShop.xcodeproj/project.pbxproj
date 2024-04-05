@@ -41,6 +41,10 @@
 		2AF5F86C2BC00EE400479E54 /* PaperclipData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5F86B2BC00EE400479E54 /* PaperclipData.json */; };
 		2AF5F8702BC0102400479E54 /* XCTestCase+JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F86F2BC0102400479E54 /* XCTestCase+JsonParser.swift */; };
 		2AF5F8722BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8712BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift */; };
+		2AF5F8742BC0770500479E54 /* PaperclipsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5F8732BC0770500479E54 /* PaperclipsData.json */; };
+		2AF5F8782BC07C9700479E54 /* PaperclipModel+Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8772BC07C9700479E54 /* PaperclipModel+Fakes.swift */; };
+		2AF5F87B2BC07F0400479E54 /* PaperclipModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F87A2BC07F0400479E54 /* PaperclipModelTests.swift */; };
+		2AF5F87D2BC07FC000479E54 /* PaperclipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F87C2BC07FBF00479E54 /* PaperclipModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +96,10 @@
 		2AF5F86B2BC00EE400479E54 /* PaperclipData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PaperclipData.json; sourceTree = "<group>"; };
 		2AF5F86F2BC0102400479E54 /* XCTestCase+JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+JsonParser.swift"; sourceTree = "<group>"; };
 		2AF5F8712BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+URLSessionMock.swift"; sourceTree = "<group>"; };
+		2AF5F8732BC0770500479E54 /* PaperclipsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PaperclipsData.json; sourceTree = "<group>"; };
+		2AF5F8772BC07C9700479E54 /* PaperclipModel+Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaperclipModel+Fakes.swift"; sourceTree = "<group>"; };
+		2AF5F87A2BC07F0400479E54 /* PaperclipModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperclipModelTests.swift; sourceTree = "<group>"; };
+		2AF5F87C2BC07FBF00479E54 /* PaperclipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperclipModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +264,7 @@
 			children = (
 				2AF5F8382BBF202F00479E54 /* Data */,
 				2AF5F8302BBF06D900479E54 /* Enums */,
+				2AF5F8792BC07EF000479E54 /* Models */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -274,6 +283,7 @@
 			children = (
 				2AF5F8372BBF202500479E54 /* Data */,
 				2AF5F8342BBF07EE00479E54 /* Enums */,
+				2AF5F8752BC07C0E00479E54 /* Models */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -310,18 +320,19 @@
 			children = (
 				2AF5F8582BBFEAAD00479E54 /* Dummies */,
 				2AF5F85B2BBFEB6C00479E54 /* Mock */,
-				2AF5F83E2BBF215200479E54 /* Objects */,
+				2AF5F83E2BBF215200479E54 /* Fakes */,
 				2AF5F8512BBFE7B200479E54 /* Spies */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
 		};
-		2AF5F83E2BBF215200479E54 /* Objects */ = {
+		2AF5F83E2BBF215200479E54 /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
 				2AF5F8652BC00CE800479E54 /* Data */,
+				2AF5F8762BC07C7300479E54 /* Models */,
 			);
-			path = Objects;
+			path = Fakes;
 			sourceTree = "<group>";
 		};
 		2AF5F8472BBFDF9B00479E54 /* Protocols */ = {
@@ -387,9 +398,9 @@
 		2AF5F8652BC00CE800479E54 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2AF5F8662BC00D0300479E54 /* JsonFileName.swift */,
 				2AF5F86D2BC00F8300479E54 /* CategoryData */,
 				2AF5F86E2BC00F9100479E54 /* PaperclipData */,
-				2AF5F8662BC00D0300479E54 /* JsonFileName.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -407,9 +418,34 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F86B2BC00EE400479E54 /* PaperclipData.json */,
+				2AF5F8732BC0770500479E54 /* PaperclipsData.json */,
 				2AF5F83F2BBF215E00479E54 /* PaperclipData+Fakes.swift */,
 			);
 			path = PaperclipData;
+			sourceTree = "<group>";
+		};
+		2AF5F8752BC07C0E00479E54 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F87C2BC07FBF00479E54 /* PaperclipModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2AF5F8762BC07C7300479E54 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F8772BC07C9700479E54 /* PaperclipModel+Fakes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2AF5F8792BC07EF000479E54 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5F87A2BC07F0400479E54 /* PaperclipModelTests.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,6 +537,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF5F8742BC0770500479E54 /* PaperclipsData.json in Resources */,
 				2AF5F86C2BC00EE400479E54 /* PaperclipData.json in Resources */,
 				2AF5F86A2BC00E6900479E54 /* CategoryData.json in Resources */,
 			);
@@ -521,6 +558,7 @@
 				2AF5F81F2BBED05900479E54 /* main.swift in Sources */,
 				2AF5F8492BBFDFAF00479E54 /* ServerProtocol.swift in Sources */,
 				2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */,
+				2AF5F87D2BC07FC000479E54 /* PaperclipModel.swift in Sources */,
 				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
 				2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */,
@@ -535,12 +573,14 @@
 				2AF5F8612BBFF04B00479E54 /* URLSessionMock.swift in Sources */,
 				2AF5F82C2BBEE91A00479E54 /* ShopListViewModelTests.swift in Sources */,
 				2AF5F8532BBFE7BF00479E54 /* ServerSpy.swift in Sources */,
+				2AF5F8782BC07C9700479E54 /* PaperclipModel+Fakes.swift in Sources */,
 				2AF5F8322BBF077200479E54 /* ServerEndpointTests.swift in Sources */,
 				2AF5F8402BBF215E00479E54 /* PaperclipData+Fakes.swift in Sources */,
 				2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */,
 				2AF5F8722BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift in Sources */,
 				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
 				2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */,
+				2AF5F87B2BC07F0400479E54 /* PaperclipModelTests.swift in Sources */,
 				2AF5F8672BC00D0300479E54 /* JsonFileName.swift in Sources */,
 				2AF5F8282BBED26900479E54 /* ShopListViewControllerTests.swift in Sources */,
 				2AF5F8642BC00BD500479E54 /* XCTestCase+ServerMock.swift in Sources */,

@@ -5,17 +5,21 @@
 import XCTest
 @testable import ClipShop
 
-final class ShopListViewControllerTests: XCTestCase {
+final class ShopListViewControllerTests: BaseXCTestCase {
 
   var sut: ShopListViewController!
 
+  var viewModelFake: ShopListViewModel!
+
   override func setUp() async throws {
     try await super.setUp()
-    sut = await ShopListViewController()
+    viewModelFake = ShopListViewModel(server: serverDummy)
+    sut = await ShopListViewController(viewModel: viewModelFake)
   }
 
   override func tearDown() async throws {
-    sut = .none
+    viewModelFake = nil
+    sut = nil
     try await super.tearDown()
   }
 
@@ -25,5 +29,21 @@ final class ShopListViewControllerTests: XCTestCase {
     let result = sut.view.backgroundColor
 
     XCTAssertEqual(result, expected, "View `backgroundColor` must be equal to `\(expected)`.")
+  }
+
+  func testInitialization_progressView_isEqualToAccent() {
+    let expected: UIColor = .accent
+
+    let result = sut.progressView.color
+
+    XCTAssertEqual(result, expected, "`progressView` color must be equal to `\(expected)`.")
+  }
+
+  func testInitialization_errorAlertView_isEqualToServerError() {
+    let expected = "Server Error"
+
+    let result = sut.errorAlertView.title
+
+    XCTAssertEqual(result, expected, "`errorAlertView` title must be equal to `\(expected)`.")
   }
 }
