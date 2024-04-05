@@ -7,6 +7,16 @@ import Foundation
 /// Responsible to request data to the ClipShop server.
 final class ServerService: ServerProtocol {
 
+  var urlSession: URLSessionProtocol
+
+  init(urlSession: URLSessionProtocol = URLSession.shared) {
+    self.urlSession = urlSession
+  }
+}
+
+// - MARK: ServerProtocol
+extension ServerService {
+
   func get<T: Codable>(
     atEndpoint endpoint: ServerEndpoint,
     for dataType: T.Type
