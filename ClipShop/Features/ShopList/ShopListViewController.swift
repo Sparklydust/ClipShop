@@ -11,14 +11,22 @@ class ShopListViewController: UIViewController {
   var cancellables = Set<AnyCancellable>()
 
   // MARK: - Views
-  private(set) var progressView: UIActivityIndicatorView = {
+  private(set) lazy var collectionView: UICollectionView = {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .vertical
+
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    return collectionView
+  }()
+
+  private(set) lazy var progressView: UIActivityIndicatorView = {
     let indicator = UIActivityIndicatorView(style: .large)
     indicator.translatesAutoresizingMaskIntoConstraints = false
     indicator.color = .accent
     return indicator
   }()
 
-  private(set) var errorAlertView: UIAlertController = {
+  private(set) lazy var errorAlertView: UIAlertController = {
     let alert = UIAlertController(
       title: "Server Error",
       message: "Connect to the world wide web and restart ClipShop.",
@@ -33,7 +41,7 @@ class ShopListViewController: UIViewController {
   private var paperclips = [PaperclipModel]()
   private var viewModel: ShopListViewModel
 
-  // MARK: - Initializers
+  // Initializers
   init(viewModel: ShopListViewModel = ShopListViewModel()) {
     self.viewModel = viewModel
     super.init(nibName: .none, bundle: .none)
@@ -72,7 +80,10 @@ extension ShopListViewController {
       .store(in: &cancellables)
 
     viewModel.$paperclips
-      .sink { [weak self] newValues in self?.paperclips = newValues }
+      .sink { [weak self] newValues in
+        self?.paperclips = newValues
+        self?.collectionView.reloadData()
+      }
       .store(in: &cancellables)
   }
 }
@@ -82,7 +93,19 @@ extension ShopListViewController {
 
   private func setupViewController() {
     view.backgroundColor = .systemBackground
+    collectionViewConstrains()
     progressViewConstraints()
+  }
+
+  private func collectionViewConstrains() {
+    view.addSubview(collectionView)
+    collectionView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+      collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+    ])
   }
 
   private func progressViewConstraints() {
