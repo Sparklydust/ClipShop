@@ -14,7 +14,7 @@ final class ServerService: ServerProtocol {
   }
 }
 
-// - MARK: ServerProtocol
+// MARK: - Requests
 extension ServerService {
 
   func get<T: Codable>(

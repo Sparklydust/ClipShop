@@ -9,7 +9,7 @@ import XCTest
 ///
 /// By adding the ``BaseXCTestCase`` as an extension to tests class, we can avoid duplications
 /// and retrieve all dummies, mocks and spies in one place.
-final class BaseXCTestCase: XCTestCase {
+class BaseXCTestCase: XCTestCase {
 
   var serverDummy: ServerDummy!
   var urlSessionMock: URLSessionMock!
