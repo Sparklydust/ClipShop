@@ -10,5 +10,7 @@ import Foundation
 @frozen enum JsonFileName: String {
 
   case categoryData = "CategoryData"
+  /// Used to trigger errors during ``URLSessionMock`` response.
+  case errorData = ""
   case paperclipData = "PaperclipData"
 }

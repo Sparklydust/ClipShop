@@ -8,9 +8,19 @@ import Foundation
 final class URLSessionMock: URLSessionProtocol {
 
   // Mock values
-  var data: Data? = .none
-  var response: URLResponse? = .none
-  var error: ServerError? = .none
+  var data: Data?
+  var response: URLResponse?
+  var error: ServerError?
+
+  init(
+    data: Data? = .none,
+    response: URLResponse? = .none,
+    error: ServerError? = .none
+  ) {
+    self.data = data
+    self.response = response
+    self.error = error
+  }
 
   // Protocol requirements
   func data(from url: URL) async throws -> (Data, URLResponse) {
