@@ -10,7 +10,7 @@ class ShopListViewController: UIViewController {
 
   var cancellables = Set<AnyCancellable>()
 
-  // MARK: - View Objects
+  // MARK: - Views
   private(set) var progressView: UIActivityIndicatorView = {
     let indicator = UIActivityIndicatorView(style: .large)
     indicator.translatesAutoresizingMaskIntoConstraints = false
@@ -21,16 +21,19 @@ class ShopListViewController: UIViewController {
   private(set) var errorAlertView: UIAlertController = {
     let alert = UIAlertController(
       title: "Server Error",
-      message: "Check your internet connection.",
+      message: "Connect to the world wide web and restart ClipShop.",
       preferredStyle: .alert
     )
     alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+    alert.view.tintColor = .accent
     return alert
   }()
 
+  // MARK: - Models
   private var paperclips = [PaperclipModel]()
   private var viewModel: ShopListViewModel
 
+  // MARK: - Initializers
   init(viewModel: ShopListViewModel = ShopListViewModel()) {
     self.viewModel = viewModel
     super.init(nibName: .none, bundle: .none)
@@ -55,12 +58,14 @@ extension ShopListViewController {
   @MainActor private func observeViewModelPipelines() {
     viewModel.$isLoading
       .sink { [weak self] isLoading in
-        self?.activityIndicator(isLoading: isLoading)
+        self?.view.isUserInteractionEnabled = !isLoading
+        isLoading ? self?.progressView.startAnimating() : self?.progressView.stopAnimating()
       }
       .store(in: &cancellables)
 
     viewModel.$showError
       .sink { [weak self] showError in
+        self?.errorAlertView.view.isHidden = !showError
         guard showError, let self else { return }
         self.present(self.errorAlertView, animated: true)
       }
@@ -69,13 +74,6 @@ extension ShopListViewController {
     viewModel.$paperclips
       .sink { [weak self] newValues in self?.paperclips = newValues }
       .store(in: &cancellables)
-  }
-
-  private func activityIndicator(isLoading: Bool) {
-    view.isUserInteractionEnabled = !isLoading
-    isLoading
-    ? progressView.startAnimating()
-    : progressView.stopAnimating()
   }
 }
 

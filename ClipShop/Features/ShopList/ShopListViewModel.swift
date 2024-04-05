@@ -8,7 +8,7 @@ import Foundation
 final class ShopListViewModel {
 
   @Published var isLoading = false
-  @Published var showError = false
+  @Published var showError = true
   @Published var paperclips = [PaperclipModel]()
 
   private var server: ServerProtocol
