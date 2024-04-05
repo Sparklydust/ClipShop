@@ -7,8 +7,7 @@ import Foundation
 /// Add URLSessionProtocol on top of ``URLSession`` to reduce the dependency for testing.
 extension URLSession: URLSessionProtocol {
 
-  /// Define an async method that wraps the standard callback API that is only available on
-  /// iOS 15+.
+  /// Define an async method that wraps the standard callback API that is only available on iOS 15+.
   @available(iOS, deprecated: 15.0, message: "This extension is no longer necessary. Use API built into SDK.")
   func data(from url: URL) async throws -> (Data, URLResponse) {
     try await withCheckedThrowingContinuation { continuation in
@@ -25,7 +24,7 @@ extension URLSession: URLSessionProtocol {
 }
 
 /// Nods the head on top of ``URLSession`` to reduce the dependency for testing and insert
-/// it in the ``InjectedDouble``.
+/// it in as a dependency injection.
 protocol URLSessionProtocol {
 
   /// Retrieves the contents of a URL and delivers the data asynchronously.

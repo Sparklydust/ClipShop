@@ -11,6 +11,6 @@ import Foundation
 
   case categoryData = "CategoryData"
   /// Used to trigger errors during ``URLSessionMock`` response.
-  case errorData = ""
+  case errorData = "" // Empty value is expected for an error.
   case paperclipData = "PaperclipData"
 }

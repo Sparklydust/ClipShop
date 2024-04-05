@@ -25,10 +25,10 @@ class BaseXCTestCase: XCTestCase {
   }
 
   override func tearDown() async throws {
-    serverSpy = .none
-    serverMock = .none
-    urlSessionMock = .none
-    serverDummy = .none
+    serverSpy = nil
+    serverMock = nil
+    urlSessionMock = nil
+    serverDummy = nil
     try await super.tearDown()
   }
 }

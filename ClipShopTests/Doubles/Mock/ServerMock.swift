@@ -28,8 +28,8 @@ final class ServerMock: ServerProtocol {
     try onPerformAsyncAwait()
 
     let data = try await urlSessionMock.data(from: endpoint.url)
-    guard let dataResponse = data.0 as? T else { throw ServerError.requestFails }
+    let decodedResponse = try JSONDecoder().decode(T.self, from: data.0)
 
-    return dataResponse
+    return decodedResponse
   }
 }

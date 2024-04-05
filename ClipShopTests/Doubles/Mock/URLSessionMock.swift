@@ -30,7 +30,7 @@ final class URLSessionMock: URLSessionProtocol {
           200..<300 ~= httpResponse.statusCode,
           let data = data,
           let response = response
-    else { throw error! }
+    else { throw error ?? ServerError.requestFails }
 
     return (data, response)
   }
