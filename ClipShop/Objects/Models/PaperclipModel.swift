@@ -4,6 +4,13 @@
 
 import Foundation
 
+/// Paperclip item value for the shop initialized with server data to be presented
+/// on views to users.
 struct PaperclipModel: Equatable {
-  // Intentionally empty
+
+  let id: Int
+
+  init(with data: PaperclipData) {
+    id = data.id
+  }
 }

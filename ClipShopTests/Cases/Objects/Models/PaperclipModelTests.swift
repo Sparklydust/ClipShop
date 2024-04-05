@@ -11,11 +11,19 @@ final class PaperclipModelTests: XCTestCase {
 
   override func setUp() async throws {
     try await super.setUp()
-    sut = PaperclipModel()
+    sut = PaperclipModel(with: .fake())
   }
 
   override func tearDown() async throws {
     sut = nil
     try await super.tearDown()
+  }
+
+  func testInitialization_id_isEqualToValueFromPassedDataObjectInInit() {
+    let expected = PaperclipData.fake().id
+
+    let result = sut.id
+
+    XCTAssertEqual(result, expected, "`id` value must be equal to `\(expected)` data object value from init parameter.")
   }
 }
