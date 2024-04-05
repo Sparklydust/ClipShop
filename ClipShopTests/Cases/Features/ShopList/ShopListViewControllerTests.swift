@@ -31,8 +31,12 @@ final class ShopListViewControllerTests: BaseXCTestCase {
     XCTAssertEqual(result, expected, "View `backgroundColor` must be equal to `\(expected)`.")
   }
 
-  func testViewDidLoad_requestPaperclipDataListFromViewModel_paperclipsValueIsNotEmpty() {
-    XCTAssert(false, "Test not yet implemented")
+  func testInitialization_activityIndicatorColor_isEqualToAccent() {
+    let expected: UIColor = .accent
+
+    let result = sut.activityIndicator.color
+
+    XCTAssertEqual(result, expected, "`activityIndicator` color must be equal to `\(expected)`.")
   }
 
   func testViewDidLoad_requestPaperclipDataListIsLoading_isLoadingValueIsTrue() {
@@ -40,6 +44,10 @@ final class ShopListViewControllerTests: BaseXCTestCase {
   }
 
   func testViewDidLoad_requestPaperclipDataListLoaded_isLoadingValueIsFalse() {
+    XCTAssert(false, "Test not yet implemented")
+  }
+
+  func testViewDidLoad_requestPaperclipDataListFromViewModel_paperclipsValueIsNotEmpty() {
     XCTAssert(false, "Test not yet implemented")
   }
 
