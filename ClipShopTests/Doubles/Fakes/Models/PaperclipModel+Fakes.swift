@@ -11,7 +11,7 @@ extension PaperclipModel {
   /// Create fake ``PaperclipModel`` object for unit tests.
   /// Returns: Initialized object with fake data.
   static func fake(
-    with data: PaperclipData = .fake()
+    with data: (PaperclipData, [CategoryData]) = (.fake(), [.fake()])
   ) -> PaperclipModel {
     .init(with: data)
   }

@@ -12,7 +12,7 @@ extension PaperclipData {
   /// Returns: Initialized object with fake data.
   static func fake(
     id: Int = 1701863618,
-    categoryID: Int = 5,
+    categoryID: Int = 2,
     title: String = "Camion de Construction",
     description: String = "249 Pieces en métal, remise Metro Pelleport.",
     price: Decimal = 10.00,
