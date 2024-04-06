@@ -14,6 +14,8 @@ class ShopListViewController: UIViewController {
   private(set) lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .vertical
+    let inset: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 16 : 32
+    layout.sectionInset = UIEdgeInsets(top: .zero, left: inset, bottom: .zero, right: inset)
 
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.delegate = self
@@ -126,24 +128,16 @@ extension ShopListViewController: UICollectionViewDelegateFlowLayout {
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
-    let size = (view.frame.width / 3) - 1.34
-    return CGSize(width: size, height: size)
-  }
+    let layout = collectionViewLayout as! UICollectionViewFlowLayout
+    let hPadding = layout.sectionInset.left + layout.sectionInset.right
+    let minimumInteritemSpacing = layout.minimumInteritemSpacing
+    let itemsPerRow: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 2 : 3
+    // `totalSpacing` is the space between cells plus the left and right padding
+    let totalSpacing = (itemsPerRow - 1) * minimumInteritemSpacing + hPadding
+    let availableWidth = collectionView.frame.width - totalSpacing
+    let widthPerItem = availableWidth / itemsPerRow - (minimumInteritemSpacing * (itemsPerRow - 1) / itemsPerRow)
 
-  func collectionView(
-    _ collectionView: UICollectionView,
-    layout collectionViewLayout: UICollectionViewLayout,
-    minimumLineSpacingForSectionAt section: Int
-  ) -> CGFloat {
-    return 2
-  }
-
-  func collectionView(
-    _ collectionView: UICollectionView,
-    layout collectionViewLayout: UICollectionViewLayout,
-    minimumInteritemSpacingForSectionAt section: Int
-  ) -> CGFloat {
-    return 2
+    return CGSize(width: widthPerItem, height: widthPerItem * 1.4)
   }
 }
 

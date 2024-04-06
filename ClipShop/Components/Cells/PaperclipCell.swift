@@ -33,7 +33,7 @@ extension PaperclipCell {
   /// - Parameter model: The ``PaperclipModel`` instance containing the data from the server
   /// adapted to be displayed on the cell.
   func configure(with model: PaperclipModel) {
-    self.title.text = String(model.id)
+    self.title.text = model.title
   }
 }
 
@@ -41,6 +41,16 @@ extension PaperclipCell {
 extension PaperclipCell {
 
   private func setupCell() {
+    setupLayer()
+    setupTitle()
+  }
+
+  private func setupLayer() {
+    layer.cornerRadius = 4
+    layer.masksToBounds = true
+  }
+
+  private func setupTitle() {
     addSubview(title)
     NSLayoutConstraint.activate([
       title.centerXAnchor.constraint(equalTo: centerXAnchor),

@@ -9,8 +9,12 @@ import Foundation
 struct PaperclipModel: Equatable {
 
   let id: Int
+  let title: String
+  let price: Decimal
 
   init(with data: PaperclipData) {
     id = data.id
+    title = data.title
+    price = data.price
   }
 }
