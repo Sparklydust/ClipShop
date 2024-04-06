@@ -2,7 +2,7 @@
 // Copyright © 2024 and confidential to ClipShop. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Responsible to request data to the ClipShop server.
 final class ServerService: ServerProtocol {
@@ -29,5 +29,9 @@ extension ServerService {
     else { throw ServerError.requestFails }
 
     return try JSONDecoder().decode(T.self, from: data)
+  }
+
+  func loadImage(urlString: String) async -> UIImage? {
+    UIImage(systemName: "gear")
   }
 }

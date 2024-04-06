@@ -2,7 +2,7 @@
 // Copyright © 2024 and confidential to ClipShop. All rights reserved.
 //
 
-import Foundation
+import UIKit
 @testable import ClipShop
 
 final class ServerMock: ServerProtocol {
@@ -31,5 +31,12 @@ final class ServerMock: ServerProtocol {
     let decodedResponse = try JSONDecoder().decode(T.self, from: data.0)
 
     return decodedResponse
+  }
+
+  func loadImage(urlString: String) async -> UIImage? {
+    try? onPerformAsyncAwait()
+
+    guard let url = URL(string: urlString) else { return .none }
+    return UIImage(systemName: "gear")
   }
 }
