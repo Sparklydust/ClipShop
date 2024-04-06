@@ -100,4 +100,22 @@ final class ShopListViewModelTests: BaseXCTestCase {
 
     XCTAssertFalse(result, "`showError` must be false when the server request is successful.")
   }
+
+  func testServerService_isSuccessfulWhenLoadingImage_returnedUIImageIsNotNil() async throws {
+    serverMock = try serverMock(data: .imageData)
+    sut = ShopListViewModel(server: serverMock)
+
+    let result = await sut.loadImage(urlString: "www.fake.url.com")
+
+    XCTAssertNotNil(result, "`loadImage(urlString:)` must return an UIImage on a successful request.")
+  }
+
+  func testServerService_isNotSuccessfulWhenLoadingImage_returnedUIImageIsNil() async throws {
+    serverMock = try serverMock(data: .errorData)
+    sut = ShopListViewModel(server: serverMock)
+
+    let result = await sut.loadImage(urlString: "")
+
+    XCTAssertNil(result, "No UIImage must be returned on a request failure.")
+  }
 }

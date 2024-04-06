@@ -44,7 +44,7 @@ final class ServerServiceTests: BaseXCTestCase {
     }
   }
 
-  func testRequests_isSuccessfulWhenLoadingImage_returnUIImageIsNotNil() async throws {
+  func testRequests_isSuccessfulWhenLoadingImage_returnedUIImageIsNotNil() async throws {
     urlSessionMock = try urlSessionMock(data: .imageData)
     sut = ServerService(urlSession: urlSessionMock)
 
@@ -53,7 +53,7 @@ final class ServerServiceTests: BaseXCTestCase {
     XCTAssertNotNil(result, "`loadImage(urlString:)` must return an UIImage on a successful request.")
   }
 
-  func testRequests_isNotSuccessfulWhenLoadingImage_returnUIImageIsNil() async throws {
+  func testRequests_isNotSuccessfulWhenLoadingImage_returnedUIImageIsNil() async throws {
     urlSessionMock = try urlSessionMock(data: .errorData)
     sut = ServerService(urlSession: urlSessionMock)
 
