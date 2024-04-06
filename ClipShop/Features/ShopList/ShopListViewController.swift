@@ -137,7 +137,7 @@ extension ShopListViewController: UICollectionViewDelegateFlowLayout {
     let availableWidth = collectionView.frame.width - totalSpacing
     let widthPerItem = availableWidth / itemsPerRow - (minimumInteritemSpacing * (itemsPerRow - 1) / itemsPerRow)
 
-    return CGSize(width: widthPerItem, height: widthPerItem * 1.4)
+    return CGSize(width: widthPerItem, height: widthPerItem * 1.1)
   }
 }
 
