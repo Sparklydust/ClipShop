@@ -60,8 +60,9 @@ final class ShopListViewModelTests: BaseXCTestCase {
   }
 
   func testServerService_requestListOfPaperclipDataIsSuccessful_paperlicpsValueIsNotEmpty() async throws {
-    try XCTSkipIf(true, "Must manage to mock more than one async request to avoid error being thrown as concurrents ones are being made.")
-    sut = ShopListViewModel(server: try serverMock(data: .paperclipsData))
+    try XCTSkipIf(true, "Must manage to mock more than one async request to avoid error being thrown as concurrents requests are being made.")
+    serverMock = try serverMock(data: .paperclipsData)
+    sut = ShopListViewModel(server: serverMock)
     sut.paperclips.removeAll()
 
     await sut.getPaperclipsList()
@@ -90,8 +91,9 @@ final class ShopListViewModelTests: BaseXCTestCase {
   }
 
   func testServerService_requestListOfPaperclipDataIsSuccessful_showErrorValueIsFalse() async throws {
-    try XCTSkipIf(true, "Must manage to mock more than one async request to avoid error being thrown as concurrents ones are being made.")
-    sut = ShopListViewModel(server: try serverMock(data: .paperclipsData))
+    try XCTSkipIf(true, "Must manage to mock more than one async request to avoid error being thrown as concurrents requests are being made.")
+    serverMock = try serverMock(data: .paperclipsData)
+    sut = ShopListViewModel(server: serverMock)
 
     await sut.getPaperclipsList()
     let result = sut.showError

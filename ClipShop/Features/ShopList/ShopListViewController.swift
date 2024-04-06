@@ -20,7 +20,10 @@ class ShopListViewController: UIViewController {
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.delegate = self
     collectionView.dataSource = self
-    collectionView.register(PaperclipCell.self, forCellWithReuseIdentifier: "PaperclipCell")
+    collectionView.register(
+      PaperclipCell.self, 
+      forCellWithReuseIdentifier: PaperclipCell.reuseIdentifier
+    )
     return collectionView
   }()
 
@@ -109,9 +112,9 @@ extension ShopListViewController: UICollectionViewDelegate, UICollectionViewData
     cellForItemAt indexPath: IndexPath
   ) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(
-      withReuseIdentifier: "PaperclipCell", for: indexPath
-    ) as? PaperclipCell  
-    else { fatalError("Unable to dequeue CustomCollectionViewCell") }
+      withReuseIdentifier: PaperclipCell.reuseIdentifier, for: indexPath
+    ) as? PaperclipCell
+    else { return UICollectionViewCell() }
 
     let paperclip = paperclips[indexPath.item]
     cell.configure(with: paperclip)
@@ -128,7 +131,9 @@ extension ShopListViewController: UICollectionViewDelegateFlowLayout {
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
-    let layout = collectionViewLayout as! UICollectionViewFlowLayout
+    guard let layout = collectionViewLayout as? UICollectionViewFlowLayout
+    else { return CGSize(width: 100, height: 100) }
+
     let hPadding = layout.sectionInset.left + layout.sectionInset.right
     let minimumInteritemSpacing = layout.minimumInteritemSpacing
     let itemsPerRow: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 2 : 3
@@ -146,11 +151,11 @@ extension ShopListViewController {
 
   private func setupViewController() {
     view.backgroundColor = .systemBackground
-    collectionViewConstrains()
+    collectionViewConstraints()
     progressViewConstraints()
   }
 
-  private func collectionViewConstrains() {
+  private func collectionViewConstraints() {
     view.addSubview(collectionView)
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([

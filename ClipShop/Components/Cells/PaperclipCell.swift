@@ -8,6 +8,8 @@ import UIKit
 /// a collection view cell.
 class PaperclipCell: UICollectionViewCell {
 
+  static let reuseIdentifier = "PaperclipCell"
+
   private let imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -87,6 +89,12 @@ extension PaperclipCell {
     layer.cornerRadius = 12
     layer.masksToBounds = true
 
+    addSubview(imageView)
+    addSubview(redactedView)
+    addSubview(titleLabel)
+    addSubview(priceLabel)
+    addSubview(categoryLabel)
+
     imageViewConstraints()
     redactedViewConstraints()
     titleLabelConstraints()
@@ -95,7 +103,6 @@ extension PaperclipCell {
   }
 
   private func imageViewConstraints() {
-    addSubview(imageView)
     NSLayoutConstraint.activate([
       imageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
       imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -108,7 +115,6 @@ extension PaperclipCell {
   }
 
   private func redactedViewConstraints() {
-    addSubview(redactedView)
     NSLayoutConstraint.activate([
       redactedView.topAnchor.constraint(equalTo: imageView.topAnchor),
       redactedView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
@@ -118,7 +124,6 @@ extension PaperclipCell {
   }
 
   private func titleLabelConstraints() {
-    addSubview(titleLabel)
     NSLayoutConstraint.activate([
       titleLabel.topAnchor.constraint(greaterThanOrEqualTo: imageView.bottomAnchor, constant: 8),
       titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -128,7 +133,6 @@ extension PaperclipCell {
   }
 
   private func priceLabelConstraints() {
-    addSubview(priceLabel)
     NSLayoutConstraint.activate([
       priceLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
       priceLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -16),
@@ -137,7 +141,6 @@ extension PaperclipCell {
   }
 
   private func categoryLabelConstraints() {
-    addSubview(categoryLabel)
     NSLayoutConstraint.activate([
       categoryLabel.leadingAnchor.constraint(equalTo: priceLabel.leadingAnchor),
       categoryLabel.trailingAnchor.constraint(equalTo: priceLabel.trailingAnchor),
