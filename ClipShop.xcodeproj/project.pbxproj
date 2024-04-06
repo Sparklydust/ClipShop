@@ -10,6 +10,7 @@
 		2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4237C62BBE8D2E00C94A0B /* AppDelegate.swift */; };
 		2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4237C82BBE8D2E00C94A0B /* SceneDelegate.swift */; };
 		2A4237D02BBE8D2F00C94A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4237CF2BBE8D2F00C94A0B /* Assets.xcassets */; };
+		2A5AD64A2BC1C2C1003DD193 /* ImageData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A5AD6492BC1C2C1003DD193 /* ImageData.json */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -65,6 +66,7 @@
 		2A4237CF2BBE8D2F00C94A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A4237D42BBE8D2F00C94A0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A4237D92BBE8D3000C94A0B /* ClipShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClipShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5AD6492BC1C2C1003DD193 /* ImageData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ImageData.json; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 				2AF5F8622BC00BA600479E54 /* Helpers */,
 			);
 			path = ClipShopTests;
+			sourceTree = "<group>";
+		};
+		2A5AD6482BC1C27A003DD193 /* ImageData */ = {
+			isa = PBXGroup;
+			children = (
+				2A5AD6492BC1C2C1003DD193 /* ImageData.json */,
+			);
+			path = ImageData;
 			sourceTree = "<group>";
 		};
 		2AF5F80E2BBE90B000479E54 /* Base */ = {
@@ -403,6 +413,7 @@
 			children = (
 				2AF5F8662BC00D0300479E54 /* JsonFileName.swift */,
 				2AF5F86D2BC00F8300479E54 /* CategoryData */,
+				2A5AD6482BC1C27A003DD193 /* ImageData */,
 				2AF5F86E2BC00F9100479E54 /* PaperclipData */,
 			);
 			path = Data;
@@ -559,6 +570,7 @@
 				2AF5F8742BC0770500479E54 /* PaperclipsData.json in Resources */,
 				2AF5F86C2BC00EE400479E54 /* PaperclipData.json in Resources */,
 				2AF5F86A2BC00E6900479E54 /* CategoryData.json in Resources */,
+				2A5AD64A2BC1C2C1003DD193 /* ImageData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

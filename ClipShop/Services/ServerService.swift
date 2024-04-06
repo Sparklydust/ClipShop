@@ -32,6 +32,7 @@ extension ServerService {
   }
 
   func loadImage(urlString: String) async -> UIImage? {
-    UIImage(systemName: "gear")
+    guard let url = URL(string: urlString) else { return .none }
+    return UIImage(systemName: "gear")
   }
 }

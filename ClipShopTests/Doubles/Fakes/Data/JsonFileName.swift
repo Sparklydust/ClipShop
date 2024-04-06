@@ -12,6 +12,8 @@ import Foundation
   case categoryData = "CategoryData"
   /// Used to trigger errors during ``URLSessionMock`` response.
   case errorData = "" // Empty value is expected for an error.
+  /// Base64 encoded string of an image data for unit test purpose.
+  case imageData = "ImageData"
   case paperclipData = "PaperclipData"
   case paperclipsData = "PaperclipsData"
 }

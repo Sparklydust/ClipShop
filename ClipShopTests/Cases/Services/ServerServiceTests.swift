@@ -43,4 +43,22 @@ final class ServerServiceTests: BaseXCTestCase {
       XCTAssertEqual(result, expected, "Unsuccessful request must throw `\(expected)` error.")
     }
   }
+
+  func testRequests_isSuccessfulWhenLoadingImage_returnUIImageIsNotNil() async throws {
+    urlSessionMock = try urlSessionMock(data: .imageData)
+    sut = ServerService(urlSession: urlSessionMock)
+
+    let result = await sut.loadImage(urlString: "www.fake.url.com")
+
+    XCTAssertNotNil(result, "`loadImage(urlString:)` must return an UIImage on a successful request.")
+  }
+
+  func testRequests_isNotSuccessfulWhenLoadingImage_returnUIImageIsNil() async throws {
+    urlSessionMock = try urlSessionMock(data: .errorData)
+    sut = ServerService(urlSession: urlSessionMock)
+
+    let result = await sut.loadImage(urlString: "")
+
+    XCTAssertNil(result, "No UIImage must be returned on a request failure.")
+  }
 }
