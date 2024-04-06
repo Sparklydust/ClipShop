@@ -45,6 +45,7 @@
 		2AF5F8782BC07C9700479E54 /* PaperclipModel+Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8772BC07C9700479E54 /* PaperclipModel+Fakes.swift */; };
 		2AF5F87B2BC07F0400479E54 /* PaperclipModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F87A2BC07F0400479E54 /* PaperclipModelTests.swift */; };
 		2AF5F87D2BC07FC000479E54 /* PaperclipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F87C2BC07FBF00479E54 /* PaperclipModel.swift */; };
+		2AFC0B5F2BC0C0EA0057BB66 /* PaperclipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC0B5E2BC0C0EA0057BB66 /* PaperclipCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		2AF5F8772BC07C9700479E54 /* PaperclipModel+Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaperclipModel+Fakes.swift"; sourceTree = "<group>"; };
 		2AF5F87A2BC07F0400479E54 /* PaperclipModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperclipModelTests.swift; sourceTree = "<group>"; };
 		2AF5F87C2BC07FBF00479E54 /* PaperclipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperclipModel.swift; sourceTree = "<group>"; };
+		2AFC0B5E2BC0C0EA0057BB66 /* PaperclipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperclipCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8132BBE926100479E54 /* Assets */,
+				2AFC0B5C2BC0C0900057BB66 /* Components */,
 				2AF5F8162BBE92D000479E54 /* Configurations */,
 				2AF5F8142BBE92B600479E54 /* Features */,
 				2AF5F8332BBF07E400479E54 /* Objects */,
@@ -448,6 +451,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		2AFC0B5C2BC0C0900057BB66 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2AFC0B5D2BC0C0A60057BB66 /* Cells */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2AFC0B5D2BC0C0A60057BB66 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2AFC0B5E2BC0C0EA0057BB66 /* PaperclipCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -560,6 +579,7 @@
 				2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */,
 				2AF5F87D2BC07FC000479E54 /* PaperclipModel.swift in Sources */,
 				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
+				2AFC0B5F2BC0C0EA0057BB66 /* PaperclipCell.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
 				2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */,
 				2AF5F8572BBFE9E400479E54 /* ServerError.swift in Sources */,

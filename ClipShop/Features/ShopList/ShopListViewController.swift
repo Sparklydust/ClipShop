@@ -16,6 +16,9 @@ class ShopListViewController: UIViewController {
     layout.scrollDirection = .vertical
 
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    collectionView.delegate = self
+    collectionView.dataSource = self
+    collectionView.register(PaperclipCell.self, forCellWithReuseIdentifier: "PaperclipCell")
     return collectionView
   }()
 
@@ -63,6 +66,7 @@ class ShopListViewController: UIViewController {
 extension ShopListViewController {
 
   /// Listening to Combine pipelines from the `viewModel` observing its changes to update `view`.
+  /// - Info: Reactive programming, making the UI responsive and dynamic.
   @MainActor private func observeViewModelPipelines() {
     viewModel.$isLoading
       .sink { [weak self] isLoading in
@@ -85,6 +89,61 @@ extension ShopListViewController {
         self?.collectionView.reloadData()
       }
       .store(in: &cancellables)
+  }
+}
+
+// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
+extension ShopListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+  func collectionView(
+    _ collectionView: UICollectionView,
+    numberOfItemsInSection section: Int
+  ) -> Int {
+    return paperclips.count
+  }
+
+  func collectionView(
+    _ collectionView: UICollectionView,
+    cellForItemAt indexPath: IndexPath
+  ) -> UICollectionViewCell {
+    guard let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: "PaperclipCell", for: indexPath
+    ) as? PaperclipCell  
+    else { fatalError("Unable to dequeue CustomCollectionViewCell") }
+
+    let paperclip = paperclips[indexPath.item]
+    cell.configure(with: paperclip)
+
+    return cell
+  }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension ShopListViewController: UICollectionViewDelegateFlowLayout {
+
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    sizeForItemAt indexPath: IndexPath
+  ) -> CGSize {
+    let size = (view.frame.width / 3) - 1.34
+    return CGSize(width: size, height: size)
+  }
+
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    minimumLineSpacingForSectionAt section: Int
+  ) -> CGFloat {
+    return 2
+  }
+
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    minimumInteritemSpacingForSectionAt section: Int
+  ) -> CGFloat {
+    return 2
   }
 }
 
