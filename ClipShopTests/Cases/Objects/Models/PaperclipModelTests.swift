@@ -11,7 +11,7 @@ final class PaperclipModelTests: XCTestCase {
 
   override func setUp() async throws {
     try await super.setUp()
-    sut = PaperclipModel(with: .fake())
+    sut = PaperclipModel(with: (.fake(), [.fake()]))
   }
 
   override func tearDown() async throws {
@@ -25,5 +25,37 @@ final class PaperclipModelTests: XCTestCase {
     let result = sut.id
 
     XCTAssertEqual(result, expected, "`id` value must be equal to `\(expected)` data object value from init parameter.")
+  }
+
+  func testInitialization_image_isEqualToNil() {
+    let expected: UIImage? = .none
+
+    let result = sut.image
+
+    XCTAssertEqual(result, expected, "`image` value must be equal to `\(String(describing: expected))` when initialized.")
+  }
+
+  func testInitialization_title_isEqualToValueFromPassedDataObjectInInit() {
+    let expected = PaperclipData.fake().title
+
+    let result = sut.title
+
+    XCTAssertEqual(result, expected, "`title` value must be equal to `\(expected)` data object value from init parameter.")
+  }
+
+  func testInitialization_price_isEqualToValueFromPassedDataObjectInInit() {
+    let expected = PaperclipData.fake().price
+
+    let result = sut.price
+
+    XCTAssertEqual(result, expected, "`price` value must be equal to `\(expected)` data object value from init parameter.")
+  }
+
+  func testInitialization_category_isEqualToValueFromPassedDataObjectInInit() {
+    let expected = CategoryData.fake().name
+
+    let result = sut.category
+
+    XCTAssertEqual(result, expected, "`category` value must be equal to `\(expected)` data object value from init parameter.")
   }
 }

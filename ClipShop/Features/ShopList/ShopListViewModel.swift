@@ -27,8 +27,11 @@ extension ShopListViewModel {
     defer { isLoading = false }
 
     do {
-      let data = try await server.get([PaperclipData].self, atEndpoint: .paperclipsList)
-      paperclips = data.map { PaperclipModel(with: $0) }
+      async let paperclipData = try await server.get([PaperclipData].self, atEndpoint: .paperclipsList)
+      async let categoryData = try await server.get([CategoryData].self, atEndpoint: .paperclipCategories)
+      let data = try await (paperclipData, categoryData)
+
+      paperclips = data.0.map { PaperclipModel(with: ($0, data.1)) }
     } catch {
       showError = true
     }
