@@ -27,6 +27,22 @@ final class PaperclipModelTests: XCTestCase {
     XCTAssertEqual(result, expected, "`id` value must be equal to `\(expected)` data object value from init parameter.")
   }
 
+  func testInitialization_imageURLSmall_isEqualToValueFromPassedDataObjectInInit() throws {
+    let expected = try XCTUnwrap(PaperclipData.fake().imageURLs.small)
+
+    let result = sut.imageURL.small
+
+    XCTAssertEqual(result, expected, "`imageURL.small` value must be equal to `\(expected)` data object value from init parameter.")
+  }
+
+  func testInitialization_imageURLThumb_isEqualToValueFromPassedDataObjectInInit() throws {
+    let expected = try XCTUnwrap(PaperclipData.fake().imageURLs.thumb)
+
+    let result = sut.imageURL.thumb
+
+    XCTAssertEqual(result, expected, "`imageURL.thumb` value must be equal to `\(expected)` data object value from init parameter.")
+  }
+
   func testInitialization_image_isEqualToNil() {
     let expected: UIImage? = .none
 
