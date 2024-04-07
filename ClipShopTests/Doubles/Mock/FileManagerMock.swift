@@ -26,11 +26,11 @@ final class FileManagerMock: FileManagerProtocol {
     withIntermediateDirectories createIntermediates: Bool,
     attributes: [FileAttributeKey : Any]?
   ) throws {
-    guard createDirectoryErrorStub != nil else { throw createDirectoryErrorStub! }
+    guard createDirectoryErrorStub == nil else { throw createDirectoryErrorStub! }
   }
   
   func removeItem(at URL: URL) throws {
-    guard removeItemErrorStub != nil else { throw removeItemErrorStub! }
+    guard removeItemErrorStub == nil else { throw removeItemErrorStub! }
   }
 
   func contentsOfDirectory(
