@@ -10,10 +10,10 @@ protocol ImageCacheProtocol {
   /// - Parameters:
   ///   - data: The data to save in disk.
   ///   - name: The name of the data to save.
-  func write(_ data: Data, name: String) throws
-  
+  func write(_ data: Data, name: String) async throws
+
   /// Reads and returns data from a file with the specified name.
   /// - Parameter name: The name of the saved data.
   /// - Returns: The data found in disk.
-  func read(name: String) throws -> Data
+  func read(name: String) async throws -> Data
 }

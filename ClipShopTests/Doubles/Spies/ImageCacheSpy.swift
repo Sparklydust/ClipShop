@@ -14,13 +14,13 @@ final class ImageCacheSpy: ImageCacheProtocol {
   var name: String?
 
   // Protocol requirements
-  func write(_ data: Data, name: String) throws {
+  func write(_ data: Data, name: String) async throws {
     isWriteCalled = true
     self.data = data
     self.name = name
   }
 
-  func read(name: String) throws -> Data {
+  func read(name: String) async throws -> Data {
     isReadCalled = true
     self.name = name
     return Data()

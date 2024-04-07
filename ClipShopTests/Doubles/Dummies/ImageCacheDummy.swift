@@ -8,11 +8,11 @@ import Foundation
 final class ImageCacheDummy: ImageCacheProtocol {
 
   // Protocol requirements
-  func write(_ data: Data, name: String) throws {
+  func write(_ data: Data, name: String) async throws {
     throw ImageCacheError.dataNotFound
   }
 
-  func read(name: String) throws -> Data {
+  func read(name: String) async throws -> Data {
     throw ImageCacheError.dataNotFound
   }
 }
