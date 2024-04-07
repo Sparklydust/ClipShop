@@ -9,11 +9,12 @@ import UIKit
 class PaperclipCell: UICollectionViewCell {
 
   static let reuseIdentifier = "PaperclipCell"
+  private let isRegular = UIDevice.current.userInterfaceIdiom == .pad
 
   private(set) var imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.contentMode = .scaleAspectFit
+    imageView.contentMode = .scaleAspectFill
     imageView.layer.cornerRadius = 8
     imageView.clipsToBounds = true
     return imageView
@@ -32,8 +33,10 @@ class PaperclipCell: UICollectionViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textAlignment = .left
-    label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-    label.numberOfLines = 0
+    label.font = UIDevice.current.userInterfaceIdiom == .pad
+    ? .preferredFont(forTextStyle: .title3, weight: .semibold)
+    : .preferredFont(forTextStyle: .callout, weight: .medium)
+    label.numberOfLines = 3
     label.allowsDefaultTighteningForTruncation = true
     return label
   }()
@@ -42,7 +45,9 @@ class PaperclipCell: UICollectionViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textAlignment = .left
-    label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+    label.font = UIDevice.current.userInterfaceIdiom == .pad
+    ? .preferredFont(forTextStyle: .headline)
+    : .preferredFont(forTextStyle: .subheadline, weight: .medium)
     return label
   }()
 
@@ -50,7 +55,9 @@ class PaperclipCell: UICollectionViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textAlignment = .left
-    label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+    label.font = UIDevice.current.userInterfaceIdiom == .pad
+    ? .preferredFont(forTextStyle: .footnote)
+    : .preferredFont(forTextStyle: .caption1)
     label.textColor = .secondaryLabel
     return label
   }()
@@ -77,7 +84,7 @@ extension PaperclipCell {
     priceLabel.text = "\(model.price)€"
     categoryLabel.text = model.category
   }
-  
+
   /// Define the image to be populated on the cell.
   /// - Parameter image: The image to be shown if any else, `redactedView` is presented.
   func imageConfiguration(with image: UIImage?) {
@@ -91,9 +98,9 @@ extension PaperclipCell {
 extension PaperclipCell {
 
   private func setupCell() {
-    backgroundColor = .accent
-    layer.cornerRadius = 12
-    layer.masksToBounds = true
+    backgroundColor = .secondarySystemBackground
+
+    cellLayers()
 
     addSubview(imageView)
     addSubview(redactedView)
@@ -108,14 +115,21 @@ extension PaperclipCell {
     categoryLabelConstraints()
   }
 
+  private func cellLayers() {
+    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowOffset = CGSize(width: 2, height: 2)
+    layer.shadowRadius = 4
+    layer.shadowOpacity = 0.4
+    layer.masksToBounds = false
+    layer.cornerRadius = 12
+  }
+
   private func imageViewConstraints() {
     NSLayoutConstraint.activate([
-      imageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-      imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-      imageView.widthAnchor.constraint(
-        equalTo: widthAnchor,
-        multiplier: UIDevice.current.userInterfaceIdiom == .phone ? 0.4 : 0.5
-      ),
+      imageView.topAnchor.constraint(equalTo: topAnchor, constant: isRegular ? 24 : 16),
+      imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: isRegular ? 24 : 16),
+      imageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: isRegular ? 0.44 : 0.4
+                                      ),
       imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
     ])
   }
@@ -131,18 +145,24 @@ extension PaperclipCell {
 
   private func titleLabelConstraints() {
     NSLayoutConstraint.activate([
-      titleLabel.topAnchor.constraint(greaterThanOrEqualTo: imageView.bottomAnchor, constant: 8),
-      titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-      titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-      titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
+      titleLabel.topAnchor.constraint(greaterThanOrEqualTo: imageView.bottomAnchor, constant: isRegular ? 12 : 8),
+      titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: isRegular ? 24 : 16),
+      titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: isRegular ? -24 : -16),
+      titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: isRegular ? -16 : -8)
     ])
   }
 
   private func priceLabelConstraints() {
     NSLayoutConstraint.activate([
-      priceLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
-      priceLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -16),
-      priceLabel.bottomAnchor.constraint(equalTo: categoryLabel.topAnchor, constant: -4)
+      priceLabel.leadingAnchor.constraint(
+        equalTo: imageView.trailingAnchor, constant: isRegular ? 12 : 8
+      ),
+      priceLabel.trailingAnchor.constraint(
+        lessThanOrEqualTo: trailingAnchor, constant: isRegular ? -24 : -16
+      ),
+      priceLabel.bottomAnchor.constraint(
+        equalTo: categoryLabel.topAnchor, constant: isRegular ? -8 : -4
+      )
     ])
   }
 
