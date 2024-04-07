@@ -2,7 +2,7 @@
 // Copyright © 2024 and confidential to ClipShop. All rights reserved.
 //
 
-import Foundation
+import UIKit
 @testable import ClipShop
 
 final class ServerDummy: ServerProtocol {
@@ -13,5 +13,9 @@ final class ServerDummy: ServerProtocol {
     atEndpoint endpoint: ServerEndpoint
   ) async throws -> T {
     throw ServerError.requestFails
+  }
+
+  func loadImage(urlString: String) async -> UIImage? {
+    .none
   }
 }

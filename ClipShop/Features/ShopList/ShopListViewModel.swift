@@ -2,7 +2,7 @@
 // Copyright © 2024 and confidential to ClipShop. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Responsible of handling the logic of the ``ShopListViewController``.
 final class ShopListViewModel {
@@ -35,5 +35,12 @@ extension ShopListViewModel {
     } catch {
       showError = true
     }
+  }
+
+  /// Asynchronously loads an image from a specified URL.
+  /// - Parameter urlString: The URL string of the image to be loaded.
+  /// - Returns: The requested image or nil on failure.
+  @MainActor func loadImage(urlString: String) async -> UIImage? {
+    await server.loadImage(urlString: urlString)
   }
 }

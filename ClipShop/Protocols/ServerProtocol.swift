@@ -2,7 +2,7 @@
 // Copyright © 2024 and confidential to ClipShop. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Server contract for requesting data on the ClipShop server.
 protocol ServerProtocol {
@@ -18,4 +18,9 @@ protocol ServerProtocol {
     _ data: T.Type,
     atEndpoint endpoint: ServerEndpoint
   ) async throws -> T
+  
+  /// Asynchronously loads an image from a specified URL.
+  /// - Parameter urlString: The URL string of the image to be loaded.
+  /// - Returns: The requested image or nil on failure.
+  func loadImage(urlString: String) async -> UIImage?
 }
