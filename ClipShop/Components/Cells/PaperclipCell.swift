@@ -9,11 +9,12 @@ import UIKit
 class PaperclipCell: UICollectionViewCell {
 
   static let reuseIdentifier = "PaperclipCell"
+  private let isPad = UIDevice.current.userInterfaceIdiom == .pad
 
   private(set) var imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.contentMode = .scaleAspectFit
+    imageView.contentMode = .scaleAspectFill
     imageView.layer.cornerRadius = 8
     imageView.clipsToBounds = true
     return imageView
@@ -32,8 +33,8 @@ class PaperclipCell: UICollectionViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textAlignment = .left
-    label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-    label.numberOfLines = 0
+    label.font = .preferredFont(forTextStyle: .headline)
+    label.numberOfLines = 3
     label.allowsDefaultTighteningForTruncation = true
     return label
   }()
@@ -42,7 +43,7 @@ class PaperclipCell: UICollectionViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textAlignment = .left
-    label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+    label.font = .preferredFont(forTextStyle: .subheadline)
     return label
   }()
 
@@ -50,7 +51,7 @@ class PaperclipCell: UICollectionViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textAlignment = .left
-    label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+    label.font = .preferredFont(forTextStyle: .caption1)
     label.textColor = .secondaryLabel
     return label
   }()
@@ -91,9 +92,9 @@ extension PaperclipCell {
 extension PaperclipCell {
 
   private func setupCell() {
-    backgroundColor = .accent
-    layer.cornerRadius = 12
-    layer.masksToBounds = true
+    backgroundColor = .secondarySystemBackground
+
+    cellLayers()
 
     addSubview(imageView)
     addSubview(redactedView)
@@ -108,13 +109,20 @@ extension PaperclipCell {
     categoryLabelConstraints()
   }
 
+  private func cellLayers() {
+    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowOffset = CGSize(width: 2, height: 2)
+    layer.shadowRadius = 4
+    layer.shadowOpacity = 0.4
+    layer.masksToBounds = false
+    layer.cornerRadius = 12
+  }
+
   private func imageViewConstraints() {
     NSLayoutConstraint.activate([
       imageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
       imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-      imageView.widthAnchor.constraint(
-        equalTo: widthAnchor,
-        multiplier: UIDevice.current.userInterfaceIdiom == .phone ? 0.4 : 0.5
+      imageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: isPad ? 0.5 : 0.4
       ),
       imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
     ])
