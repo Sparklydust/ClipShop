@@ -12,10 +12,13 @@ class ShopListViewController: UIViewController {
 
   // MARK: - Views
   private(set) lazy var collectionView: UICollectionView = {
+    let isRegular = UIDevice.current.userInterfaceIdiom == .pad
+    let inset: CGFloat = isRegular ? 36 : 16
+
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .vertical
-    let inset: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 16 : 32
     layout.sectionInset = UIEdgeInsets(top: .zero, left: inset, bottom: .zero, right: inset)
+    layout.minimumLineSpacing = isRegular ? 32 : 20
 
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.delegate = self
@@ -163,12 +166,12 @@ extension ShopListViewController: UICollectionViewDelegateFlowLayout {
     else { return CGSize(width: 100, height: 100) }
     let isRegular = UIDevice.current.userInterfaceIdiom == .pad
     let hPadding = layout.sectionInset.left + layout.sectionInset.right
-    let minimumInteritemSpacing = layout.minimumInteritemSpacing
+    let minimumInteritemSpacing = layout.minimumInteritemSpacing + (isRegular ? 28 : 8)
     let itemsPerRow: CGFloat = isRegular ? 3 : 2
     // `totalSpacing` is the space between cells plus the left and right padding
     let totalSpacing = (itemsPerRow - 1) * minimumInteritemSpacing + hPadding
     let availableWidth = collectionView.frame.width - totalSpacing
-    let widthPerItem = availableWidth / itemsPerRow - (minimumInteritemSpacing * (itemsPerRow - 1) / itemsPerRow)
+    let widthPerItem = availableWidth / itemsPerRow
 
     return CGSize(width: widthPerItem, height: widthPerItem * (isRegular ? 1.05 : 1.1))
   }
