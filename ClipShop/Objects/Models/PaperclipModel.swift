@@ -14,6 +14,7 @@ struct PaperclipModel {
   let title: String
   let price: Decimal
   let category: String
+  let isUrgent: Bool
 
   init(
     with data: (paperclip: PaperclipData, categories: [CategoryData])
@@ -22,6 +23,7 @@ struct PaperclipModel {
     imageURL = (small: data.paperclip.imageURLs.small, thumb: data.paperclip.imageURLs.thumb)
     title = data.paperclip.title
     price = data.paperclip.price
+    isUrgent = data.paperclip.isUrgent
     category = data.categories
       .first { $0.id == data.paperclip.categoryID }?
       .name ?? "Unknown Category"

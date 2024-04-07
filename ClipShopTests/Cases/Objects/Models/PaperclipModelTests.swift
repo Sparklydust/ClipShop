@@ -74,4 +74,12 @@ final class PaperclipModelTests: XCTestCase {
 
     XCTAssertEqual(result, expected, "`category` value must be equal to `\(expected)` data object value from init parameter.")
   }
+
+  func testInitialization_isUrgent_isEqualToValueFromPassedDataObjectInInit() {
+    let expected = PaperclipData.fake().isUrgent
+
+    let result = sut.isUrgent
+
+    XCTAssertEqual(result, expected, "`isUrgent` value must be equal to `\(expected)` data object value from init parameter.")
+  }
 }
