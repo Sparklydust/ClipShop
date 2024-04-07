@@ -6,8 +6,8 @@ import XCTest
 @testable import ClipShop
 
 extension XCTestCase {
-  
-  /// Creates a mock ``URLSession`` configured with fake response data, an HTTP response, 
+
+  /// Creates a mock ``URLSession`` configured with fake response data, an HTTP response,
   /// and an optional error, facilitating the simulation of API calls for unit testing
   /// purposes.
   /// - Parameters:
@@ -24,7 +24,9 @@ extension XCTestCase {
     line: UInt = #line
   ) throws -> URLSessionMock {
 
-    let data = try json(fake: dataFake, file: file, line: line)
+    let rawData = try json(fake: dataFake, file: file, line: line)
+    let processedData = dataFake == .imageData ? try imageData(with: rawData) : rawData
+
     let response = try XCTUnwrap(HTTPURLResponse(
       url: try XCTUnwrap(URL(string: "https://fake.api.request.com")),
       statusCode: dataFake == .errorData ? 500 : 200,
@@ -33,6 +35,23 @@ extension XCTestCase {
     ))
     let error: ServerError? = dataFake == .errorData ? .requestFails : .none
 
-    return URLSessionMock(data: data, response: response, error: error)
+    return URLSessionMock(data: processedData, response: response, error: error)
+  }
+
+  /// Decodes image data from `ImageData.json` file that contains a Base64-encoded image string.
+  /// - Parameters:
+  ///   - rawData: The JSON data containing an `imageData` field with a Base64-encoded image string.
+  ///   - file: The file where the test fails.
+  ///   - line: The line of code where the test fails.
+  /// - Returns: The decoded binary image data.
+  /// - Throws: An error if any step of the process fails.
+  private func imageData(
+    with rawData: Data,
+    file: StaticString = #filePath,
+    line: UInt = #line
+  ) throws -> Data {
+    let jsonObject = try JSONSerialization.jsonObject(with: rawData) as? [String: String]
+    let base64String = try XCTUnwrap(jsonObject?["imageData"])
+    return try XCTUnwrap(Data(base64Encoded: base64String))
   }
 }

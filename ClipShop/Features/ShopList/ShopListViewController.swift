@@ -121,6 +121,34 @@ extension ShopListViewController: UICollectionViewDelegate, UICollectionViewData
 
     return cell
   }
+
+  func collectionView(
+    _ collectionView: UICollectionView,
+    willDisplay cell: UICollectionViewCell,
+    forItemAt indexPath: IndexPath
+  ) {
+    guard let cell = cell as? PaperclipCell, cell.imageView.image == .none else { return }
+    let paperclip = paperclips[indexPath.item]
+    populateImage(paperclip: paperclip, on: cell)
+  }
+  
+  /// Request the small image of the paperclip to be populated on the corresponding cell.
+  /// - Parameters:
+  ///   - paperclip: The paperclip item to get the image from.
+  ///   - cell: The cell on which the image must be populated on.
+  private func populateImage(
+    paperclip: PaperclipModel,
+    on cell: PaperclipCell
+  ) {
+    guard paperclip.imageURL.small != .none,
+          let urlString = paperclip.imageURL.small
+    else { return }
+
+    Task { @MainActor [weak self] in
+      let image = await self?.viewModel.loadImage(urlString: urlString)
+      cell.imageConfiguration(with: image)
+    }
+  }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

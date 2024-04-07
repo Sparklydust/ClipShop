@@ -10,7 +10,7 @@ class PaperclipCell: UICollectionViewCell {
 
   static let reuseIdentifier = "PaperclipCell"
 
-  private let imageView: UIImageView = {
+  private(set) var imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.contentMode = .scaleAspectFit
@@ -72,12 +72,18 @@ extension PaperclipCell {
   /// - Parameter model: The ``PaperclipModel`` instance containing the data from the server
   /// adapted to be displayed on the cell.
   func configure(with model: PaperclipModel) {
-    imageView.image = model.image == .none ? .none : model.image
-    imageView.isHidden = model.image == .none
-    redactedView.isHidden = model.image != .none
+    imageConfiguration(with: model.image)
     titleLabel.text = model.title
     priceLabel.text = "\(model.price)€"
     categoryLabel.text = model.category
+  }
+  
+  /// Define the image to be populated on the cell.
+  /// - Parameter image: The image to be shown if any else, `redactedView` is presented.
+  func imageConfiguration(with image: UIImage?) {
+    imageView.image = image
+    imageView.isHidden = image == .none
+    redactedView.isHidden = image != .none
   }
 }
 
