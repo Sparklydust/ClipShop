@@ -161,16 +161,16 @@ extension ShopListViewController: UICollectionViewDelegateFlowLayout {
   ) -> CGSize {
     guard let layout = collectionViewLayout as? UICollectionViewFlowLayout
     else { return CGSize(width: 100, height: 100) }
-
+    let isRegular = UIDevice.current.userInterfaceIdiom == .pad
     let hPadding = layout.sectionInset.left + layout.sectionInset.right
     let minimumInteritemSpacing = layout.minimumInteritemSpacing
-    let itemsPerRow: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 2 : 3
+    let itemsPerRow: CGFloat = isRegular ? 3 : 2
     // `totalSpacing` is the space between cells plus the left and right padding
     let totalSpacing = (itemsPerRow - 1) * minimumInteritemSpacing + hPadding
     let availableWidth = collectionView.frame.width - totalSpacing
     let widthPerItem = availableWidth / itemsPerRow - (minimumInteritemSpacing * (itemsPerRow - 1) / itemsPerRow)
 
-    return CGSize(width: widthPerItem, height: widthPerItem * 1.1)
+    return CGSize(width: widthPerItem, height: widthPerItem * (isRegular ? 1.05 : 1.1))
   }
 }
 
