@@ -33,6 +33,8 @@ extension ServerService {
 
   func loadImage(urlString: String) async -> UIImage? {
     guard let url = URL(string: urlString) else { return .none }
+
+
     do {
       let data = try await urlSession.data(from: url).0
       return UIImage(data: data)
