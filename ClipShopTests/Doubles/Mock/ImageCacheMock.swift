@@ -18,7 +18,8 @@ final class ImageCacheMock: ImageCacheProtocol {
   }
 
   func read(name: String) throws -> Data {
-    guard errorStub == nil, let dataStub else { throw errorStub! }
+    guard errorStub == nil, let dataStub
+    else { throw errorStub ?? ImageCacheError.dataNotFound }
     return dataStub
   }
 }

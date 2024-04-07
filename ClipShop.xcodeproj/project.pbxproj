@@ -19,6 +19,10 @@
 		2A64B6D72BC2DB0D00BE267D /* ImageCacheMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6D62BC2DB0D00BE267D /* ImageCacheMock.swift */; };
 		2A64B6D92BC2DB1F00BE267D /* ImageCacheDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6D82BC2DB1F00BE267D /* ImageCacheDummy.swift */; };
 		2A64B6DB2BC2DB2C00BE267D /* ImageCacheSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6DA2BC2DB2C00BE267D /* ImageCacheSpy.swift */; };
+		2A64B6DE2BC2DFBB00BE267D /* String+FileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6DD2BC2DFBB00BE267D /* String+FileName.swift */; };
+		2A64B6E12BC2DFD400BE267D /* String+FileNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6E02BC2DFD400BE267D /* String+FileNameTests.swift */; };
+		2A64B6E32BC2E44800BE267D /* ImageCacheErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6E22BC2E44800BE267D /* ImageCacheErrorTests.swift */; };
+		2A64B6E52BC2E48300BE267D /* ImageCacheError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6E42BC2E48300BE267D /* ImageCacheError.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -83,6 +87,10 @@
 		2A64B6D62BC2DB0D00BE267D /* ImageCacheMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheMock.swift; sourceTree = "<group>"; };
 		2A64B6D82BC2DB1F00BE267D /* ImageCacheDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheDummy.swift; sourceTree = "<group>"; };
 		2A64B6DA2BC2DB2C00BE267D /* ImageCacheSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheSpy.swift; sourceTree = "<group>"; };
+		2A64B6DD2BC2DFBB00BE267D /* String+FileName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FileName.swift"; sourceTree = "<group>"; };
+		2A64B6E02BC2DFD400BE267D /* String+FileNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FileNameTests.swift"; sourceTree = "<group>"; };
+		2A64B6E22BC2E44800BE267D /* ImageCacheErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheErrorTests.swift; sourceTree = "<group>"; };
+		2A64B6E42BC2E48300BE267D /* ImageCacheError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheError.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 				2AF5F8132BBE926100479E54 /* Assets */,
 				2AFC0B5C2BC0C0900057BB66 /* Components */,
 				2AF5F8162BBE92D000479E54 /* Configurations */,
+				2A64B6DC2BC2DF9F00BE267D /* Extensions */,
 				2AF5F8142BBE92B600479E54 /* Features */,
 				2AF5F8332BBF07E400479E54 /* Objects */,
 				2AF5F8472BBFDF9B00479E54 /* Protocols */,
@@ -190,6 +199,22 @@
 				2A5AD6492BC1C2C1003DD193 /* ImageData.json */,
 			);
 			path = ImageData;
+			sourceTree = "<group>";
+		};
+		2A64B6DC2BC2DF9F00BE267D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2A64B6DD2BC2DFBB00BE267D /* String+FileName.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2A64B6DF2BC2DFC000BE267D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2A64B6E02BC2DFD400BE267D /* String+FileNameTests.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2AF5F80E2BBE90B000479E54 /* Base */ = {
@@ -263,6 +288,7 @@
 		2AF5F8222BBED12200479E54 /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				2A64B6DF2BC2DFC000BE267D /* Extensions */,
 				2AF5F8202BBED11300479E54 /* Features */,
 				2AF5F82F2BBF06C700479E54 /* Objects */,
 				2AF5F84A2BBFE24300479E54 /* Services */,
@@ -301,6 +327,7 @@
 		2AF5F8302BBF06D900479E54 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				2A64B6E22BC2E44800BE267D /* ImageCacheErrorTests.swift */,
 				2AF5F8312BBF077200479E54 /* ServerEndpointTests.swift */,
 				2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */,
 			);
@@ -320,6 +347,7 @@
 		2AF5F8342BBF07EE00479E54 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				2A64B6E42BC2E48300BE267D /* ImageCacheError.swift */,
 				2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */,
 				2AF5F8562BBFE9E400479E54 /* ServerError.swift */,
 			);
@@ -614,11 +642,13 @@
 				2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */,
 				2AF5F81F2BBED05900479E54 /* main.swift in Sources */,
 				2AF5F8492BBFDFAF00479E54 /* ServerProtocol.swift in Sources */,
+				2A64B6DE2BC2DFBB00BE267D /* String+FileName.swift in Sources */,
 				2A64B6D52BC2D97C00BE267D /* ImageCacheProtocol.swift in Sources */,
 				2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */,
 				2AF5F87D2BC07FC000479E54 /* PaperclipModel.swift in Sources */,
 				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
 				2AFC0B5F2BC0C0EA0057BB66 /* PaperclipCell.swift in Sources */,
+				2A64B6E52BC2E48300BE267D /* ImageCacheError.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
 				2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */,
 				2AF5F8572BBFE9E400479E54 /* ServerError.swift in Sources */,
@@ -638,6 +668,7 @@
 				2AF5F8402BBF215E00479E54 /* PaperclipData+Fakes.swift in Sources */,
 				2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */,
 				2AF5F8722BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift in Sources */,
+				2A64B6E12BC2DFD400BE267D /* String+FileNameTests.swift in Sources */,
 				2A64B6D72BC2DB0D00BE267D /* ImageCacheMock.swift in Sources */,
 				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
 				2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */,
@@ -649,6 +680,7 @@
 				2AF5F8702BC0102400479E54 /* XCTestCase+JsonParser.swift in Sources */,
 				2AF5F85D2BBFEB8200479E54 /* ServerMock.swift in Sources */,
 				2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */,
+				2A64B6E32BC2E44800BE267D /* ImageCacheErrorTests.swift in Sources */,
 				2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */,
 				2A64B6D12BC2D18F00BE267D /* FileManagerMock.swift in Sources */,
 				2AF5F83A2BBF208500479E54 /* PaperclipDataTests.swift in Sources */,

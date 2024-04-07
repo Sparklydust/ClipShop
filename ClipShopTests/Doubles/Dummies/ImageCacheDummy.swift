@@ -9,10 +9,10 @@ final class ImageCacheDummy: ImageCacheProtocol {
 
   // Protocol requirements
   func write(_ data: Data, name: String) throws {
-    // Intentionally empty
+    throw ImageCacheError.dataNotFound
   }
 
   func read(name: String) throws -> Data {
-    Data()
+    throw ImageCacheError.dataNotFound
   }
 }
