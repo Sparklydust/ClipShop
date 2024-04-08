@@ -37,19 +37,28 @@ final class ShopListViewController: UIViewController {
   }
 }
 
-// MARK: - View Model Pipelines
-extension ShopListViewController {
+// MARK: - ViewModel Pipelines
+@MainActor extension ShopListViewController {
 
   /// Listening to Combine pipelines from the `viewModel` observing its changes to update `view`.
   /// - Info: Reactive programming, making the UI responsive and dynamic.
-  @MainActor private func observeViewModelPipelines() {
+  private func observeViewModelPipelines() {
+    progressViewPipeline()
+    errorPipeline()
+    paperclipsPipeline()
+    categoriesPipeline()
+  }
+
+  private func progressViewPipeline() {
     viewModel.$isLoading
       .sink { [weak self] isLoading in
         self?.view.isUserInteractionEnabled = !isLoading
         isLoading ? self?.progressView.startAnimating() : self?.progressView.stopAnimating()
       }
       .store(in: &cancellables)
+  }
 
+  private func errorPipeline() {
     viewModel.$showError
       .sink { [weak self] showError in
         self?.errorAlertView.view.isHidden = !showError
@@ -57,11 +66,22 @@ extension ShopListViewController {
         self.present(self.errorAlertView, animated: true)
       }
       .store(in: &cancellables)
+  }
 
+  private func paperclipsPipeline() {
     viewModel.$paperclips
       .sink { [weak self] newValues in
         self?.paperclips = newValues
         self?.collectionView.reloadData()
+      }
+      .store(in: &cancellables)
+  }
+
+  private func categoriesPipeline() {
+    viewModel.$categories
+      .sink { [weak self] newValues in
+        self?.filterCategoryButton?.categories = newValues
+        self?.filterCategoryButton?.isEnabled = !newValues.isEmpty
       }
       .store(in: &cancellables)
   }
@@ -162,6 +182,7 @@ extension ShopListViewController {
 
   private func setupNavigationBar() {
     filterCategoryButton = FilterCategoryNavButton()
+    filterCategoryButton?.isEnabled = false
     navigationItem.rightBarButtonItem = filterCategoryButton
   }
 

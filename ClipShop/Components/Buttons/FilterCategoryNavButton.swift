@@ -7,7 +7,7 @@ import UIKit
 /// Navigation bar button used to filter items from a list view.
 final class FilterCategoryNavButton: UIBarButtonItem {
 
-  var categories: [String] = [] {
+  var categories: [CategoryModel] = [] {
     didSet { menu = setupCategoriesMenu() }
   }
 
@@ -31,7 +31,7 @@ extension FilterCategoryNavButton {
   }
 
   func setupCategoriesMenu() -> UIMenu {
-    let menuItems = categories.map { UIAction(title: $0, handler: { _ in }) }
+    let menuItems = categories.map { UIAction(title: $0.name, handler: { _ in }) }
     let categoriesMenu = UIMenu(children: menuItems)
     return categoriesMenu
   }
