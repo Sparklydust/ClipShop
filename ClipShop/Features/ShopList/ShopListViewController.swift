@@ -6,11 +6,12 @@ import Combine
 import UIKit
 
 /// The view that populates a list of paperclips that can be purchased by users.
-class ShopListViewController: UIViewController {
+final class ShopListViewController: UIViewController {
 
   var cancellables = Set<AnyCancellable>()
 
-  // MARK: - Views
+  // MARK: - Components
+  private(set) lazy var errorAlertView: UIAlertController = .serverErrorAlert
   private(set) lazy var collectionView: UICollectionView = {
     let isRegular = UIDevice.current.userInterfaceIdiom == .pad
     let inset: CGFloat = isRegular ? 36 : 16
@@ -37,16 +38,6 @@ class ShopListViewController: UIViewController {
     return indicator
   }()
 
-  private(set) lazy var errorAlertView: UIAlertController = {
-    let alert = UIAlertController(
-      title: "Server Error",
-      message: "Connect to the world wide web and restart ClipShop.",
-      preferredStyle: .alert
-    )
-    alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
-    alert.view.tintColor = .accent
-    return alert
-  }()
 
   // MARK: - Models
   private var paperclips = [PaperclipModel]()
