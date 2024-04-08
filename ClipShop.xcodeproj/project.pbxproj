@@ -33,6 +33,8 @@
 		2A64B6FB2BC3E3B500BE267D /* PriceSmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6FA2BC3E3B500BE267D /* PriceSmallLabel.swift */; };
 		2A64B6FD2BC3E55D00BE267D /* RedactedViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6FC2BC3E55D00BE267D /* RedactedViewTests.swift */; };
 		2A64B6FF2BC3E5CC00BE267D /* RedactedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6FE2BC3E5CC00BE267D /* RedactedView.swift */; };
+		2A64B7012BC3E70800BE267D /* TitleSmallLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7002BC3E70800BE267D /* TitleSmallLabelTests.swift */; };
+		2A64B7032BC3E72C00BE267D /* TitleSmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7022BC3E72C00BE267D /* TitleSmallLabel.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -111,6 +113,8 @@
 		2A64B6FA2BC3E3B500BE267D /* PriceSmallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSmallLabel.swift; sourceTree = "<group>"; };
 		2A64B6FC2BC3E55D00BE267D /* RedactedViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactedViewTests.swift; sourceTree = "<group>"; };
 		2A64B6FE2BC3E5CC00BE267D /* RedactedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactedView.swift; sourceTree = "<group>"; };
+		2A64B7002BC3E70800BE267D /* TitleSmallLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSmallLabelTests.swift; sourceTree = "<group>"; };
+		2A64B7022BC3E72C00BE267D /* TitleSmallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSmallLabel.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 			children = (
 				2A64B6ED2BC3D94700BE267D /* CategorySmallLabelTests.swift */,
 				2A64B6F82BC3E36F00BE267D /* PriceSmallLabelTests.swift */,
+				2A64B7002BC3E70800BE267D /* TitleSmallLabelTests.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			children = (
 				2A64B6F02BC3D9C500BE267D /* CategorySmallLabel.swift */,
 				2A64B6FA2BC3E3B500BE267D /* PriceSmallLabel.swift */,
+				2A64B7022BC3E72C00BE267D /* TitleSmallLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -719,6 +725,7 @@
 				2AF5F83C2BBF20BB00479E54 /* PaperclipData.swift in Sources */,
 				2AF5F82E2BBEE94700479E54 /* ShopListViewModel.swift in Sources */,
 				2AF5F8362BBF07FE00479E54 /* ServerEndpoint.swift in Sources */,
+				2A64B7032BC3E72C00BE267D /* TitleSmallLabel.swift in Sources */,
 				2A64B6CD2BC2ADE900BE267D /* ImageCacheService.swift in Sources */,
 				2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */,
 				2AF5F81F2BBED05900479E54 /* main.swift in Sources */,
@@ -775,6 +782,7 @@
 				2A64B6DB2BC2DB2C00BE267D /* ImageCacheSpy.swift in Sources */,
 				2AF5F84C2BBFE27200479E54 /* ServerServiceTests.swift in Sources */,
 				2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */,
+				2A64B7012BC3E70800BE267D /* TitleSmallLabelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

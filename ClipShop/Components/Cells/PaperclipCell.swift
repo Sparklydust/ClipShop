@@ -14,20 +14,9 @@ final class PaperclipCell: UICollectionViewCell {
   // MARK: - Components
   private(set) var categorySmallLabel = CategorySmallLabel()
   private(set) var priceSmallLabel = PriceSmallLabel()
+  private(set) var titleSmallLabel = TitleSmallLabel()
   private(set) var imageSmallView = ImageSmallView(frame: .zero)
   private(set) var redactedView = RedactedView()
-
-  private let titleLabel: UILabel = {
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.textAlignment = .left
-    label.font = UIDevice.current.userInterfaceIdiom == .pad
-    ? .preferredFont(forTextStyle: .title3, weight: .semibold)
-    : .preferredFont(forTextStyle: .callout, weight: .medium)
-    label.numberOfLines = 3
-    label.allowsDefaultTighteningForTruncation = true
-    return label
-  }()
 
   private(set) var urgentIcon: UIImageView = {
     let imageView = UIImageView()
@@ -59,7 +48,7 @@ extension PaperclipCell {
   /// adapted to be displayed on the cell.
   func configure(with model: PaperclipModel) {
     imageConfiguration(with: model.image)
-    titleLabel.text = model.title
+    titleSmallLabel.text = model.title
     priceSmallLabel.text = "\(model.price)€"
     categorySmallLabel.text = model.category
     urgentIcon.isHidden = !model.isUrgent
@@ -98,7 +87,7 @@ extension PaperclipCell {
     addSubview(imageSmallView)
     addSubview(priceSmallLabel)
     addSubview(redactedView)
-    addSubview(titleLabel)
+    addSubview(titleSmallLabel)
     addSubview(urgentIcon)
   }
 
@@ -107,7 +96,7 @@ extension PaperclipCell {
     imageSmallViewConstraints()
     priceSmallLabelConstraints()
     redactedViewConstraints()
-    titleLabelConstraints()
+    titleSmallLabelConstraints()
     urgentIconConstraints()
   }
 }
@@ -156,12 +145,12 @@ extension PaperclipCell {
     ])
   }
 
-  private func titleLabelConstraints() {
+  private func titleSmallLabelConstraints() {
     NSLayoutConstraint.activate([
-      titleLabel.topAnchor.constraint(greaterThanOrEqualTo: imageSmallView.bottomAnchor, constant: isRegular ? 12 : 8),
-      titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: isRegular ? 24 : 16),
-      titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: isRegular ? -24 : -16),
-      titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: isRegular ? -16 : -8)
+      titleSmallLabel.topAnchor.constraint(greaterThanOrEqualTo: imageSmallView.bottomAnchor, constant: isRegular ? 12 : 8),
+      titleSmallLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: isRegular ? 24 : 16),
+      titleSmallLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: isRegular ? -24 : -16),
+      titleSmallLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: isRegular ? -16 : -8)
     ])
   }
 
