@@ -11,26 +11,9 @@ final class ShopListViewController: UIViewController {
   var cancellables = Set<AnyCancellable>()
 
   // MARK: - Components
-  private(set) lazy var errorAlertView: UIAlertController = .serverErrorAlert
+  private(set) var collectionView = ShopListCollectionView()
   private(set) var progressView = ProgressLargeView(frame: .zero)
-  private(set) lazy var collectionView: UICollectionView = {
-    let isRegular = UIDevice.current.userInterfaceIdiom == .pad
-    let inset: CGFloat = isRegular ? 36 : 16
-
-    let layout = UICollectionViewFlowLayout()
-    layout.scrollDirection = .vertical
-    layout.sectionInset = UIEdgeInsets(top: .zero, left: inset, bottom: .zero, right: inset)
-    layout.minimumLineSpacing = isRegular ? 32 : 20
-
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    collectionView.delegate = self
-    collectionView.dataSource = self
-    collectionView.register(
-      PaperclipCell.self, 
-      forCellWithReuseIdentifier: PaperclipCell.reuseIdentifier
-    )
-    return collectionView
-  }()
+  private(set) lazy var errorAlertView: UIAlertController = .serverErrorAlert
 
   // MARK: - Models
   private var paperclips = [PaperclipModel]()
@@ -117,7 +100,7 @@ extension ShopListViewController: UICollectionViewDelegate, UICollectionViewData
     let paperclip = paperclips[indexPath.item]
     populateImage(paperclip: paperclip, on: cell)
   }
-  
+
   /// Request the small image of the paperclip to be populated on the corresponding cell.
   /// - Parameters:
   ///   - paperclip: The paperclip item to get the image from.
@@ -165,8 +148,14 @@ extension ShopListViewController {
 
   private func setupViewController() {
     view.backgroundColor = .systemBackground
+    setupDelegates()
     collectionViewConstraints()
     progressViewConstraints()
+  }
+
+  private func setupDelegates() {
+    collectionView.delegate = self
+    collectionView.dataSource = self
   }
 
   private func collectionViewConstraints() {
