@@ -12,6 +12,7 @@ final class ShopListViewController: UIViewController {
 
   // MARK: - Components
   private(set) lazy var errorAlertView: UIAlertController = .serverErrorAlert
+  private(set) var progressView = ProgressLargeView(frame: .zero)
   private(set) lazy var collectionView: UICollectionView = {
     let isRegular = UIDevice.current.userInterfaceIdiom == .pad
     let inset: CGFloat = isRegular ? 36 : 16
@@ -31,19 +32,10 @@ final class ShopListViewController: UIViewController {
     return collectionView
   }()
 
-  private(set) lazy var progressView: UIActivityIndicatorView = {
-    let indicator = UIActivityIndicatorView(style: .large)
-    indicator.translatesAutoresizingMaskIntoConstraints = false
-    indicator.color = .accent
-    return indicator
-  }()
-
-
   // MARK: - Models
   private var paperclips = [PaperclipModel]()
   private var viewModel: ShopListViewModel
 
-  // Initializers
   init(viewModel: ShopListViewModel = ShopListViewModel()) {
     self.viewModel = viewModel
     super.init(nibName: .none, bundle: .none)

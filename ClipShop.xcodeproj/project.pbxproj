@@ -38,6 +38,8 @@
 		2A64B7062BC3E93A00BE267D /* UrgentSmallIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7052BC3E93A00BE267D /* UrgentSmallIconTests.swift */; };
 		2A64B7092BC3E9B100BE267D /* UrgentSmallIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7082BC3E9B100BE267D /* UrgentSmallIcon.swift */; };
 		2A64B7112BC3F3FE00BE267D /* UIAlertController+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7102BC3F3FE00BE267D /* UIAlertController+Server.swift */; };
+		2AB92DA02BC3F60500DB1DCA /* ProgressLargeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92D9F2BC3F60500DB1DCA /* ProgressLargeViewTests.swift */; };
+		2AB92DA22BC3F6A000DB1DCA /* ProgressLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DA12BC3F6A000DB1DCA /* ProgressLargeView.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -121,6 +123,8 @@
 		2A64B7052BC3E93A00BE267D /* UrgentSmallIconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrgentSmallIconTests.swift; sourceTree = "<group>"; };
 		2A64B7082BC3E9B100BE267D /* UrgentSmallIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrgentSmallIcon.swift; sourceTree = "<group>"; };
 		2A64B7102BC3F3FE00BE267D /* UIAlertController+Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Server.swift"; sourceTree = "<group>"; };
+		2AB92D9F2BC3F60500DB1DCA /* ProgressLargeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressLargeViewTests.swift; sourceTree = "<group>"; };
+		2AB92DA12BC3F6A000DB1DCA /* ProgressLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressLargeView.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				2A64B7042BC3E91D00BE267D /* Icons */,
 				2A64B6F22BC3DF1200BE267D /* Images */,
 				2A64B6EC2BC3D91700BE267D /* Labels */,
+				2AB92D9D2BC3F5D100DB1DCA /* Progress */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -320,6 +325,22 @@
 				2A64B7082BC3E9B100BE267D /* UrgentSmallIcon.swift */,
 			);
 			path = Icons;
+			sourceTree = "<group>";
+		};
+		2AB92D9D2BC3F5D100DB1DCA /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				2AB92D9F2BC3F60500DB1DCA /* ProgressLargeViewTests.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		2AB92D9E2BC3F5E200DB1DCA /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				2AB92DA12BC3F6A000DB1DCA /* ProgressLargeView.swift */,
+			);
+			path = Progress;
 			sourceTree = "<group>";
 		};
 		2AF5F80E2BBE90B000479E54 /* Base */ = {
@@ -627,6 +648,7 @@
 				2A64B7072BC3E99400BE267D /* Icons */,
 				2A64B6F52BC3DFCC00BE267D /* Images */,
 				2A64B6EF2BC3D9AF00BE267D /* Labels */,
+				2AB92D9E2BC3F5E200DB1DCA /* Progress */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -759,6 +781,7 @@
 				2AF5F8492BBFDFAF00479E54 /* ServerProtocol.swift in Sources */,
 				2A64B6DE2BC2DFBB00BE267D /* String+FileName.swift in Sources */,
 				2A64B6F72BC3DFDF00BE267D /* ImageSmallView.swift in Sources */,
+				2AB92DA22BC3F6A000DB1DCA /* ProgressLargeView.swift in Sources */,
 				2A64B6FB2BC3E3B500BE267D /* PriceSmallLabel.swift in Sources */,
 				2A64B6D52BC2D97C00BE267D /* ImageCacheProtocol.swift in Sources */,
 				2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */,
@@ -785,6 +808,7 @@
 				2AF5F8322BBF077200479E54 /* ServerEndpointTests.swift in Sources */,
 				2AF5F8402BBF215E00479E54 /* PaperclipData+Fakes.swift in Sources */,
 				2AF5F8462BBF720900479E54 /* CategoryData+Fakes.swift in Sources */,
+				2AB92DA02BC3F60500DB1DCA /* ProgressLargeViewTests.swift in Sources */,
 				2A64B6EB2BC3D7A900BE267D /* PaperclipCellTests.swift in Sources */,
 				2AF5F8722BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift in Sources */,
 				2A64B6E12BC2DFD400BE267D /* String+FileNameTests.swift in Sources */,
