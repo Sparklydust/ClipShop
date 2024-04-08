@@ -27,6 +27,7 @@ final class ShopListCollectionView: UICollectionView {
 
   /// Sets up the collection view's delegate, data source, and cell registration.
   private func setupCollectionView() {
+    translatesAutoresizingMaskIntoConstraints = false
     delegate = self as? UICollectionViewDelegate
     dataSource = self as? UICollectionViewDataSource
     register(PaperclipCell.self, forCellWithReuseIdentifier: PaperclipCell.reuseIdentifier)

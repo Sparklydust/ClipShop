@@ -14,6 +14,7 @@ final class ShopListViewController: UIViewController {
   private(set) var collectionView = ShopListCollectionView()
   private(set) var progressView = ProgressLargeView(frame: .zero)
   private(set) lazy var errorAlertView: UIAlertController = .serverErrorAlert
+  private(set) var filterCategoryButton: FilterCategoryNavButton?
 
   // MARK: - Models
   private var paperclips = [PaperclipModel]()
@@ -149,6 +150,7 @@ extension ShopListViewController {
   private func setupViewController() {
     view.backgroundColor = .systemBackground
     setupDelegates()
+    setupNavigationBar()
     collectionViewConstraints()
     progressViewConstraints()
   }
@@ -158,9 +160,13 @@ extension ShopListViewController {
     collectionView.dataSource = self
   }
 
+  private func setupNavigationBar() {
+    filterCategoryButton = FilterCategoryNavButton()
+    navigationItem.rightBarButtonItem = filterCategoryButton
+  }
+
   private func collectionViewConstraints() {
     view.addSubview(collectionView)
-    collectionView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       collectionView.topAnchor.constraint(equalTo: view.topAnchor),
