@@ -7,7 +7,7 @@ import UIKit
 /// Navigation bar button used to filter items from a list view.
 final class FilterCategoryNavButton: UIBarButtonItem {
 
-  var selectedItem: Int? = .none {
+  @Published var selectedItem: Int? = .none {
     didSet { menu = setupCategoriesMenu() }
   }
   var categories: [CategoryModel] = [] {

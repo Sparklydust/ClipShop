@@ -14,7 +14,7 @@ final class ShopListViewController: UIViewController {
   private(set) var collectionView = ShopListCollectionView()
   private(set) var progressView = ProgressLargeView(frame: .zero)
   private(set) lazy var errorAlertView: UIAlertController = .serverErrorAlert
-  private(set) var filterCategoryButton: FilterCategoryNavButton?
+  private(set) var filterCategoryButton: FilterCategoryNavButton!
 
   // MARK: - Models
   private var paperclips = [PaperclipModel]()
@@ -70,6 +70,11 @@ final class ShopListViewController: UIViewController {
 
   private func paperclipsPipeline() {
     viewModel.$paperclips
+      .combineLatest(filterCategoryButton.$selectedItem)
+      .map { newValues, selectedCategory -> [PaperclipModel] in
+        guard let selectedCategory else { return newValues }
+        return newValues.filter { $0.category.id == selectedCategory }
+      }
       .sink { [weak self] newValues in
         self?.paperclips = newValues
         self?.collectionView.reloadData()
@@ -80,8 +85,8 @@ final class ShopListViewController: UIViewController {
   private func categoriesPipeline() {
     viewModel.$categories
       .sink { [weak self] newValues in
-        self?.filterCategoryButton?.categories = newValues
-        self?.filterCategoryButton?.isEnabled = !newValues.isEmpty
+        self?.filterCategoryButton.categories = newValues
+        self?.filterCategoryButton.isEnabled = !newValues.isEmpty
       }
       .store(in: &cancellables)
   }
@@ -182,7 +187,7 @@ extension ShopListViewController {
 
   private func setupNavigationBar() {
     filterCategoryButton = FilterCategoryNavButton()
-    filterCategoryButton?.isEnabled = false
+    filterCategoryButton.isEnabled = false
     navigationItem.rightBarButtonItem = filterCategoryButton
   }
 
