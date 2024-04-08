@@ -19,6 +19,22 @@ final class FilterCategoryNavButtonTests: XCTestCase {
     try await super.tearDown()
   }
 
+  func testInitialization_categories_isEqualToEmptyArrayOfCategoryModel() {
+    let expected = [CategoryModel]()
+
+    let result = sut.categories
+
+    XCTAssertEqual(result, expected, "`categories` must be equal to `\(expected)` when initialized.")
+  }
+
+  func testInitialization_selectedItem_isEqualToOptionalInt() {
+    let expected: Int? = .none
+
+    let result = sut.selectedItem
+
+    XCTAssertEqual(result, expected, "`selectedItem` must be equal to `\(String(describing: expected))` when initialized.")
+  }
+
   func testInitialization_tintColor_isEqualToAccent() {
     let expected: UIColor = .accent
 

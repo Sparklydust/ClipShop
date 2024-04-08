@@ -7,6 +7,9 @@ import UIKit
 /// Navigation bar button used to filter items from a list view.
 final class FilterCategoryNavButton: UIBarButtonItem {
 
+  var selectedItem: Int? = .none {
+    didSet { menu = setupCategoriesMenu() }
+  }
   var categories: [CategoryModel] = [] {
     didSet { menu = setupCategoriesMenu() }
   }
@@ -34,11 +37,24 @@ extension FilterCategoryNavButton {
 // MARK: - Menu
 extension FilterCategoryNavButton {
 
-  func setupCategoriesMenu() -> UIMenu {
-    let menuItems = categories.map { UIAction(title: $0.name, handler: { _ in }) }
-    let dismissSelection = UIAction(title: "Réinitialiser", attributes: .destructive, handler: { _ in })
-    let children = menuItems + [dismissSelection]
+  private func setupCategoriesMenu() -> UIMenu {
+    let menuItems = categories.map { category in
+      return UIAction(
+        title: category.name,
+        state: category.id == selectedItem ? .on : .off,
+        handler: { [weak self] _ in self?.handleCategorySelection(category) }
+      )
+    }
+    let dismissSelection = UIAction(
+      title: "Réinitialiser",
+      attributes: .destructive,
+      handler: { [weak self] _ in self?.selectedItem = .none }
+    )
 
-    return UIMenu(children: children)
+    return UIMenu(children: menuItems + [dismissSelection])
+  }
+
+  private func handleCategorySelection(_ category: CategoryModel) {
+    selectedItem = category.id
   }
 }
