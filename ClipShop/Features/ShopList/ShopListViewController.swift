@@ -17,7 +17,7 @@ final class ShopListViewController: UIViewController {
   private(set) var filterCategoryButton: FilterCategoryNavButton!
 
   // MARK: - Models
-  private var paperclips = [PaperclipModel]()
+  private(set) var paperclips = [PaperclipModel]()
   private var viewModel: ShopListViewModel
 
   init(viewModel: ShopListViewModel = ShopListViewModel()) {
@@ -37,12 +37,12 @@ final class ShopListViewController: UIViewController {
   }
 }
 
-// MARK: - ViewModel Pipelines
-@MainActor extension ShopListViewController {
+// MARK: - Pipelines
+extension ShopListViewController {
 
   /// Listening to Combine pipelines from the `viewModel` observing its changes to update `view`.
   /// - Info: Reactive programming, making the UI responsive and dynamic.
-  private func observeViewModelPipelines() {
+  @MainActor private func observeViewModelPipelines() {
     progressViewPipeline()
     errorPipeline()
     paperclipsPipeline()
