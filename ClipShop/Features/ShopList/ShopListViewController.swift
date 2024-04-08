@@ -130,7 +130,7 @@ extension ShopListViewController: UICollectionViewDelegate, UICollectionViewData
     willDisplay cell: UICollectionViewCell,
     forItemAt indexPath: IndexPath
   ) {
-    guard let cell = cell as? PaperclipCell, cell.imageView.image == .none else { return }
+    guard let cell = cell as? PaperclipCell, cell.imageSmallView.image == .none else { return }
     let paperclip = paperclips[indexPath.item]
     populateImage(paperclip: paperclip, on: cell)
   }
