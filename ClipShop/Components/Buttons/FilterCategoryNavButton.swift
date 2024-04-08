@@ -29,10 +29,16 @@ extension FilterCategoryNavButton {
     image = UIImage(systemName: "line.3.horizontal.decrease.circle")
     tintColor = .accent
   }
+}
+
+// MARK: - Menu
+extension FilterCategoryNavButton {
 
   func setupCategoriesMenu() -> UIMenu {
     let menuItems = categories.map { UIAction(title: $0.name, handler: { _ in }) }
-    let categoriesMenu = UIMenu(children: menuItems)
-    return categoriesMenu
+    let dismissSelection = UIAction(title: "Réinitialiser", attributes: .destructive, handler: { _ in })
+    let children = menuItems + [dismissSelection]
+
+    return UIMenu(children: children)
   }
 }
