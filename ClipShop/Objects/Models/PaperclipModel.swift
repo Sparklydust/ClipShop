@@ -13,7 +13,7 @@ struct PaperclipModel {
   var image: UIImage? = .none
   let title: String
   let price: Decimal
-  let category: String
+  let category: CategoryModel
   let isUrgent: Bool
 
   init(
@@ -24,9 +24,10 @@ struct PaperclipModel {
     title = data.paperclip.title
     price = data.paperclip.price
     isUrgent = data.paperclip.isUrgent
-    category = data.categories
-      .first { $0.id == data.paperclip.categoryID }?
-      .name ?? "Unknown Category"
+
+    let categoryData = data.categories
+      .first(where: { $0.id == data.paperclip.categoryID }) ?? .init(id: .zero, name: "Inconnu")
+    category = CategoryModel(with: categoryData)
   }
 }
 

@@ -5,7 +5,7 @@
 import Foundation
 
 /// The object referring to ``PaperclipModel`` object shop categories.
-struct CategoryModel {
+struct CategoryModel: Equatable {
 
   let id: Int
   let name: String

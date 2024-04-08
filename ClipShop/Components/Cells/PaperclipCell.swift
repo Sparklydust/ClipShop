@@ -39,7 +39,7 @@ extension PaperclipCell {
     imageConfiguration(with: model.image)
     titleSmallLabel.text = model.title
     priceSmallLabel.text = "\(model.price)€"
-    categorySmallLabel.text = model.category
+    categorySmallLabel.text = model.category.name
     urgentSmallIcon.isHidden = !model.isUrgent
   }
 

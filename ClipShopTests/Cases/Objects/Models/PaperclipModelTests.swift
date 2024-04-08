@@ -67,8 +67,8 @@ final class PaperclipModelTests: XCTestCase {
     XCTAssertEqual(result, expected, "`price` value must be equal to `\(expected)` data object value from init parameter.")
   }
 
-  func testInitialization_category_isEqualToValueFromPassedDataObjectInInit() {
-    let expected = CategoryData.fake().name
+  func testInitialization_category_isEqualToCategoryModelWithPassedDataObjectInInit() {
+    let expected = CategoryModel(with: .fake())
 
     let result = sut.category
 
