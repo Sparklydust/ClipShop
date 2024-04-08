@@ -27,6 +27,14 @@ final class ShopListViewModelTests: BaseXCTestCase {
     XCTAssertEqual(result, expected, "`paperclips` value must be equal to `\(expected)` when initialized.")
   }
 
+  func testInitialization_categories_isEqualToEmptyArrayOfCategoryModel() {
+    let expected = [CategoryModel]()
+
+    let result = sut.categories
+
+    XCTAssertEqual(result, expected, "`categories` value must be equal to `\(expected)` when initialized.")
+  }
+
   func testInitialization_showError_isFalse() {
     let result = sut.showError
 
