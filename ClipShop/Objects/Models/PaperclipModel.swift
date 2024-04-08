@@ -26,7 +26,7 @@ struct PaperclipModel {
     isUrgent = data.paperclip.isUrgent
 
     let categoryData = data.categories
-      .first(where: { $0.id == data.paperclip.categoryID }) ?? .init(id: .zero, name: "Inconnu")
+      .first(where: { $0.id == data.paperclip.categoryID }) ?? .init(id: .zero, name: "Divers")
     category = CategoryModel(with: categoryData)
   }
 }

@@ -51,7 +51,7 @@ extension FilterCategoryNavButton {
       handler: { [weak self] _ in self?.selectedItem = .none }
     )
 
-    return UIMenu(children: menuItems + [dismissSelection])
+    return UIMenu(title: "Catégories", children: menuItems + [dismissSelection])
   }
 
   private func handleCategorySelection(_ category: CategoryModel) {
