@@ -6,53 +6,19 @@ import Combine
 import UIKit
 
 /// The view that populates a list of paperclips that can be purchased by users.
-class ShopListViewController: UIViewController {
+final class ShopListViewController: UIViewController {
 
   var cancellables = Set<AnyCancellable>()
 
-  // MARK: - Views
-  private(set) lazy var collectionView: UICollectionView = {
-    let isRegular = UIDevice.current.userInterfaceIdiom == .pad
-    let inset: CGFloat = isRegular ? 36 : 16
-
-    let layout = UICollectionViewFlowLayout()
-    layout.scrollDirection = .vertical
-    layout.sectionInset = UIEdgeInsets(top: .zero, left: inset, bottom: .zero, right: inset)
-    layout.minimumLineSpacing = isRegular ? 32 : 20
-
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    collectionView.delegate = self
-    collectionView.dataSource = self
-    collectionView.register(
-      PaperclipCell.self, 
-      forCellWithReuseIdentifier: PaperclipCell.reuseIdentifier
-    )
-    return collectionView
-  }()
-
-  private(set) lazy var progressView: UIActivityIndicatorView = {
-    let indicator = UIActivityIndicatorView(style: .large)
-    indicator.translatesAutoresizingMaskIntoConstraints = false
-    indicator.color = .accent
-    return indicator
-  }()
-
-  private(set) lazy var errorAlertView: UIAlertController = {
-    let alert = UIAlertController(
-      title: "Server Error",
-      message: "Connect to the world wide web and restart ClipShop.",
-      preferredStyle: .alert
-    )
-    alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
-    alert.view.tintColor = .accent
-    return alert
-  }()
+  // MARK: - Components
+  private(set) var collectionView = ShopListCollectionView()
+  private(set) var progressView = ProgressLargeView(frame: .zero)
+  private(set) lazy var errorAlertView: UIAlertController = .serverErrorAlert
 
   // MARK: - Models
   private var paperclips = [PaperclipModel]()
   private var viewModel: ShopListViewModel
 
-  // Initializers
   init(viewModel: ShopListViewModel = ShopListViewModel()) {
     self.viewModel = viewModel
     super.init(nibName: .none, bundle: .none)
@@ -130,11 +96,11 @@ extension ShopListViewController: UICollectionViewDelegate, UICollectionViewData
     willDisplay cell: UICollectionViewCell,
     forItemAt indexPath: IndexPath
   ) {
-    guard let cell = cell as? PaperclipCell, cell.imageView.image == .none else { return }
+    guard let cell = cell as? PaperclipCell, cell.imageSmallView.image == .none else { return }
     let paperclip = paperclips[indexPath.item]
     populateImage(paperclip: paperclip, on: cell)
   }
-  
+
   /// Request the small image of the paperclip to be populated on the corresponding cell.
   /// - Parameters:
   ///   - paperclip: The paperclip item to get the image from.
@@ -182,8 +148,14 @@ extension ShopListViewController {
 
   private func setupViewController() {
     view.backgroundColor = .systemBackground
+    setupDelegates()
     collectionViewConstraints()
     progressViewConstraints()
+  }
+
+  private func setupDelegates() {
+    collectionView.delegate = self
+    collectionView.dataSource = self
   }
 
   private func collectionViewConstraints() {

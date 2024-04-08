@@ -6,73 +6,18 @@ import UIKit
 
 /// Cell component to populate ``PaperclipModel`` within the ``ShopListViewController`` within
 /// a collection view cell.
-class PaperclipCell: UICollectionViewCell {
+final class PaperclipCell: UICollectionViewCell {
 
   static let reuseIdentifier = "PaperclipCell"
   private let isRegular = UIDevice.current.userInterfaceIdiom == .pad
 
-  private let categoryLabel: UILabel = {
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.textAlignment = .left
-    label.font = UIDevice.current.userInterfaceIdiom == .pad
-    ? .preferredFont(forTextStyle: .footnote)
-    : .preferredFont(forTextStyle: .caption1)
-    label.textColor = .secondaryLabel
-    return label
-  }()
-
-  private(set) var imageView: UIImageView = {
-    let imageView = UIImageView()
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.contentMode = .scaleAspectFill
-    imageView.layer.cornerRadius = 8
-    imageView.clipsToBounds = true
-    return imageView
-  }()
-
-  private let priceLabel: UILabel = {
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.textAlignment = .left
-    label.font = UIDevice.current.userInterfaceIdiom == .pad
-    ? .preferredFont(forTextStyle: .headline)
-    : .preferredFont(forTextStyle: .subheadline, weight: .medium)
-    return label
-  }()
-
-  /// Placeholder view for when the image is nil.
-  private let redactedView: UIView = {
-    let view = UIView()
-    view.translatesAutoresizingMaskIntoConstraints = false
-    view.backgroundColor = UIColor.systemGray4
-    view.layer.cornerRadius = 8
-    return view
-  }()
-
-  private let titleLabel: UILabel = {
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.textAlignment = .left
-    label.font = UIDevice.current.userInterfaceIdiom == .pad
-    ? .preferredFont(forTextStyle: .title3, weight: .semibold)
-    : .preferredFont(forTextStyle: .callout, weight: .medium)
-    label.numberOfLines = 3
-    label.allowsDefaultTighteningForTruncation = true
-    return label
-  }()
-
-  private(set) var urgentIcon: UIImageView = {
-    let imageView = UIImageView()
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.contentMode = .scaleAspectFit
-    imageView.image = UIImage(
-      systemName: "eurosign.arrow.circlepath",
-      withConfiguration: UIImage.SymbolConfiguration(weight: .semibold)
-    )
-    imageView.tintColor = .accent
-    return imageView
-  }()
+  // MARK: - Components
+  private(set) var categorySmallLabel = CategorySmallLabel()
+  private(set) var priceSmallLabel = PriceSmallLabel()
+  private(set) var titleSmallLabel = TitleSmallLabel()
+  private(set) var imageSmallView = ImageSmallView(frame: .zero)
+  private(set) var urgentSmallIcon = UrgentSmallIcon(frame: .zero)
+  private(set) var redactedView = RedactedView()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -84,7 +29,7 @@ class PaperclipCell: UICollectionViewCell {
   }
 }
 
-// MARK: - Cell Configuration
+// MARK: - Configurations
 extension PaperclipCell {
 
   /// Define the cell values from the model passed in the parameter.
@@ -92,22 +37,22 @@ extension PaperclipCell {
   /// adapted to be displayed on the cell.
   func configure(with model: PaperclipModel) {
     imageConfiguration(with: model.image)
-    titleLabel.text = model.title
-    priceLabel.text = "\(model.price)€"
-    categoryLabel.text = model.category
-    urgentIcon.isHidden = !model.isUrgent
+    titleSmallLabel.text = model.title
+    priceSmallLabel.text = "\(model.price)€"
+    categorySmallLabel.text = model.category
+    urgentSmallIcon.isHidden = !model.isUrgent
   }
 
   /// Define the image to be populated on the cell.
   /// - Parameter image: The image to be shown if any else, `redactedView` is presented.
   func imageConfiguration(with image: UIImage?) {
-    imageView.image = image
-    imageView.isHidden = image == .none
+    imageSmallView.image = image
+    imageSmallView.isHidden = image == .none
     redactedView.isHidden = image != .none
   }
 }
 
-// MARK: - Cell Setup
+// MARK: - Setup
 extension PaperclipCell {
 
   private func setupCell() {
@@ -127,85 +72,85 @@ extension PaperclipCell {
   }
 
   private func addSubviews() {
-    addSubview(categoryLabel)
-    addSubview(imageView)
-    addSubview(priceLabel)
+    addSubview(categorySmallLabel)
+    addSubview(imageSmallView)
+    addSubview(priceSmallLabel)
     addSubview(redactedView)
-    addSubview(titleLabel)
-    addSubview(urgentIcon)
+    addSubview(titleSmallLabel)
+    addSubview(urgentSmallIcon)
   }
 
   private func activateConstraints() {
-    categoryLabelConstraints()
-    imageViewConstraints()
-    priceLabelConstraints()
+    categorySmallLabelConstraints()
+    imageSmallViewConstraints()
+    priceSmallLabelConstraints()
     redactedViewConstraints()
-    titleLabelConstraints()
-    urgentIconConstraints()
+    titleSmallLabelConstraints()
+    urgentSmallIconConstraints()
   }
 }
 
 // MARK: - Constraints
 extension PaperclipCell {
 
-  private func categoryLabelConstraints() {
+  private func categorySmallLabelConstraints() {
     NSLayoutConstraint.activate([
-      categoryLabel.leadingAnchor.constraint(equalTo: priceLabel.leadingAnchor),
-      categoryLabel.trailingAnchor.constraint(equalTo: priceLabel.trailingAnchor),
-      categoryLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor)
+      categorySmallLabel.leadingAnchor.constraint(equalTo: priceSmallLabel.leadingAnchor),
+      categorySmallLabel.trailingAnchor.constraint(equalTo: priceSmallLabel.trailingAnchor),
+      categorySmallLabel.bottomAnchor.constraint(equalTo: imageSmallView.bottomAnchor)
     ])
   }
 
-  private func imageViewConstraints() {
+  private func imageSmallViewConstraints() {
     NSLayoutConstraint.activate([
-      imageView.topAnchor.constraint(equalTo: topAnchor, constant: isRegular ? 24 : 16),
-      imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: isRegular ? 24 : 16),
-      imageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: isRegular ? 0.44 : 0.4
+      imageSmallView.topAnchor.constraint(equalTo: topAnchor, constant: isRegular ? 24 : 16),
+      imageSmallView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: isRegular ? 24 : 16),
+      imageSmallView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: isRegular ? 0.44 : 0.4
                                       ),
-      imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
+      imageSmallView.heightAnchor.constraint(equalTo: imageSmallView.widthAnchor)
     ])
   }
 
-  private func priceLabelConstraints() {
+  private func priceSmallLabelConstraints() {
     NSLayoutConstraint.activate([
-      priceLabel.leadingAnchor.constraint(
-        equalTo: imageView.trailingAnchor, constant: isRegular ? 12 : 8
+      priceSmallLabel.leadingAnchor.constraint(
+        equalTo: imageSmallView.trailingAnchor, constant: isRegular ? 12 : 8
       ),
-      priceLabel.trailingAnchor.constraint(
+      priceSmallLabel.trailingAnchor.constraint(
         lessThanOrEqualTo: trailingAnchor, constant: isRegular ? -24 : -16
       ),
-      priceLabel.bottomAnchor.constraint(
-        equalTo: categoryLabel.topAnchor, constant: isRegular ? -8 : -4
+      priceSmallLabel.bottomAnchor.constraint(
+        equalTo: categorySmallLabel.topAnchor, constant: isRegular ? -8 : -4
       )
     ])
   }
 
   private func redactedViewConstraints() {
     NSLayoutConstraint.activate([
-      redactedView.topAnchor.constraint(equalTo: imageView.topAnchor),
-      redactedView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
-      redactedView.widthAnchor.constraint(equalTo: imageView.widthAnchor),
-      redactedView.heightAnchor.constraint(equalTo: imageView.heightAnchor)
+      redactedView.topAnchor.constraint(equalTo: imageSmallView.topAnchor),
+      redactedView.leadingAnchor.constraint(equalTo: imageSmallView.leadingAnchor),
+      redactedView.widthAnchor.constraint(equalTo: imageSmallView.widthAnchor),
+      redactedView.heightAnchor.constraint(equalTo: imageSmallView.heightAnchor)
     ])
   }
 
-  private func titleLabelConstraints() {
+  private func titleSmallLabelConstraints() {
     NSLayoutConstraint.activate([
-      titleLabel.topAnchor.constraint(greaterThanOrEqualTo: imageView.bottomAnchor, constant: isRegular ? 12 : 8),
-      titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: isRegular ? 24 : 16),
-      titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: isRegular ? -24 : -16),
-      titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: isRegular ? -16 : -8)
+      titleSmallLabel.topAnchor.constraint(greaterThanOrEqualTo: imageSmallView.bottomAnchor, constant: isRegular ? 12 : 8),
+      titleSmallLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: isRegular ? 24 : 16),
+      titleSmallLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: isRegular ? -24 : -16),
+      titleSmallLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: isRegular ? -16 : -8)
     ])
   }
 
-  private func urgentIconConstraints() {
+  private func urgentSmallIconConstraints() {
     NSLayoutConstraint.activate([
-      urgentIcon.trailingAnchor.constraint(
+      urgentSmallIcon.trailingAnchor.constraint(
         equalTo: contentView.trailingAnchor, constant: isRegular ? -8 : -4
       ),
-      urgentIcon.topAnchor.constraint(equalTo: topAnchor, constant: isRegular ? 8 : 4),
-      urgentIcon.widthAnchor.constraint(equalToConstant: isRegular ? 36 : 28),
-      urgentIcon.heightAnchor.constraint(equalToConstant: isRegular ? 36 : 28)
+      urgentSmallIcon.topAnchor.constraint(equalTo: topAnchor, constant: isRegular ? 8 : 4),
+      urgentSmallIcon.widthAnchor.constraint(equalToConstant: isRegular ? 36 : 28),
+      urgentSmallIcon.heightAnchor.constraint(equalToConstant: isRegular ? 36 : 28)
     ])
   }
 }

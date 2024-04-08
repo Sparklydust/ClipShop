@@ -36,7 +36,7 @@ final class ServerMock: ServerProtocol {
   func loadImage(urlString: String) async -> UIImage? {
     try? onPerformAsyncAwait()
 
-    guard let url = URL(string: urlString) else { return .none }
+    guard let _ = URL(string: urlString) else { return .none }
     return UIImage(systemName: "gear")
   }
 }
