@@ -29,7 +29,7 @@ final class PaperclipCell: UICollectionViewCell {
   }
 }
 
-// MARK: - Cell Configurations
+// MARK: - Configurations
 extension PaperclipCell {
 
   /// Define the cell values from the model passed in the parameter.
@@ -52,7 +52,7 @@ extension PaperclipCell {
   }
 }
 
-// MARK: - Cell Setup
+// MARK: - Setup
 extension PaperclipCell {
 
   private func setupCell() {
