@@ -14,9 +14,10 @@ final class ShopListViewController: UIViewController {
   private(set) var collectionView = ShopListCollectionView()
   private(set) var progressView = ProgressLargeView(frame: .zero)
   private(set) lazy var errorAlertView: UIAlertController = .serverErrorAlert
+  private(set) var filterCategoryButton: FilterCategoryNavButton!
 
   // MARK: - Models
-  private var paperclips = [PaperclipModel]()
+  private(set) var paperclips = [PaperclipModel]()
   private var viewModel: ShopListViewModel
 
   init(viewModel: ShopListViewModel = ShopListViewModel()) {
@@ -36,19 +37,28 @@ final class ShopListViewController: UIViewController {
   }
 }
 
-// MARK: - View Model Pipelines
+// MARK: - Pipelines
 extension ShopListViewController {
 
   /// Listening to Combine pipelines from the `viewModel` observing its changes to update `view`.
   /// - Info: Reactive programming, making the UI responsive and dynamic.
   @MainActor private func observeViewModelPipelines() {
+    progressViewPipeline()
+    errorPipeline()
+    paperclipsPipeline()
+    categoriesPipeline()
+  }
+
+  private func progressViewPipeline() {
     viewModel.$isLoading
       .sink { [weak self] isLoading in
         self?.view.isUserInteractionEnabled = !isLoading
         isLoading ? self?.progressView.startAnimating() : self?.progressView.stopAnimating()
       }
       .store(in: &cancellables)
+  }
 
+  private func errorPipeline() {
     viewModel.$showError
       .sink { [weak self] showError in
         self?.errorAlertView.view.isHidden = !showError
@@ -56,11 +66,27 @@ extension ShopListViewController {
         self.present(self.errorAlertView, animated: true)
       }
       .store(in: &cancellables)
+  }
 
+  private func paperclipsPipeline() {
     viewModel.$paperclips
+      .combineLatest(filterCategoryButton.$selectedItem)
+      .map { newValues, selectedCategory -> [PaperclipModel] in
+        guard let selectedCategory else { return newValues }
+        return newValues.filter { $0.category.id == selectedCategory }
+      }
       .sink { [weak self] newValues in
         self?.paperclips = newValues
         self?.collectionView.reloadData()
+      }
+      .store(in: &cancellables)
+  }
+
+  private func categoriesPipeline() {
+    viewModel.$categories
+      .sink { [weak self] newValues in
+        self?.filterCategoryButton.categories = newValues
+        self?.filterCategoryButton.isEnabled = !newValues.isEmpty
       }
       .store(in: &cancellables)
   }
@@ -149,6 +175,7 @@ extension ShopListViewController {
   private func setupViewController() {
     view.backgroundColor = .systemBackground
     setupDelegates()
+    setupNavigationBar()
     collectionViewConstraints()
     progressViewConstraints()
   }
@@ -158,9 +185,14 @@ extension ShopListViewController {
     collectionView.dataSource = self
   }
 
+  private func setupNavigationBar() {
+    filterCategoryButton = FilterCategoryNavButton()
+    filterCategoryButton.isEnabled = false
+    navigationItem.rightBarButtonItem = filterCategoryButton
+  }
+
   private func collectionViewConstraints() {
     view.addSubview(collectionView)
-    collectionView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       collectionView.topAnchor.constraint(equalTo: view.topAnchor),

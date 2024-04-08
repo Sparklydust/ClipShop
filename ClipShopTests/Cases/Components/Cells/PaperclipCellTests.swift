@@ -58,7 +58,7 @@ final class PaperclipCellTests: XCTestCase {
 
   func testConfigurations_categorySmallLabelTextConfiguredWithPaperclipModel_categoryIsEqualToModelCategory() {
     sut.configure(with: .fake())
-    let expected = PaperclipModel.fake().category
+    let expected = PaperclipModel.fake().category.name
 
     let result = sut.categorySmallLabel.text
 

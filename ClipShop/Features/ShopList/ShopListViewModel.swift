@@ -10,6 +10,7 @@ final class ShopListViewModel {
   @Published var isLoading = false
   @Published var showError = false
   @Published var paperclips = [PaperclipModel]()
+  @Published var categories = [CategoryModel]()
 
   private var server: ServerProtocol
 
@@ -29,8 +30,10 @@ extension ShopListViewModel {
     do {
       async let paperclipData = try await server.get([PaperclipData].self, atEndpoint: .paperclipsList)
       async let categoryData = try await server.get([CategoryData].self, atEndpoint: .paperclipCategories)
+
       let data = try await (paperclipData, categoryData)
 
+      categories = data.1.map { CategoryModel(with: $0) }.sorted(by: { $0.name < $1.name })
       paperclips = data.0.map { PaperclipModel(with: ($0, data.1)) }
     } catch {
       showError = true
