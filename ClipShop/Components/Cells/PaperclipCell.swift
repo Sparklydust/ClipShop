@@ -15,15 +15,7 @@ final class PaperclipCell: UICollectionViewCell {
   private(set) var categorySmallLabel = CategorySmallLabel()
   private(set) var priceSmallLabel = PriceSmallLabel()
   private(set) var imageSmallView = ImageSmallView(frame: .zero)
-
-  /// Placeholder view for when the image is nil.
-  private let redactedView: UIView = {
-    let view = UIView()
-    view.translatesAutoresizingMaskIntoConstraints = false
-    view.backgroundColor = UIColor.systemGray4
-    view.layer.cornerRadius = 8
-    return view
-  }()
+  private(set) var redactedView = RedactedView()
 
   private let titleLabel: UILabel = {
     let label = UILabel()

@@ -31,6 +31,8 @@
 		2A64B6F72BC3DFDF00BE267D /* ImageSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6F62BC3DFDF00BE267D /* ImageSmallView.swift */; };
 		2A64B6F92BC3E36F00BE267D /* PriceSmallLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6F82BC3E36F00BE267D /* PriceSmallLabelTests.swift */; };
 		2A64B6FB2BC3E3B500BE267D /* PriceSmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6FA2BC3E3B500BE267D /* PriceSmallLabel.swift */; };
+		2A64B6FD2BC3E55D00BE267D /* RedactedViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6FC2BC3E55D00BE267D /* RedactedViewTests.swift */; };
+		2A64B6FF2BC3E5CC00BE267D /* RedactedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6FE2BC3E5CC00BE267D /* RedactedView.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -107,6 +109,8 @@
 		2A64B6F62BC3DFDF00BE267D /* ImageSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSmallView.swift; sourceTree = "<group>"; };
 		2A64B6F82BC3E36F00BE267D /* PriceSmallLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSmallLabelTests.swift; sourceTree = "<group>"; };
 		2A64B6FA2BC3E3B500BE267D /* PriceSmallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSmallLabel.swift; sourceTree = "<group>"; };
+		2A64B6FC2BC3E55D00BE267D /* RedactedViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactedViewTests.swift; sourceTree = "<group>"; };
+		2A64B6FE2BC3E5CC00BE267D /* RedactedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactedView.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				2A64B6F32BC3DF8E00BE267D /* ImageSmallViewTests.swift */,
+				2A64B6FC2BC3E55D00BE267D /* RedactedViewTests.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				2A64B6F62BC3DFDF00BE267D /* ImageSmallView.swift */,
+				2A64B6FE2BC3E5CC00BE267D /* RedactedView.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 				2AF5F85F2BBFEC4500479E54 /* URLSessionProtocol.swift in Sources */,
 				2A64B6F12BC3D9C500BE267D /* CategorySmallLabel.swift in Sources */,
 				2A64B6CF2BC2CCB200BE267D /* FileManagerProtocol.swift in Sources */,
+				2A64B6FF2BC3E5CC00BE267D /* RedactedView.swift in Sources */,
 				2AF5F83C2BBF20BB00479E54 /* PaperclipData.swift in Sources */,
 				2AF5F82E2BBEE94700479E54 /* ShopListViewModel.swift in Sources */,
 				2AF5F8362BBF07FE00479E54 /* ServerEndpoint.swift in Sources */,
@@ -750,6 +757,7 @@
 				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
 				2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */,
 				2A64B6CB2BC2AD7A00BE267D /* ImageCacheServiceTests.swift in Sources */,
+				2A64B6FD2BC3E55D00BE267D /* RedactedViewTests.swift in Sources */,
 				2AF5F87B2BC07F0400479E54 /* PaperclipModelTests.swift in Sources */,
 				2AF5F8672BC00D0300479E54 /* JsonFileName.swift in Sources */,
 				2AF5F8282BBED26900479E54 /* ShopListViewControllerTests.swift in Sources */,
