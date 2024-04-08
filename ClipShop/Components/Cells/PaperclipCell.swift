@@ -6,21 +6,13 @@ import UIKit
 
 /// Cell component to populate ``PaperclipModel`` within the ``ShopListViewController`` within
 /// a collection view cell.
-class PaperclipCell: UICollectionViewCell {
+final class PaperclipCell: UICollectionViewCell {
 
   static let reuseIdentifier = "PaperclipCell"
   private let isRegular = UIDevice.current.userInterfaceIdiom == .pad
 
-  private let categoryLabel: UILabel = {
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.textAlignment = .left
-    label.font = UIDevice.current.userInterfaceIdiom == .pad
-    ? .preferredFont(forTextStyle: .footnote)
-    : .preferredFont(forTextStyle: .caption1)
-    label.textColor = .secondaryLabel
-    return label
-  }()
+  // MARK: - Components
+  private let categorySmallLabel = CategorySmallLabel()
 
   private(set) var imageView: UIImageView = {
     let imageView = UIImageView()
@@ -84,7 +76,7 @@ class PaperclipCell: UICollectionViewCell {
   }
 }
 
-// MARK: - Cell Configuration
+// MARK: - Cell Configurations
 extension PaperclipCell {
 
   /// Define the cell values from the model passed in the parameter.
@@ -94,7 +86,7 @@ extension PaperclipCell {
     imageConfiguration(with: model.image)
     titleLabel.text = model.title
     priceLabel.text = "\(model.price)€"
-    categoryLabel.text = model.category
+    categorySmallLabel.text = model.category
     urgentIcon.isHidden = !model.isUrgent
   }
 
@@ -127,7 +119,7 @@ extension PaperclipCell {
   }
 
   private func addSubviews() {
-    addSubview(categoryLabel)
+    addSubview(categorySmallLabel)
     addSubview(imageView)
     addSubview(priceLabel)
     addSubview(redactedView)
@@ -150,9 +142,9 @@ extension PaperclipCell {
 
   private func categoryLabelConstraints() {
     NSLayoutConstraint.activate([
-      categoryLabel.leadingAnchor.constraint(equalTo: priceLabel.leadingAnchor),
-      categoryLabel.trailingAnchor.constraint(equalTo: priceLabel.trailingAnchor),
-      categoryLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor)
+      categorySmallLabel.leadingAnchor.constraint(equalTo: priceLabel.leadingAnchor),
+      categorySmallLabel.trailingAnchor.constraint(equalTo: priceLabel.trailingAnchor),
+      categorySmallLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor)
     ])
   }
 
@@ -175,7 +167,7 @@ extension PaperclipCell {
         lessThanOrEqualTo: trailingAnchor, constant: isRegular ? -24 : -16
       ),
       priceLabel.bottomAnchor.constraint(
-        equalTo: categoryLabel.topAnchor, constant: isRegular ? -8 : -4
+        equalTo: categorySmallLabel.topAnchor, constant: isRegular ? -8 : -4
       )
     ])
   }
