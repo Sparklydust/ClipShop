@@ -25,7 +25,7 @@ struct PaperclipModel {
     title = data.paperclip.title
     price = data.paperclip.price
     isUrgent = data.paperclip.isUrgent
-    creationDate = ISO8601DateFormatter().date(from: data.paperclip.creationDate) ?? Date()
+    creationDate = data.paperclip.creationDate.iso8601Date()
 
     let categoryData = data.categories
       .first(where: { $0.id == data.paperclip.categoryID }) ?? .init(id: .zero, name: "Divers")
