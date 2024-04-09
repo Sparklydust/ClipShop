@@ -24,6 +24,7 @@ extension Coordinator {
 
   func start() {
     let viewController = ShopListViewController(viewModel: shopListViewModel)
+    viewController.delegate = self
     navigationController.pushViewController(viewController, animated: true)
   }
   
