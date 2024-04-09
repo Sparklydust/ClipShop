@@ -32,7 +32,7 @@ extension Coordinator {
   /// `paperclip`.
   /// - Parameter paperclip: The selected item from the shop list.
   private func showDetails(for paperclip: PaperclipModel) {
-    let shopDetailsVC = ShopDetailsViewController()
+    let shopDetailsVC = ShopDetailsViewController(paperclip: paperclip)
     navigationController.pushViewController(shopDetailsVC, animated: true)
   }
 }
