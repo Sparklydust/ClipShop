@@ -15,6 +15,7 @@ struct PaperclipModel {
   let price: Decimal
   let category: CategoryModel
   let isUrgent: Bool
+  let creationDate: Date
 
   init(
     with data: (paperclip: PaperclipData, categories: [CategoryData])
@@ -24,6 +25,7 @@ struct PaperclipModel {
     title = data.paperclip.title
     price = data.paperclip.price
     isUrgent = data.paperclip.isUrgent
+    creationDate = ISO8601DateFormatter().date(from: data.paperclip.creationDate) ?? Date()
 
     let categoryData = data.categories
       .first(where: { $0.id == data.paperclip.categoryID }) ?? .init(id: .zero, name: "Divers")
