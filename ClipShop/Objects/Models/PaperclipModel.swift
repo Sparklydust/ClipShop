@@ -12,6 +12,8 @@ struct PaperclipModel {
   let imageURL: (small: String?, thumb: String?)
   var image: UIImage? = .none
   let title: String
+  let description: String
+  let siret: String
   let price: Decimal
   let category: CategoryModel
   let isUrgent: Bool
@@ -23,6 +25,8 @@ struct PaperclipModel {
     id = data.paperclip.id
     imageURL = (small: data.paperclip.imageURLs.small, thumb: data.paperclip.imageURLs.thumb)
     title = data.paperclip.title
+    description = data.paperclip.description
+    siret = data.paperclip.siret ?? String()
     price = data.paperclip.price
     isUrgent = data.paperclip.isUrgent
     creationDate = data.paperclip.creationDate.iso8601Date()
