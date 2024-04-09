@@ -7,6 +7,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
+  var coordinator: Coordinator?
 
   func scene(
     _ scene: UIScene,
@@ -14,9 +15,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     options connectionOptions: UIScene.ConnectionOptions
   ) {
     guard let scene = (scene as? UIWindowScene) else { return }
+    let navigationController = UINavigationController()
+
+    coordinator = Coordinator(navigationController: navigationController)
+    coordinator?.start()
+
     window = UIWindow(windowScene: scene)
-    let nav = UINavigationController(rootViewController: ShopListViewController())
-    window?.rootViewController = nav
+    window?.rootViewController = navigationController
     window?.makeKeyAndVisible()
   }
 }
