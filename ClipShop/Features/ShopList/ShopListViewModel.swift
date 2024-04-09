@@ -32,9 +32,7 @@ extension ShopListViewModel {
       async let categoryData = try await server.get([CategoryData].self, atEndpoint: .paperclipCategories)
 
       let data = try await (paperclipData, categoryData)
-
-      categories = data.1.map { CategoryModel(with: $0) }.sorted(by: { $0.name < $1.name })
-      paperclips = data.0.map { PaperclipModel(with: ($0, data.1)) }
+      updateModels(with: data)
     } catch {
       showError = true
     }
@@ -45,5 +43,25 @@ extension ShopListViewModel {
   /// - Returns: The requested image or nil on failure.
   @MainActor func loadImage(urlString: String) async -> UIImage? {
     await server.loadImage(urlString: urlString)
+  }
+}
+
+// MARK: - Models
+extension ShopListViewModel {
+  
+  /// Update the models values to be presented on the view following the received data from the server.
+  /// - Parameter data: The data fetch from the server request.
+  private func updateModels(with data: ([PaperclipData], [CategoryData])) {
+    categories = data.1
+      .map { CategoryModel(with: $0) }
+      .sorted(by: { $0.name < $1.name })
+
+    paperclips = data.0
+      .map { PaperclipModel(with: ($0, data.1)) }
+      .sorted {
+        guard $0.isUrgent == $1.isUrgent 
+        else { return $0.isUrgent && !$1.isUrgent }
+        return $0.creationDate < $1.creationDate
+      }
   }
 }

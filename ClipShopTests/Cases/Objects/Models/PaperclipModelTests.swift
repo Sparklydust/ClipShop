@@ -82,4 +82,12 @@ final class PaperclipModelTests: XCTestCase {
 
     XCTAssertEqual(result, expected, "`isUrgent` value must be equal to `\(expected)` data object value from init parameter.")
   }
+
+  func testInitialization_creationDate_isEqualToDateValueFromPassedDataObjectInInit() throws {
+    let expected = try XCTUnwrap(ISO8601DateFormatter().date(from: PaperclipData.fake().creationDate))
+
+    let result = sut.creationDate
+
+    XCTAssertEqual(result, expected, "`isUrgent` value must be equal to `\(expected)` data object value from init parameter.")
+  }
 }

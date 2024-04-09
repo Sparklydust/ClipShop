@@ -21,10 +21,7 @@ final class UrgentSmallIcon: UIImageView {
   private func setupIcon() {
     translatesAutoresizingMaskIntoConstraints = false
     contentMode = .scaleAspectFit
-    image = UIImage(
-      systemName: "eurosign.arrow.circlepath",
-      withConfiguration: UIImage.SymbolConfiguration(weight: .semibold)
-    )
+    image = UIImage(systemName: "eurosign.arrow.circlepath")
     tintColor = .accent
   }
 }
