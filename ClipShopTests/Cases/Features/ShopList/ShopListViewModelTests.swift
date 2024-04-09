@@ -126,4 +126,20 @@ final class ShopListViewModelTests: BaseXCTestCase {
 
     XCTAssertNil(result, "No UIImage must be returned on a request failure.")
   }
+
+  func testServerService_requestListOfCategoryDataIsSuccessful_categoriesAreSortedByNameInAscendingOrder() async throws {
+    try XCTSkipIf(true, "Must manage to mock more than one async request to avoid error being thrown as concurrents requests are being made.")
+    serverMock = try serverMock(data: .categoriesData)
+    sut = ShopListViewModel(server: serverMock)
+    sut.categories.removeAll()
+    let expected: [CategoryModel] = [
+      .fake(),
+      .fake(with: .fake(id: 1, name: "Véhicule"))
+    ]
+
+    await sut.getPaperclipsList()
+    let result = sut.categories
+
+    XCTAssertEqual(result, expected, "`categories` must be sorted in an ascending order by name.")
+  }
 }

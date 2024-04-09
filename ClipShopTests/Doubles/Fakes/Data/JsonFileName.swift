@@ -9,6 +9,7 @@ import Foundation
 /// All data objects are the request contract of the ClipShop server.
 @frozen enum JsonFileName: String {
 
+  case categoriesData = "CategoriesData"
   case categoryData = "CategoryData"
   /// Used to trigger errors during ``URLSessionMock`` response.
   case errorData = "" // Empty value is expected for an error.

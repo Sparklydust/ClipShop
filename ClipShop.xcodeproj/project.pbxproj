@@ -47,6 +47,7 @@
 		2AB92DB12BC420F500DB1DCA /* CategoryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DB02BC420F500DB1DCA /* CategoryModelTests.swift */; };
 		2AB92DB32BC4213300DB1DCA /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DB22BC4213300DB1DCA /* CategoryModel.swift */; };
 		2AB92DB52BC4217D00DB1DCA /* CategoryModel+Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DB42BC4217D00DB1DCA /* CategoryModel+Fakes.swift */; };
+		2AB92DB72BC5293100DB1DCA /* CategoriesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AB92DB62BC5293100DB1DCA /* CategoriesData.json */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -139,6 +140,7 @@
 		2AB92DB02BC420F500DB1DCA /* CategoryModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModelTests.swift; sourceTree = "<group>"; };
 		2AB92DB22BC4213300DB1DCA /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		2AB92DB42BC4217D00DB1DCA /* CategoryModel+Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryModel+Fakes.swift"; sourceTree = "<group>"; };
+		2AB92DB62BC5293100DB1DCA /* CategoriesData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoriesData.json; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 		2AF5F86D2BC00F8300479E54 /* CategoryData */ = {
 			isa = PBXGroup;
 			children = (
+				2AB92DB62BC5293100DB1DCA /* CategoriesData.json */,
 				2AF5F8692BC00E6900479E54 /* CategoryData.json */,
 				2AF5F8452BBF720900479E54 /* CategoryData+Fakes.swift */,
 			);
@@ -805,6 +808,7 @@
 			files = (
 				2AF5F8742BC0770500479E54 /* PaperclipsData.json in Resources */,
 				2AF5F86C2BC00EE400479E54 /* PaperclipData.json in Resources */,
+				2AB92DB72BC5293100DB1DCA /* CategoriesData.json in Resources */,
 				2AF5F86A2BC00E6900479E54 /* CategoryData.json in Resources */,
 				2A5AD64A2BC1C2C1003DD193 /* ImageData.json in Resources */,
 			);
