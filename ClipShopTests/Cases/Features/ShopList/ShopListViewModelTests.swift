@@ -142,4 +142,30 @@ final class ShopListViewModelTests: BaseXCTestCase {
 
     XCTAssertEqual(result, expected, "`categories` must be sorted in an ascending order by name.")
   }
+
+  func testServerService_requestListOfCategoryDataIsSuccessful_paperclipsAreSortedWithUrgentFirst() async throws {
+    try XCTSkipIf(true, "Must manage to mock more than one async request to avoid error being thrown as concurrents requests are being made.")
+    serverMock = try serverMock(data: .categoriesData)
+    sut = ShopListViewModel(server: serverMock)
+    sut.paperclips.removeAll()
+    let expected = PaperclipModel.fake(with: (.fake(id: 1077103477), [.fake()])).id
+
+    await sut.getPaperclipsList()
+    let result = sut.paperclips.first?.id
+
+    XCTAssertEqual(result, expected, "`paperclips` must be sorted with urgent items first.")
+  }
+
+  func testServerService_requestListOfCategoryDataIsSuccessful_paperclipsAreSortedByDateInDescendingOrder() async throws {
+    try XCTSkipIf(true, "Must manage to mock more than one async request to avoid error being thrown as concurrents requests are being made.")
+    serverMock = try serverMock(data: .categoriesData)
+    sut = ShopListViewModel(server: serverMock)
+    sut.paperclips.removeAll()
+    let expected = PaperclipModel.fake(with: (.fake(id: 1461267313), [.fake()])).id
+
+    await sut.getPaperclipsList()
+    let result = sut.paperclips[1].id
+
+    XCTAssertEqual(result, expected, "`paperclips` must be sorted by Date.")
+  }
 }
