@@ -5,17 +5,22 @@
 import XCTest
 @testable import ClipShop
 
-final class ShopDetailsViewControllerTests: XCTestCase {
+final class ShopDetailsViewControllerTests: BaseXCTestCase {
 
   var sut: ShopDetailsViewController!
 
+  var viewModelFake: ShopDetailsViewModel!
+
   override func setUp() async throws {
     try await super.setUp()
-    sut = await ShopDetailsViewController(paperclip: .fake())
+    viewModelFake = ShopDetailsViewModel(server: serverDummy)
+
+    sut = await ShopDetailsViewController(viewModel: viewModelFake, paperclip: .fake())
     await sut.loadViewIfNeeded()
   }
 
   override func tearDown() async throws {
+    viewModelFake = nil
     sut = nil
     try await super.tearDown()
   }

@@ -11,7 +11,7 @@ final class ShopDetailsViewModelTests: BaseXCTestCase {
 
   override func setUp() async throws {
     try await super.setUp()
-    sut = ShopDetailsViewModel()
+    sut = ShopDetailsViewModel(server: serverDummy)
   }
 
   override func tearDown() async throws {

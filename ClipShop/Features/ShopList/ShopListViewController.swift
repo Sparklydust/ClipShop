@@ -21,7 +21,7 @@ final class ShopListViewController: UIViewController {
   private(set) var paperclips = [PaperclipModel]()
   private var viewModel: ShopListViewModel
 
-  init(viewModel: ShopListViewModel = ShopListViewModel()) {
+  init(viewModel: ShopListViewModel) {
     self.viewModel = viewModel
     super.init(nibName: .none, bundle: .none)
   }

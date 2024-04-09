@@ -8,9 +8,14 @@ import UIKit
 final class ShopDetailsViewController: UIViewController {
 
   // MARK: - Models
+  private var viewModel: ShopDetailsViewModel
   private var paperclip: PaperclipModel
 
-  init(paperclip: PaperclipModel) {
+  init(
+    viewModel: ShopDetailsViewModel,
+    paperclip: PaperclipModel
+  ) {
+    self.viewModel = viewModel
     self.paperclip = paperclip
     super.init(nibName: .none, bundle: .none)
   }

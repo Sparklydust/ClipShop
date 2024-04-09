@@ -9,12 +9,15 @@ final class Coordinator: CoordinatorProtocol {
 
   var navigationController: UINavigationController
   var shopListViewModel: ShopListViewModel
+  var shopDetailsViewModel: ShopDetailsViewModel
 
   init(
     navigationController: UINavigationController,
+    shopDetailsViewModel: ShopDetailsViewModel = ShopDetailsViewModel(),
     shopListViewModel: ShopListViewModel = ShopListViewModel()
   ) {
     self.navigationController = navigationController
+    self.shopDetailsViewModel = shopDetailsViewModel
     self.shopListViewModel = shopListViewModel
   }
 }
@@ -27,12 +30,15 @@ extension Coordinator {
     viewController.delegate = self
     navigationController.pushViewController(viewController, animated: true)
   }
-  
+
   /// Trigger the navigation to the ``ShopDetailsViewController`` to see all informations about a
   /// `paperclip`.
   /// - Parameter paperclip: The selected item from the shop list.
   private func showDetails(for paperclip: PaperclipModel) {
-    let shopDetailsVC = ShopDetailsViewController(paperclip: paperclip)
+    let shopDetailsVC = ShopDetailsViewController(
+      viewModel: shopDetailsViewModel,
+      paperclip: paperclip
+    )
     navigationController.pushViewController(shopDetailsVC, animated: true)
   }
 }

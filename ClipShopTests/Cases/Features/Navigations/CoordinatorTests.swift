@@ -10,29 +10,28 @@ final class CoordinatorTests: BaseXCTestCase {
   var sut: Coordinator!
 
   var shopListViewModelFake: ShopListViewModel!
+  var shopDetailsViewModelFake: ShopDetailsViewModel!
 
   override func setUp() async throws {
     try await super.setUp()
     shopListViewModelFake = ShopListViewModel(server: serverDummy)
+    shopDetailsViewModelFake = ShopDetailsViewModel(server: serverDummy)
 
     sut = Coordinator(
-      navigationController: navigationControllerDummy,
+      navigationController: navigationControllerSpy,
+      shopDetailsViewModel: shopDetailsViewModelFake,
       shopListViewModel: shopListViewModelFake
     )
   }
 
   override func tearDown() async throws {
     sut = nil
+    shopDetailsViewModelFake = nil
     shopListViewModelFake = nil
     try await super.tearDown()
   }
 
   func testNavigations_pushesShopListViewController_resultIsTrue() {
-    sut = Coordinator(
-      navigationController: navigationControllerSpy,
-      shopListViewModel: shopListViewModelFake
-    )
-
     sut.start()
     let result = navigationControllerSpy.viewController is ShopListViewController
 
@@ -40,10 +39,6 @@ final class CoordinatorTests: BaseXCTestCase {
   }
 
   func testNavigations_didSelectPaperclipItemIsTriggered_navigationPushShopDetailsViewController() {
-    sut = Coordinator(
-      navigationController: navigationControllerSpy,
-      shopListViewModel: shopListViewModelFake
-    )
     sut.start()
 
     sut.didSelectItem(.fake())

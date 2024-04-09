@@ -6,5 +6,10 @@ import Foundation
 
 /// Responsible of handling the logic of the ``ShopDetailsViewController``.
 final class ShopDetailsViewModel {
-  // Intentionally empty
+
+  private var server: ServerProtocol
+
+  init(server: ServerProtocol = ServerService()) {
+    self.server = server
+  }
 }
