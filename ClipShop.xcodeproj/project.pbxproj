@@ -50,6 +50,18 @@
 		2AB92DB72BC5293100DB1DCA /* CategoriesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AB92DB62BC5293100DB1DCA /* CategoriesData.json */; };
 		2AB92DB92BC5403E00DB1DCA /* String+DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DB82BC5403E00DB1DCA /* String+DateTests.swift */; };
 		2AB92DBC2BC540B200DB1DCA /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DBB2BC540B200DB1DCA /* String+Date.swift */; };
+		2AB92DC02BC544B200DB1DCA /* ShopDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DBF2BC544B200DB1DCA /* ShopDetailsViewControllerTests.swift */; };
+		2AB92DC32BC544FF00DB1DCA /* ShopDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DC22BC544FF00DB1DCA /* ShopDetailsViewController.swift */; };
+		2AB92DC52BC546A600DB1DCA /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DC42BC546A500DB1DCA /* CoordinatorProtocol.swift */; };
+		2AB92DC72BC5486500DB1DCA /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DC62BC5486500DB1DCA /* NavigationControllerMock.swift */; };
+		2AB92DC92BC5497400DB1DCA /* NavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DC82BC5497400DB1DCA /* NavigationControllerSpy.swift */; };
+		2AB92DCB2BC549FF00DB1DCA /* NavigationControllerDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DCA2BC549FF00DB1DCA /* NavigationControllerDummy.swift */; };
+		2AB92DCE2BC54EE600DB1DCA /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DCD2BC54EE600DB1DCA /* CoordinatorTests.swift */; };
+		2AB92DD12BC550C500DB1DCA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DD02BC550C500DB1DCA /* Coordinator.swift */; };
+		2AB92DD32BC5536000DB1DCA /* CoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DD22BC5536000DB1DCA /* CoordinatorMock.swift */; };
+		2AB92DD52BC554C100DB1DCA /* CoordinatorDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DD42BC554C100DB1DCA /* CoordinatorDummy.swift */; };
+		2AB92DD72BC5554100DB1DCA /* CoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DD62BC5554100DB1DCA /* CoordinatorSpy.swift */; };
+		2ABBD3782BC56237004B6068 /* ShopListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3772BC56237004B6068 /* ShopListViewControllerDelegate.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -145,6 +157,18 @@
 		2AB92DB62BC5293100DB1DCA /* CategoriesData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoriesData.json; sourceTree = "<group>"; };
 		2AB92DB82BC5403E00DB1DCA /* String+DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateTests.swift"; sourceTree = "<group>"; };
 		2AB92DBB2BC540B200DB1DCA /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		2AB92DBF2BC544B200DB1DCA /* ShopDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsViewControllerTests.swift; sourceTree = "<group>"; };
+		2AB92DC22BC544FF00DB1DCA /* ShopDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsViewController.swift; sourceTree = "<group>"; };
+		2AB92DC42BC546A500DB1DCA /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		2AB92DC62BC5486500DB1DCA /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
+		2AB92DC82BC5497400DB1DCA /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
+		2AB92DCA2BC549FF00DB1DCA /* NavigationControllerDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerDummy.swift; sourceTree = "<group>"; };
+		2AB92DCD2BC54EE600DB1DCA /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		2AB92DD02BC550C500DB1DCA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		2AB92DD22BC5536000DB1DCA /* CoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorMock.swift; sourceTree = "<group>"; };
+		2AB92DD42BC554C100DB1DCA /* CoordinatorDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorDummy.swift; sourceTree = "<group>"; };
+		2AB92DD62BC5554100DB1DCA /* CoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorSpy.swift; sourceTree = "<group>"; };
+		2ABBD3772BC56237004B6068 /* ShopListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewControllerDelegate.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -415,6 +439,46 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		2AB92DBE2BC5447800DB1DCA /* ShopDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2AB92DBF2BC544B200DB1DCA /* ShopDetailsViewControllerTests.swift */,
+			);
+			path = ShopDetails;
+			sourceTree = "<group>";
+		};
+		2AB92DC12BC544EC00DB1DCA /* ShopDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2AB92DC22BC544FF00DB1DCA /* ShopDetailsViewController.swift */,
+			);
+			path = ShopDetails;
+			sourceTree = "<group>";
+		};
+		2AB92DCC2BC54B9D00DB1DCA /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				2AB92DCD2BC54EE600DB1DCA /* CoordinatorTests.swift */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		2AB92DCF2BC550A500DB1DCA /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				2AB92DD02BC550C500DB1DCA /* Coordinator.swift */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		2ABBD3762BC5621F004B6068 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				2ABBD3772BC56237004B6068 /* ShopListViewControllerDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		2AF5F80E2BBE90B000479E54 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +507,8 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8152BBE92BE00479E54 /* Main */,
+				2AB92DCF2BC550A500DB1DCA /* Navigations */,
+				2AB92DC12BC544EC00DB1DCA /* ShopDetails */,
 				2AF5F8252BBED24000479E54 /* ShopList */,
 			);
 			path = Features;
@@ -470,6 +536,8 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8212BBED11C00479E54 /* Main */,
+				2AB92DCC2BC54B9D00DB1DCA /* Navigations */,
+				2AB92DBE2BC5447800DB1DCA /* ShopDetails */,
 				2AF5F8262BBED24700479E54 /* ShopList */,
 			);
 			path = Features;
@@ -594,6 +662,8 @@
 		2AF5F8472BBFDF9B00479E54 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				2ABBD3762BC5621F004B6068 /* Delegates */,
+				2AB92DC42BC546A500DB1DCA /* CoordinatorProtocol.swift */,
 				2A64B6CE2BC2CCB200BE267D /* FileManagerProtocol.swift */,
 				2A64B6D42BC2D97C00BE267D /* ImageCacheProtocol.swift */,
 				2AF5F8482BBFDFAF00479E54 /* ServerProtocol.swift */,
@@ -623,7 +693,9 @@
 		2AF5F8512BBFE7B200479E54 /* Spies */ = {
 			isa = PBXGroup;
 			children = (
+				2AB92DD62BC5554100DB1DCA /* CoordinatorSpy.swift */,
 				2A64B6DA2BC2DB2C00BE267D /* ImageCacheSpy.swift */,
+				2AB92DC82BC5497400DB1DCA /* NavigationControllerSpy.swift */,
 				2AF5F8522BBFE7BF00479E54 /* ServerSpy.swift */,
 			);
 			path = Spies;
@@ -632,7 +704,9 @@
 		2AF5F8582BBFEAAD00479E54 /* Dummies */ = {
 			isa = PBXGroup;
 			children = (
+				2AB92DD42BC554C100DB1DCA /* CoordinatorDummy.swift */,
 				2A64B6D82BC2DB1F00BE267D /* ImageCacheDummy.swift */,
+				2AB92DCA2BC549FF00DB1DCA /* NavigationControllerDummy.swift */,
 				2AF5F8592BBFEB0B00479E54 /* ServerDummy.swift */,
 			);
 			path = Dummies;
@@ -641,8 +715,10 @@
 		2AF5F85B2BBFEB6C00479E54 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				2AB92DD22BC5536000DB1DCA /* CoordinatorMock.swift */,
 				2A64B6D02BC2D18F00BE267D /* FileManagerMock.swift */,
 				2A64B6D62BC2DB0D00BE267D /* ImageCacheMock.swift */,
+				2AB92DC62BC5486500DB1DCA /* NavigationControllerMock.swift */,
 				2AF5F85C2BBFEB8200479E54 /* ServerMock.swift */,
 				2AF5F8602BBFF04B00479E54 /* URLSessionMock.swift */,
 			);
@@ -854,6 +930,7 @@
 				2AF5F82E2BBEE94700479E54 /* ShopListViewModel.swift in Sources */,
 				2AB92DA82BC3F95B00DB1DCA /* ShopListCollectionView.swift in Sources */,
 				2AB92DAF2BC408F000DB1DCA /* FilterCategoryNavButton.swift in Sources */,
+				2ABBD3782BC56237004B6068 /* ShopListViewControllerDelegate.swift in Sources */,
 				2AF5F8362BBF07FE00479E54 /* ServerEndpoint.swift in Sources */,
 				2AB92DBC2BC540B200DB1DCA /* String+Date.swift in Sources */,
 				2A64B7032BC3E72C00BE267D /* TitleSmallLabel.swift in Sources */,
@@ -865,11 +942,14 @@
 				2A64B6DE2BC2DFBB00BE267D /* String+FileName.swift in Sources */,
 				2A64B6F72BC3DFDF00BE267D /* ImageSmallView.swift in Sources */,
 				2AB92DA22BC3F6A000DB1DCA /* ProgressLargeView.swift in Sources */,
+				2AB92DC32BC544FF00DB1DCA /* ShopDetailsViewController.swift in Sources */,
 				2A64B6FB2BC3E3B500BE267D /* PriceSmallLabel.swift in Sources */,
 				2A64B6D52BC2D97C00BE267D /* ImageCacheProtocol.swift in Sources */,
 				2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */,
 				2AF5F87D2BC07FC000479E54 /* PaperclipModel.swift in Sources */,
+				2AB92DD12BC550C500DB1DCA /* Coordinator.swift in Sources */,
 				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
+				2AB92DC52BC546A600DB1DCA /* CoordinatorProtocol.swift in Sources */,
 				2AFC0B5F2BC0C0EA0057BB66 /* PaperclipCell.swift in Sources */,
 				2A64B6E52BC2E48300BE267D /* ImageCacheError.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
@@ -886,6 +966,7 @@
 				2AF5F82C2BBEE91A00479E54 /* ShopListViewModelTests.swift in Sources */,
 				2A64B6D92BC2DB1F00BE267D /* ImageCacheDummy.swift in Sources */,
 				2A64B7062BC3E93A00BE267D /* UrgentSmallIconTests.swift in Sources */,
+				2AB92DC92BC5497400DB1DCA /* NavigationControllerSpy.swift in Sources */,
 				2AF5F8532BBFE7BF00479E54 /* ServerSpy.swift in Sources */,
 				2AF5F8782BC07C9700479E54 /* PaperclipModel+Fakes.swift in Sources */,
 				2AF5F8322BBF077200479E54 /* ServerEndpointTests.swift in Sources */,
@@ -895,12 +976,14 @@
 				2A64B6EB2BC3D7A900BE267D /* PaperclipCellTests.swift in Sources */,
 				2AB92DB92BC5403E00DB1DCA /* String+DateTests.swift in Sources */,
 				2AF5F8722BC01A6F00479E54 /* XCTestCase+URLSessionMock.swift in Sources */,
+				2AB92DD32BC5536000DB1DCA /* CoordinatorMock.swift in Sources */,
 				2A64B6E12BC2DFD400BE267D /* String+FileNameTests.swift in Sources */,
 				2A64B6D72BC2DB0D00BE267D /* ImageCacheMock.swift in Sources */,
 				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
 				2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */,
 				2AB92DA62BC3F92100DB1DCA /* ShopListCollectionViewTests.swift in Sources */,
 				2A64B6CB2BC2AD7A00BE267D /* ImageCacheServiceTests.swift in Sources */,
+				2AB92DC72BC5486500DB1DCA /* NavigationControllerMock.swift in Sources */,
 				2A64B6FD2BC3E55D00BE267D /* RedactedViewTests.swift in Sources */,
 				2AF5F87B2BC07F0400479E54 /* PaperclipModelTests.swift in Sources */,
 				2AF5F8672BC00D0300479E54 /* JsonFileName.swift in Sources */,
@@ -910,17 +993,22 @@
 				2AF5F8642BC00BD500479E54 /* XCTestCase+ServerMock.swift in Sources */,
 				2AF5F8702BC0102400479E54 /* XCTestCase+JsonParser.swift in Sources */,
 				2AF5F85D2BBFEB8200479E54 /* ServerMock.swift in Sources */,
+				2AB92DD52BC554C100DB1DCA /* CoordinatorDummy.swift in Sources */,
 				2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */,
 				2A64B6E32BC2E44800BE267D /* ImageCacheErrorTests.swift in Sources */,
 				2AB92DB12BC420F500DB1DCA /* CategoryModelTests.swift in Sources */,
 				2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */,
+				2AB92DCE2BC54EE600DB1DCA /* CoordinatorTests.swift in Sources */,
 				2A64B6D12BC2D18F00BE267D /* FileManagerMock.swift in Sources */,
+				2AB92DCB2BC549FF00DB1DCA /* NavigationControllerDummy.swift in Sources */,
 				2AB92DB52BC4217D00DB1DCA /* CategoryModel+Fakes.swift in Sources */,
 				2AF5F83A2BBF208500479E54 /* PaperclipDataTests.swift in Sources */,
+				2AB92DD72BC5554100DB1DCA /* CoordinatorSpy.swift in Sources */,
 				2A64B6F92BC3E36F00BE267D /* PriceSmallLabelTests.swift in Sources */,
 				2A64B6DB2BC2DB2C00BE267D /* ImageCacheSpy.swift in Sources */,
 				2AF5F84C2BBFE27200479E54 /* ServerServiceTests.swift in Sources */,
 				2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */,
+				2AB92DC02BC544B200DB1DCA /* ShopDetailsViewControllerTests.swift in Sources */,
 				2A64B7012BC3E70800BE267D /* TitleSmallLabelTests.swift in Sources */,
 				2AB92DAC2BC408C000DB1DCA /* FilterCategoryNavButtonTests.swift in Sources */,
 			);

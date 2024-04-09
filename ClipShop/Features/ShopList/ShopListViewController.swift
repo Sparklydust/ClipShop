@@ -9,6 +9,7 @@ import UIKit
 final class ShopListViewController: UIViewController {
 
   var cancellables = Set<AnyCancellable>()
+  weak var delegate: ShopListViewControllerDelegate?
 
   // MARK: - Components
   private(set) var collectionView = ShopListCollectionView()
@@ -125,6 +126,14 @@ extension ShopListViewController: UICollectionViewDelegate, UICollectionViewData
     guard let cell = cell as? PaperclipCell, cell.imageSmallView.image == .none else { return }
     let paperclip = paperclips[indexPath.item]
     populateImage(paperclip: paperclip, on: cell)
+  }
+
+  func collectionView(
+    _ collectionView: UICollectionView,
+    didSelectItemAt indexPath: IndexPath
+  ) {
+    let paperclip = paperclips[indexPath.item]
+    delegate?.didSelectItem(paperclip)
   }
 
   /// Request the small image of the paperclip to be populated on the corresponding cell.
