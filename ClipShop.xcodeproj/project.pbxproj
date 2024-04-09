@@ -52,6 +52,7 @@
 		2AB92DBC2BC540B200DB1DCA /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DBB2BC540B200DB1DCA /* String+Date.swift */; };
 		2AB92DC02BC544B200DB1DCA /* ShopDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DBF2BC544B200DB1DCA /* ShopDetailsViewControllerTests.swift */; };
 		2AB92DC32BC544FF00DB1DCA /* ShopDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DC22BC544FF00DB1DCA /* ShopDetailsViewController.swift */; };
+		2AB92DC52BC546A600DB1DCA /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DC42BC546A500DB1DCA /* CoordinatorProtocol.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -149,6 +150,7 @@
 		2AB92DBB2BC540B200DB1DCA /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		2AB92DBF2BC544B200DB1DCA /* ShopDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsViewControllerTests.swift; sourceTree = "<group>"; };
 		2AB92DC22BC544FF00DB1DCA /* ShopDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsViewController.swift; sourceTree = "<group>"; };
+		2AB92DC42BC546A500DB1DCA /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -616,6 +618,7 @@
 		2AF5F8472BBFDF9B00479E54 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				2AB92DC42BC546A500DB1DCA /* CoordinatorProtocol.swift */,
 				2A64B6CE2BC2CCB200BE267D /* FileManagerProtocol.swift */,
 				2A64B6D42BC2D97C00BE267D /* ImageCacheProtocol.swift */,
 				2AF5F8482BBFDFAF00479E54 /* ServerProtocol.swift */,
@@ -893,6 +896,7 @@
 				2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */,
 				2AF5F87D2BC07FC000479E54 /* PaperclipModel.swift in Sources */,
 				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
+				2AB92DC52BC546A600DB1DCA /* CoordinatorProtocol.swift in Sources */,
 				2AFC0B5F2BC0C0EA0057BB66 /* PaperclipCell.swift in Sources */,
 				2A64B6E52BC2E48300BE267D /* ImageCacheError.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
