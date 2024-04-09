@@ -38,4 +38,17 @@ final class CoordinatorTests: BaseXCTestCase {
 
     XCTAssertTrue(result, "Coordinator must push `ShopListViewController` in the navigation stack on `start()`.")
   }
+
+  func testNavigations_didSelectPaperclipItemIsTriggered_navigationPushShopDetailsViewController() {
+    sut = Coordinator(
+      navigationController: navigationControllerSpy,
+      shopListViewModel: shopListViewModelFake
+    )
+    sut.start()
+
+    sut.didSelectItem(.fake())
+    let result = navigationControllerSpy.viewController is ShopDetailsViewController
+
+    XCTAssertTrue(result, "Coordinator must push `ShopDetailsViewController` in the navigation stack on `didSelectItem(_:)`.")
+  }
 }

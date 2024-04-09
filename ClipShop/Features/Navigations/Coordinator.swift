@@ -26,4 +26,20 @@ extension Coordinator {
     let viewController = ShopListViewController(viewModel: shopListViewModel)
     navigationController.pushViewController(viewController, animated: true)
   }
+  
+  /// Trigger the navigation to the ``ShopDetailsViewController`` to see all informations about a
+  /// `paperclip`.
+  /// - Parameter paperclip: The selected item from the shop list.
+  private func showDetails(for paperclip: PaperclipModel) {
+    let shopDetailsVC = ShopDetailsViewController()
+    navigationController.pushViewController(shopDetailsVC, animated: true)
+  }
+}
+
+// MARK: - ShopListViewControllerDelegate
+extension Coordinator: ShopListViewControllerDelegate {
+
+  func didSelectItem(_ paperclip: PaperclipModel) {
+    showDetails(for: paperclip)
+  }
 }
