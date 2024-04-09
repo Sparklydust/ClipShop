@@ -56,6 +56,8 @@
 		2AB92DC72BC5486500DB1DCA /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DC62BC5486500DB1DCA /* NavigationControllerMock.swift */; };
 		2AB92DC92BC5497400DB1DCA /* NavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DC82BC5497400DB1DCA /* NavigationControllerSpy.swift */; };
 		2AB92DCB2BC549FF00DB1DCA /* NavigationControllerDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DCA2BC549FF00DB1DCA /* NavigationControllerDummy.swift */; };
+		2AB92DCE2BC54EE600DB1DCA /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DCD2BC54EE600DB1DCA /* CoordinatorTests.swift */; };
+		2AB92DD12BC550C500DB1DCA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DD02BC550C500DB1DCA /* Coordinator.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -157,6 +159,8 @@
 		2AB92DC62BC5486500DB1DCA /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
 		2AB92DC82BC5497400DB1DCA /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
 		2AB92DCA2BC549FF00DB1DCA /* NavigationControllerDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerDummy.swift; sourceTree = "<group>"; };
+		2AB92DCD2BC54EE600DB1DCA /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		2AB92DD02BC550C500DB1DCA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -443,6 +447,22 @@
 			path = ShopDetails;
 			sourceTree = "<group>";
 		};
+		2AB92DCC2BC54B9D00DB1DCA /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				2AB92DCD2BC54EE600DB1DCA /* CoordinatorTests.swift */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		2AB92DCF2BC550A500DB1DCA /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				2AB92DD02BC550C500DB1DCA /* Coordinator.swift */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
 		2AF5F80E2BBE90B000479E54 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8152BBE92BE00479E54 /* Main */,
+				2AB92DCF2BC550A500DB1DCA /* Navigations */,
 				2AB92DC12BC544EC00DB1DCA /* ShopDetails */,
 				2AF5F8252BBED24000479E54 /* ShopList */,
 			);
@@ -499,6 +520,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5F8212BBED11C00479E54 /* Main */,
+				2AB92DCC2BC54B9D00DB1DCA /* Navigations */,
 				2AB92DBE2BC5447800DB1DCA /* ShopDetails */,
 				2AF5F8262BBED24700479E54 /* ShopList */,
 			);
@@ -904,6 +926,7 @@
 				2A64B6D52BC2D97C00BE267D /* ImageCacheProtocol.swift in Sources */,
 				2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */,
 				2AF5F87D2BC07FC000479E54 /* PaperclipModel.swift in Sources */,
+				2AB92DD12BC550C500DB1DCA /* Coordinator.swift in Sources */,
 				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
 				2AB92DC52BC546A600DB1DCA /* CoordinatorProtocol.swift in Sources */,
 				2AFC0B5F2BC0C0EA0057BB66 /* PaperclipCell.swift in Sources */,
@@ -952,6 +975,7 @@
 				2A64B6E32BC2E44800BE267D /* ImageCacheErrorTests.swift in Sources */,
 				2AB92DB12BC420F500DB1DCA /* CategoryModelTests.swift in Sources */,
 				2AF5F8422BBF718300479E54 /* CategoryDataTests.swift in Sources */,
+				2AB92DCE2BC54EE600DB1DCA /* CoordinatorTests.swift in Sources */,
 				2A64B6D12BC2D18F00BE267D /* FileManagerMock.swift in Sources */,
 				2AB92DCB2BC549FF00DB1DCA /* NavigationControllerDummy.swift in Sources */,
 				2AB92DB52BC4217D00DB1DCA /* CategoryModel+Fakes.swift in Sources */,
