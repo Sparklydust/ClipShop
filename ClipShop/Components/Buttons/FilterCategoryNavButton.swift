@@ -37,12 +37,12 @@ extension FilterCategoryNavButton {
 // MARK: - Menu
 extension FilterCategoryNavButton {
 
-  private func setupCategoriesMenu() -> UIMenu {
+  @MainActor private func setupCategoriesMenu() -> UIMenu {
     let menuItems = categories.map { category in
       return UIAction(
         title: category.name,
         state: category.id == selectedItem ? .on : .off,
-        handler: { [weak self] _ in self?.handleCategorySelection(category) }
+        handler: { [weak self] _ in self?.selectedItem = category.id }
       )
     }
     let dismissSelection = UIAction(
@@ -52,9 +52,5 @@ extension FilterCategoryNavButton {
     )
 
     return UIMenu(title: "Catégories", children: menuItems + [dismissSelection])
-  }
-
-  private func handleCategorySelection(_ category: CategoryModel) {
-    selectedItem = category.id
   }
 }
