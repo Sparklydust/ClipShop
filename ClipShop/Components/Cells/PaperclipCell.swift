@@ -149,8 +149,8 @@ extension PaperclipCell {
         equalTo: contentView.trailingAnchor, constant: isRegular ? -8 : -4
       ),
       urgentSmallIcon.topAnchor.constraint(equalTo: topAnchor, constant: isRegular ? 8 : 4),
-      urgentSmallIcon.widthAnchor.constraint(equalToConstant: isRegular ? 36 : 28),
-      urgentSmallIcon.heightAnchor.constraint(equalToConstant: isRegular ? 36 : 28)
+      urgentSmallIcon.widthAnchor.constraint(equalToConstant: isRegular ? 32 : 24),
+      urgentSmallIcon.heightAnchor.constraint(equalToConstant: isRegular ? 32 : 24)
     ])
   }
 }

@@ -63,6 +63,5 @@ extension ShopListViewModel {
         else { return $0.isUrgent && !$1.isUrgent }
         return $0.creationDate < $1.creationDate
       }
-    print(paperclips)
   }
 }
