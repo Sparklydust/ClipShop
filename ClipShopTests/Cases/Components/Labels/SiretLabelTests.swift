@@ -27,7 +27,7 @@ final class SiretLabelTests: XCTestCase {
     XCTAssertEqual(result, expected, "`font` must be equal to `\(expected)` when initialized.")
   }
 
-  func testInitialization_numberOfLines_isEqualToZero() {
+  func testInitialization_numberOfLines_isEqualTo1() {
     let expected: Int = 1
 
     let result = sut.numberOfLines
