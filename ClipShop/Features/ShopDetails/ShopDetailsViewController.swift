@@ -18,7 +18,7 @@ final class ShopDetailsViewController: UIViewController {
   private(set) var scrollView = MainScrollView()
   private(set) var priceLargeLabel = PriceLargeLabel()
   private(set) var siretLabel = SiretLabel()
-  private(set) var titleLargeLabel = TitleLargeLabel()
+  private(set) var titleLabel = TitleLabel(size: .large)
 
   private(set) var iconView: UIImageView = {
     let icon = UIImageView()

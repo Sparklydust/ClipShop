@@ -14,7 +14,7 @@ final class PaperclipCell: UICollectionViewCell {
   // MARK: - Components
   private(set) var categorySmallLabel = CategorySmallLabel()
   private(set) var priceSmallLabel = PriceSmallLabel()
-  private(set) var titleSmallLabel = TitleSmallLabel()
+  private(set) var titleLabel = TitleLabel(size: .small)
   private(set) var imageSmallView = ImageSmallView(frame: .zero)
   private(set) var urgentIcon = UrgentIcon(frame: .zero)
   private(set) var redactedView = RedactedView()
@@ -37,7 +37,7 @@ extension PaperclipCell {
   /// adapted to be displayed on the cell.
   func configure(with model: PaperclipModel) {
     imageConfiguration(with: model.image)
-    titleSmallLabel.text = model.title
+    titleLabel.text = model.title
     priceSmallLabel.text = "\(model.price)€"
     categorySmallLabel.text = model.category.name
     urgentIcon.isHidden = !model.isUrgent
@@ -76,7 +76,7 @@ extension PaperclipCell {
     addSubview(imageSmallView)
     addSubview(priceSmallLabel)
     addSubview(redactedView)
-    addSubview(titleSmallLabel)
+    addSubview(titleLabel)
     addSubview(urgentIcon)
   }
 
@@ -85,7 +85,7 @@ extension PaperclipCell {
     imageSmallViewConstraints()
     priceSmallLabelConstraints()
     redactedViewConstraints()
-    titleSmallLabelConstraints()
+    titleLabelConstraints()
     urgentIconConstraints()
   }
 }
@@ -134,12 +134,12 @@ extension PaperclipCell {
     ])
   }
 
-  private func titleSmallLabelConstraints() {
+  private func titleLabelConstraints() {
     NSLayoutConstraint.activate([
-      titleSmallLabel.topAnchor.constraint(greaterThanOrEqualTo: imageSmallView.bottomAnchor, constant: isRegular ? 12 : 8),
-      titleSmallLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: isRegular ? 24 : 16),
-      titleSmallLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: isRegular ? -24 : -16),
-      titleSmallLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: isRegular ? -16 : -8)
+      titleLabel.topAnchor.constraint(greaterThanOrEqualTo: imageSmallView.bottomAnchor, constant: isRegular ? 12 : 8),
+      titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: isRegular ? 24 : 16),
+      titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: isRegular ? -24 : -16),
+      titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: isRegular ? -16 : -8)
     ])
   }
 

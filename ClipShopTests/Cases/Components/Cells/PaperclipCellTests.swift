@@ -38,13 +38,13 @@ final class PaperclipCellTests: XCTestCase {
     XCTAssertEqual(result, expected, "cell image must be equal to `\(expected)` when configured with model image.")
   }
 
-  func testConfigurations_titleSmallLabelTextConfiguredWithPaperclipModel_titleIsEqualToModelTitle() {
+  func testConfigurations_titleLabelTextConfiguredWithPaperclipModel_titleIsEqualToModelTitle() {
     sut.configure(with: .fake())
     let expected = PaperclipModel.fake().title
 
-    let result = sut.titleSmallLabel.text
+    let result = sut.titleLabel.text
 
-    XCTAssertEqual(result, expected, "`titleSmallLabel.text` must be equal to `\(expected)` when configured with model.")
+    XCTAssertEqual(result, expected, "`titleLabel.text` must be equal to `\(expected)` when configured with model.")
   }
 
   func testConfigurations_priceSmallLabelTextConfiguredWithPaperclipModel_priceIsEqualToModelPrice() {
