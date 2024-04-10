@@ -9,6 +9,7 @@ import UIKit
 final class ShopDetailsViewController: UIViewController {
 
   var cancellables = Set<AnyCancellable>()
+  private let isRegular = UIDevice.current.userInterfaceIdiom == .pad
 
   private(set) var imageLargeView = ImageLargeView(frame: .zero)
   private(set) var redactedView = RedactedView()
@@ -60,10 +61,11 @@ extension ShopDetailsViewController {
     imageLargeView.image = image
     imageLargeView.isHidden = image == .none
     redactedView.isHidden = image != .none
+    redactedView.layer.cornerRadius = .zero
   }
 }
 
-// MARK: - View Components Constraints
+// MARK: - Constraints
 extension ShopDetailsViewController {
 
   /// Sets up the view with the paperclip details.
@@ -71,16 +73,50 @@ extension ShopDetailsViewController {
     view.backgroundColor = .systemBackground
     title = paperclip.category.name
 
-    view.addSubview(scrollView)
+    addSubviews()
+    activateConstraints()
+  }
 
+  private func addSubviews() {
+    view.addSubview(scrollView)
+    scrollView.addSubview(imageLargeView)
+    scrollView.addSubview(redactedView)
+  }
+
+  private func activateConstraints() {
     scrollViewConstraints()
+    imageLargeViewConstraints()
+    redactedViewConstraints()
   }
 
   private func scrollViewConstraints() {
     let layoutMargins = view.layoutMarginsGuide
-    scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-    scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    scrollView.topAnchor.constraint(equalTo: layoutMargins.topAnchor).isActive = true
-    scrollView.bottomAnchor.constraint(equalTo: layoutMargins.bottomAnchor).isActive = true
+    NSLayoutConstraint.activate([
+      scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      scrollView.topAnchor.constraint(equalTo: layoutMargins.topAnchor),
+      scrollView.bottomAnchor.constraint(equalTo: layoutMargins.bottomAnchor)
+    ])
+  }
+
+  private func imageLargeViewConstraints() {
+    NSLayoutConstraint.activate([
+      imageLargeView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+      imageLargeView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+      imageLargeView.trailingAnchor.constraint(lessThanOrEqualTo: scrollView.contentLayoutGuide.trailingAnchor),
+      imageLargeView.widthAnchor.constraint(
+        equalTo: scrollView.frameLayoutGuide.widthAnchor, multiplier: isRegular ? 0.33 : 1
+      ),
+      imageLargeView.heightAnchor.constraint(equalToConstant: isRegular ? 400 : 320),
+    ])
+  }
+
+  private func redactedViewConstraints() {
+    NSLayoutConstraint.activate([
+      redactedView.topAnchor.constraint(equalTo: imageLargeView.topAnchor),
+      redactedView.leadingAnchor.constraint(equalTo: imageLargeView.leadingAnchor),
+      redactedView.widthAnchor.constraint(equalTo: imageLargeView.widthAnchor),
+      redactedView.heightAnchor.constraint(equalTo: imageLargeView.heightAnchor)
+    ])
   }
 }

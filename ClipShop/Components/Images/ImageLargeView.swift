@@ -21,7 +21,6 @@ final class ImageLargeView: UIImageView {
   private func setupImage() {
     translatesAutoresizingMaskIntoConstraints = false
     contentMode = .scaleAspectFill
-    layer.cornerRadius = 12
     clipsToBounds = true
   }
 }

@@ -27,14 +27,6 @@ final class ImageLargeViewTests: XCTestCase {
     XCTAssertEqual(result, expected, "`contentMode` must be equal to `\(expected)` when initialized.")
   }
 
-  func testInitialization_layerCornerRadius_isEqualTo8() {
-    let expected: CGFloat = 12
-
-    let result = sut.layer.cornerRadius
-
-    XCTAssertEqual(result, expected, "`layer.cornerRadius` must be equal to `\(expected)` when initialized.")
-  }
-
   func testInitialization_clipsToBounds_isEqualToTrue() {
     let result = sut.clipsToBounds
 
