@@ -68,6 +68,8 @@
 		2ABBD3872BC672F2004B6068 /* MainScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3862BC672F2004B6068 /* MainScrollView.swift */; };
 		2ABBD3932BC67A8D004B6068 /* ImageLargeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3922BC67A8D004B6068 /* ImageLargeViewTests.swift */; };
 		2ABBD3952BC67AB7004B6068 /* ImageLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3942BC67AB7004B6068 /* ImageLargeView.swift */; };
+		2ABBD3972BC6B8CB004B6068 /* TitleLargeLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3962BC6B8CB004B6068 /* TitleLargeLabelTests.swift */; };
+		2ABBD3992BC6B94D004B6068 /* TitleLargeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3982BC6B94D004B6068 /* TitleLargeLabel.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -181,6 +183,8 @@
 		2ABBD3862BC672F2004B6068 /* MainScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScrollView.swift; sourceTree = "<group>"; };
 		2ABBD3922BC67A8D004B6068 /* ImageLargeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLargeViewTests.swift; sourceTree = "<group>"; };
 		2ABBD3942BC67AB7004B6068 /* ImageLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLargeView.swift; sourceTree = "<group>"; };
+		2ABBD3962BC6B8CB004B6068 /* TitleLargeLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLargeLabelTests.swift; sourceTree = "<group>"; };
+		2ABBD3982BC6B94D004B6068 /* TitleLargeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLargeLabel.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 			children = (
 				2A64B6ED2BC3D94700BE267D /* CategorySmallLabelTests.swift */,
 				2A64B6F82BC3E36F00BE267D /* PriceSmallLabelTests.swift */,
+				2ABBD3962BC6B8CB004B6068 /* TitleLargeLabelTests.swift */,
 				2A64B7002BC3E70800BE267D /* TitleSmallLabelTests.swift */,
 			);
 			path = Labels;
@@ -347,6 +352,7 @@
 			children = (
 				2A64B6F02BC3D9C500BE267D /* CategorySmallLabel.swift */,
 				2A64B6FA2BC3E3B500BE267D /* PriceSmallLabel.swift */,
+				2ABBD3982BC6B94D004B6068 /* TitleLargeLabel.swift */,
 				2A64B7022BC3E72C00BE267D /* TitleSmallLabel.swift */,
 			);
 			path = Labels;
@@ -958,6 +964,7 @@
 				2AF5F85F2BBFEC4500479E54 /* URLSessionProtocol.swift in Sources */,
 				2ABBD37E2BC57B17004B6068 /* ShopDetailsViewModel.swift in Sources */,
 				2A64B6F12BC3D9C500BE267D /* CategorySmallLabel.swift in Sources */,
+				2ABBD3992BC6B94D004B6068 /* TitleLargeLabel.swift in Sources */,
 				2A64B7092BC3E9B100BE267D /* UrgentSmallIcon.swift in Sources */,
 				2A64B6CF2BC2CCB200BE267D /* FileManagerProtocol.swift in Sources */,
 				2A64B6FF2BC3E5CC00BE267D /* RedactedView.swift in Sources */,
@@ -1049,6 +1056,7 @@
 				2AF5F84C2BBFE27200479E54 /* ServerServiceTests.swift in Sources */,
 				2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */,
 				2AB92DC02BC544B200DB1DCA /* ShopDetailsViewControllerTests.swift in Sources */,
+				2ABBD3972BC6B8CB004B6068 /* TitleLargeLabelTests.swift in Sources */,
 				2A64B7012BC3E70800BE267D /* TitleSmallLabelTests.swift in Sources */,
 				2AB92DAC2BC408C000DB1DCA /* FilterCategoryNavButtonTests.swift in Sources */,
 			);

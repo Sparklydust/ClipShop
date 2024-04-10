@@ -14,6 +14,45 @@ final class ShopDetailsViewController: UIViewController {
   private(set) var imageLargeView = ImageLargeView(frame: .zero)
   private(set) var redactedView = RedactedView()
   private(set) var scrollView = MainScrollView()
+  private(set) var titleLargeLabel = TitleLargeLabel()
+
+  private(set) var descriptionLabel: UILabel = {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.numberOfLines = .zero
+    label.font = .preferredFont(forTextStyle: .body)
+    return label
+  }()
+
+  private(set) var siretLabel: UILabel = {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.numberOfLines = .zero
+    label.font = .preferredFont(forTextStyle: .body)
+    return label
+  }()
+
+  private(set) var priceLabel: UILabel = {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.numberOfLines = .zero
+    label.font = .preferredFont(forTextStyle: .body)
+    return label
+  }()
+
+  private(set) var dateLabel: UILabel = {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.numberOfLines = .zero
+    label.font = .preferredFont(forTextStyle: .body)
+    return label
+  }()
+
+  private(set) var iconView: UIImageView = {
+    let icon = UIImageView()
+    icon.translatesAutoresizingMaskIntoConstraints = false
+    return icon
+  }()
 
   // MARK: - Models
   private var viewModel: ShopDetailsViewModel
