@@ -183,6 +183,8 @@ extension ShopListViewController {
 
   private func setupViewController() {
     view.backgroundColor = .systemBackground
+    navigationController?.navigationBar.prefersLargeTitles = true
+    title = "Boutique"
     setupDelegates()
     setupNavigationBar()
     collectionViewConstraints()
