@@ -72,6 +72,8 @@
 		2ABBD3992BC6B94D004B6068 /* TitleLargeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3982BC6B94D004B6068 /* TitleLargeLabel.swift */; };
 		2ABBD39B2BC6B9DD004B6068 /* DescriptionLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD39A2BC6B9DD004B6068 /* DescriptionLabelTests.swift */; };
 		2ABBD39D2BC6BA66004B6068 /* DescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD39C2BC6BA66004B6068 /* DescriptionLabel.swift */; };
+		2ABBD39F2BC6BC0F004B6068 /* SiretLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD39E2BC6BC0F004B6068 /* SiretLabelTests.swift */; };
+		2ABBD3A12BC6BC57004B6068 /* SiretLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3A02BC6BC57004B6068 /* SiretLabel.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -189,6 +191,8 @@
 		2ABBD3982BC6B94D004B6068 /* TitleLargeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLargeLabel.swift; sourceTree = "<group>"; };
 		2ABBD39A2BC6B9DD004B6068 /* DescriptionLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionLabelTests.swift; sourceTree = "<group>"; };
 		2ABBD39C2BC6BA66004B6068 /* DescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionLabel.swift; sourceTree = "<group>"; };
+		2ABBD39E2BC6BC0F004B6068 /* SiretLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiretLabelTests.swift; sourceTree = "<group>"; };
+		2ABBD3A02BC6BC57004B6068 /* SiretLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiretLabel.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 				2A64B6ED2BC3D94700BE267D /* CategorySmallLabelTests.swift */,
 				2ABBD39A2BC6B9DD004B6068 /* DescriptionLabelTests.swift */,
 				2A64B6F82BC3E36F00BE267D /* PriceSmallLabelTests.swift */,
+				2ABBD39E2BC6BC0F004B6068 /* SiretLabelTests.swift */,
 				2ABBD3962BC6B8CB004B6068 /* TitleLargeLabelTests.swift */,
 				2A64B7002BC3E70800BE267D /* TitleSmallLabelTests.swift */,
 			);
@@ -358,6 +363,7 @@
 				2A64B6F02BC3D9C500BE267D /* CategorySmallLabel.swift */,
 				2ABBD39C2BC6BA66004B6068 /* DescriptionLabel.swift */,
 				2A64B6FA2BC3E3B500BE267D /* PriceSmallLabel.swift */,
+				2ABBD3A02BC6BC57004B6068 /* SiretLabel.swift */,
 				2ABBD3982BC6B94D004B6068 /* TitleLargeLabel.swift */,
 				2A64B7022BC3E72C00BE267D /* TitleSmallLabel.swift */,
 			);
@@ -967,6 +973,7 @@
 			files = (
 				2AB92DB32BC4213300DB1DCA /* CategoryModel.swift in Sources */,
 				2A64B6E72BC2FA6B00BE267D /* UIFont+StyleWeight.swift in Sources */,
+				2ABBD3A12BC6BC57004B6068 /* SiretLabel.swift in Sources */,
 				2AF5F85F2BBFEC4500479E54 /* URLSessionProtocol.swift in Sources */,
 				2ABBD37E2BC57B17004B6068 /* ShopDetailsViewModel.swift in Sources */,
 				2A64B6F12BC3D9C500BE267D /* CategorySmallLabel.swift in Sources */,
@@ -1034,6 +1041,7 @@
 				2A64B6D72BC2DB0D00BE267D /* ImageCacheMock.swift in Sources */,
 				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
 				2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */,
+				2ABBD39F2BC6BC0F004B6068 /* SiretLabelTests.swift in Sources */,
 				2AB92DA62BC3F92100DB1DCA /* ShopListCollectionViewTests.swift in Sources */,
 				2A64B6CB2BC2AD7A00BE267D /* ImageCacheServiceTests.swift in Sources */,
 				2AB92DC72BC5486500DB1DCA /* NavigationControllerMock.swift in Sources */,
