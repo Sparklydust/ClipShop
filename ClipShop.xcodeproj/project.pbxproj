@@ -78,6 +78,8 @@
 		2ABBD3A52BC6BD65004B6068 /* PriceLargeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3A42BC6BD65004B6068 /* PriceLargeLabel.swift */; };
 		2ABBD3AB2BC6BFE4004B6068 /* DateLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3AA2BC6BFE4004B6068 /* DateLabelTests.swift */; };
 		2ABBD3AD2BC6C021004B6068 /* DateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3AC2BC6C021004B6068 /* DateLabel.swift */; };
+		2ABBD3AF2BC6C29D004B6068 /* ComponentSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3AE2BC6C29D004B6068 /* ComponentSizeTests.swift */; };
+		2ABBD3B12BC6C2AD004B6068 /* ComponentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3B02BC6C2AD004B6068 /* ComponentSize.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -201,6 +203,8 @@
 		2ABBD3A42BC6BD65004B6068 /* PriceLargeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLargeLabel.swift; sourceTree = "<group>"; };
 		2ABBD3AA2BC6BFE4004B6068 /* DateLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabelTests.swift; sourceTree = "<group>"; };
 		2ABBD3AC2BC6C021004B6068 /* DateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabel.swift; sourceTree = "<group>"; };
+		2ABBD3AE2BC6C29D004B6068 /* ComponentSizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentSizeTests.swift; sourceTree = "<group>"; };
+		2ABBD3B02BC6C2AD004B6068 /* ComponentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentSize.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -689,6 +693,7 @@
 		2AF5F8302BBF06D900479E54 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				2ABBD3AE2BC6C29D004B6068 /* ComponentSizeTests.swift */,
 				2A64B6E22BC2E44800BE267D /* ImageCacheErrorTests.swift */,
 				2AF5F8312BBF077200479E54 /* ServerEndpointTests.swift */,
 				2AF5F8542BBFE93200479E54 /* ServerErrorTests.swift */,
@@ -712,6 +717,7 @@
 				2A64B6E42BC2E48300BE267D /* ImageCacheError.swift */,
 				2AF5F8352BBF07FE00479E54 /* ServerEndpoint.swift */,
 				2AF5F8562BBFE9E400479E54 /* ServerError.swift */,
+				2ABBD3B02BC6C2AD004B6068 /* ComponentSize.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1026,6 +1032,7 @@
 				2A64B6CF2BC2CCB200BE267D /* FileManagerProtocol.swift in Sources */,
 				2A64B6FF2BC3E5CC00BE267D /* RedactedView.swift in Sources */,
 				2AF5F83C2BBF20BB00479E54 /* PaperclipData.swift in Sources */,
+				2ABBD3B12BC6C2AD004B6068 /* ComponentSize.swift in Sources */,
 				2AF5F82E2BBEE94700479E54 /* ShopListViewModel.swift in Sources */,
 				2ABBD3952BC67AB7004B6068 /* ImageLargeView.swift in Sources */,
 				2AB92DA82BC3F95B00DB1DCA /* ShopListCollectionView.swift in Sources */,
@@ -1084,6 +1091,7 @@
 				2ABBD3842BC672B4004B6068 /* MainScrollViewTests.swift in Sources */,
 				2AB92DD32BC5536000DB1DCA /* CoordinatorMock.swift in Sources */,
 				2A64B6E12BC2DFD400BE267D /* String+FileNameTests.swift in Sources */,
+				2ABBD3AF2BC6C29D004B6068 /* ComponentSizeTests.swift in Sources */,
 				2A64B6D72BC2DB0D00BE267D /* ImageCacheMock.swift in Sources */,
 				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
 				2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */,
