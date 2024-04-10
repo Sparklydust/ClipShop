@@ -15,7 +15,35 @@ final class ShopDetailsViewModelTests: BaseXCTestCase {
   }
 
   override func tearDown() async throws {
-    sut = .none
+    sut = nil
     try await super.tearDown()
+  }
+
+  func testInitialization_itemImage_isEqualToUIImageNil() {
+    let expected: UIImage? = .none
+
+    let result = sut.itemImage
+
+    XCTAssertEqual(result, expected, "`itemImage` value must be equal to `\(String(describing: expected))` when initialized.")
+  }
+
+  func testServerService_isSuccessfulWhenLoadingThumbImage_iItemImageValueIsNotNil() async throws {
+    serverMock = try serverMock(data: .imageData)
+    sut = ShopDetailsViewModel(server: serverMock)
+
+    await sut.loadImage(for: .fake())
+    let result = sut.itemImage
+
+    XCTAssertNotNil(result, "`loadImage(urlString:)` must return an UIImage on a successful request.")
+  }
+
+  func testServerService_isNotSuccessfulWhenLoadingImage_itemImageValueIsNil() async throws {
+    serverMock = try serverMock(data: .errorData)
+    sut = ShopDetailsViewModel(server: serverMock)
+
+    await sut.loadImage(for: .fake(with: (.fake(imageURLs: .fake(thumb: .none)), [])))
+    let result = sut.itemImage
+
+    XCTAssertNil(result, "No UIImage must be returned on a request failure.")
   }
 }

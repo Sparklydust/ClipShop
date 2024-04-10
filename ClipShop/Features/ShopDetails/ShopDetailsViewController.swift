@@ -29,6 +29,7 @@ final class ShopDetailsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupViewController()
+    Task { await viewModel.loadImage(for: paperclip) }
   }
 }
 
