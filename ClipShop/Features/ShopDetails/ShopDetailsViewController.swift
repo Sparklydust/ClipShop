@@ -7,6 +7,8 @@ import UIKit
 /// The view that populates details of a paperclip that can be purchased by users.
 final class ShopDetailsViewController: UIViewController {
 
+  private(set) var scrollView = MainScrollView()
+
   // MARK: - Models
   private var viewModel: ShopDetailsViewModel
   private var paperclip: PaperclipModel
@@ -37,5 +39,17 @@ extension ShopDetailsViewController {
   private func setupViewController() {
     view.backgroundColor = .systemBackground
     title = paperclip.category.name
+
+    view.addSubview(scrollView)
+
+    scrollViewConstraints()
+  }
+
+  private func scrollViewConstraints() {
+    let layoutMargins = view.layoutMarginsGuide
+    scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    scrollView.topAnchor.constraint(equalTo: layoutMargins.topAnchor).isActive = true
+    scrollView.bottomAnchor.constraint(equalTo: layoutMargins.bottomAnchor).isActive = true
   }
 }
