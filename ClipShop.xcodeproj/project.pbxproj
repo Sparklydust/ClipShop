@@ -66,6 +66,10 @@
 		2ABBD37E2BC57B17004B6068 /* ShopDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD37D2BC57B17004B6068 /* ShopDetailsViewModel.swift */; };
 		2ABBD3842BC672B4004B6068 /* MainScrollViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3832BC672B4004B6068 /* MainScrollViewTests.swift */; };
 		2ABBD3872BC672F2004B6068 /* MainScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3862BC672F2004B6068 /* MainScrollView.swift */; };
+		2ABBD38B2BC6779D004B6068 /* VStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD38A2BC6779D004B6068 /* VStackViewTests.swift */; };
+		2ABBD38D2BC677CA004B6068 /* HStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD38C2BC677CA004B6068 /* HStackViewTests.swift */; };
+		2ABBD38F2BC67841004B6068 /* VStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD38E2BC67841004B6068 /* VStackView.swift */; };
+		2ABBD3912BC67914004B6068 /* HStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3902BC67914004B6068 /* HStackView.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -177,6 +181,10 @@
 		2ABBD37D2BC57B17004B6068 /* ShopDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsViewModel.swift; sourceTree = "<group>"; };
 		2ABBD3832BC672B4004B6068 /* MainScrollViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScrollViewTests.swift; sourceTree = "<group>"; };
 		2ABBD3862BC672F2004B6068 /* MainScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScrollView.swift; sourceTree = "<group>"; };
+		2ABBD38A2BC6779D004B6068 /* VStackViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VStackViewTests.swift; sourceTree = "<group>"; };
+		2ABBD38C2BC677CA004B6068 /* HStackViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackViewTests.swift; sourceTree = "<group>"; };
+		2ABBD38E2BC67841004B6068 /* VStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VStackView.swift; sourceTree = "<group>"; };
+		2ABBD3902BC67914004B6068 /* HStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackView.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -316,6 +324,7 @@
 				2AB92DA32BC3F8D200DB1DCA /* Lists */,
 				2AB92D9D2BC3F5D100DB1DCA /* Progress */,
 				2ABBD3822BC67289004B6068 /* ScrollViews */,
+				2ABBD3892BC67785004B6068 /* Stacks */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -504,6 +513,24 @@
 				2ABBD3862BC672F2004B6068 /* MainScrollView.swift */,
 			);
 			path = ScrollViews;
+			sourceTree = "<group>";
+		};
+		2ABBD3882BC6771A004B6068 /* Stacks */ = {
+			isa = PBXGroup;
+			children = (
+				2ABBD3902BC67914004B6068 /* HStackView.swift */,
+				2ABBD38E2BC67841004B6068 /* VStackView.swift */,
+			);
+			path = Stacks;
+			sourceTree = "<group>";
+		};
+		2ABBD3892BC67785004B6068 /* Stacks */ = {
+			isa = PBXGroup;
+			children = (
+				2ABBD38C2BC677CA004B6068 /* HStackViewTests.swift */,
+				2ABBD38A2BC6779D004B6068 /* VStackViewTests.swift */,
+			);
+			path = Stacks;
 			sourceTree = "<group>";
 		};
 		2AF5F80E2BBE90B000479E54 /* Base */ = {
@@ -831,6 +858,7 @@
 				2AB92DA42BC3F8DF00DB1DCA /* Lists */,
 				2AB92D9E2BC3F5E200DB1DCA /* Progress */,
 				2ABBD3852BC672D9004B6068 /* ScrollViews */,
+				2ABBD3882BC6771A004B6068 /* Stacks */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -975,6 +1003,7 @@
 				2A64B6FB2BC3E3B500BE267D /* PriceSmallLabel.swift in Sources */,
 				2A64B6D52BC2D97C00BE267D /* ImageCacheProtocol.swift in Sources */,
 				2AF5F84F2BBFE32700479E54 /* ServerService.swift in Sources */,
+				2ABBD3912BC67914004B6068 /* HStackView.swift in Sources */,
 				2AF5F87D2BC07FC000479E54 /* PaperclipModel.swift in Sources */,
 				2AB92DD12BC550C500DB1DCA /* Coordinator.swift in Sources */,
 				2AF5F8442BBF71DE00479E54 /* CategoryData.swift in Sources */,
@@ -982,6 +1011,7 @@
 				2AFC0B5F2BC0C0EA0057BB66 /* PaperclipCell.swift in Sources */,
 				2A64B6E52BC2E48300BE267D /* ImageCacheError.swift in Sources */,
 				2AF5F82A2BBED35100479E54 /* ShopListViewController.swift in Sources */,
+				2ABBD38F2BC67841004B6068 /* VStackView.swift in Sources */,
 				2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */,
 				2ABBD3872BC672F2004B6068 /* MainScrollView.swift in Sources */,
 				2AF5F8572BBFE9E400479E54 /* ServerError.swift in Sources */,
@@ -1012,6 +1042,7 @@
 				2A64B6E12BC2DFD400BE267D /* String+FileNameTests.swift in Sources */,
 				2A64B6D72BC2DB0D00BE267D /* ImageCacheMock.swift in Sources */,
 				2AF5F8552BBFE93200479E54 /* ServerErrorTests.swift in Sources */,
+				2ABBD38D2BC677CA004B6068 /* HStackViewTests.swift in Sources */,
 				2AF5F85A2BBFEB0B00479E54 /* ServerDummy.swift in Sources */,
 				2AB92DA62BC3F92100DB1DCA /* ShopListCollectionViewTests.swift in Sources */,
 				2A64B6CB2BC2AD7A00BE267D /* ImageCacheServiceTests.swift in Sources */,
@@ -1023,6 +1054,7 @@
 				2A64B6EE2BC3D94700BE267D /* CategorySmallLabelTests.swift in Sources */,
 				2A64B6F42BC3DF8E00BE267D /* ImageSmallViewTests.swift in Sources */,
 				2AF5F8642BC00BD500479E54 /* XCTestCase+ServerMock.swift in Sources */,
+				2ABBD38B2BC6779D004B6068 /* VStackViewTests.swift in Sources */,
 				2AF5F8702BC0102400479E54 /* XCTestCase+JsonParser.swift in Sources */,
 				2AF5F85D2BBFEB8200479E54 /* ServerMock.swift in Sources */,
 				2AB92DD52BC554C100DB1DCA /* CoordinatorDummy.swift in Sources */,
