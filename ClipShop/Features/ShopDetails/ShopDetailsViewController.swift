@@ -11,18 +11,11 @@ final class ShopDetailsViewController: UIViewController {
   var cancellables = Set<AnyCancellable>()
   private let isRegular = UIDevice.current.userInterfaceIdiom == .pad
 
+  private(set) var descriptionLabel = DescriptionLabel()
   private(set) var imageLargeView = ImageLargeView(frame: .zero)
   private(set) var redactedView = RedactedView()
   private(set) var scrollView = MainScrollView()
   private(set) var titleLargeLabel = TitleLargeLabel()
-
-  private(set) var descriptionLabel: UILabel = {
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.numberOfLines = .zero
-    label.font = .preferredFont(forTextStyle: .body)
-    return label
-  }()
 
   private(set) var siretLabel: UILabel = {
     let label = UILabel()

@@ -5,13 +5,13 @@
 import XCTest
 @testable import ClipShop
 
-final class TitleLargeLabelTests: XCTestCase {
+final class DescriptionLabelTests: XCTestCase {
 
-  var sut: TitleLargeLabel!
+  var sut: DescriptionLabel!
 
   override func setUp() async throws {
     try await super.setUp()
-    sut = await TitleLargeLabel(frame: .zero)
+    sut = await DescriptionLabel(frame: .zero)
   }
 
   override func tearDown() async throws {
@@ -27,10 +27,8 @@ final class TitleLargeLabelTests: XCTestCase {
     XCTAssertEqual(result, expected, "`textAlignment` must be equal to `\(expected)` when initialized.")
   }
 
-  func testInitialization_font_isEqualToLargeTitleForRegularElseTitle1() {
-    let expected: UIFont = UIDevice.current.userInterfaceIdiom == .pad
-    ? .preferredFont(forTextStyle: .largeTitle)
-    : .preferredFont(forTextStyle: .title1)
+  func testInitialization_font_isEqualToBody() {
+    let expected: UIFont = .preferredFont(forTextStyle: .body)
 
     let result = sut.font
 
