@@ -33,7 +33,7 @@ final class PaperclipCellTests: XCTestCase {
     fake.image = expected
     sut.configure(with: fake)
 
-    let result = sut.imageSmallView.image
+    let result = sut.imageView.image
 
     XCTAssertEqual(result, expected, "cell image must be equal to `\(expected)` when configured with model image.")
   }

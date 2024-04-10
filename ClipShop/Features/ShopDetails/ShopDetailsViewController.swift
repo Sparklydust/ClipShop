@@ -13,18 +13,13 @@ final class ShopDetailsViewController: UIViewController {
 
   private(set) var dateLabel = DateLabel()
   private(set) var descriptionLabel = DescriptionLabel()
-  private(set) var imageLargeView = ImageLargeView(frame: .zero)
+  private(set) var imageView = ImageView(size: .large)
   private(set) var redactedView = RedactedView()
   private(set) var scrollView = MainScrollView()
   private(set) var priceLabel = PriceLabel(size: .large)
   private(set) var siretLabel = SiretLabel()
   private(set) var titleLabel = TitleLabel(size: .large)
-
-  private(set) var iconView: UIImageView = {
-    let icon = UIImageView()
-    icon.translatesAutoresizingMaskIntoConstraints = false
-    return icon
-  }()
+  private(set) var iconView = UrgentIcon(frame: .zero)
 
   // MARK: - Models
   private var viewModel: ShopDetailsViewModel
@@ -69,8 +64,8 @@ extension ShopDetailsViewController {
   /// Define the image to be populated on the view.
   /// - Parameter image: The image to be shown if any else, `redactedView` is presented.
   func imageConfiguration(with image: UIImage?) {
-    imageLargeView.image = image
-    imageLargeView.isHidden = image == .none
+    imageView.image = image
+    imageView.isHidden = image == .none
     redactedView.isHidden = image != .none
     redactedView.layer.cornerRadius = .zero
   }
@@ -90,13 +85,13 @@ extension ShopDetailsViewController {
 
   private func addSubviews() {
     view.addSubview(scrollView)
-    scrollView.addSubview(imageLargeView)
+    scrollView.addSubview(imageView)
     scrollView.addSubview(redactedView)
   }
 
   private func activateConstraints() {
     scrollViewConstraints()
-    imageLargeViewConstraints()
+    imageViewConstraints()
     redactedViewConstraints()
   }
 
@@ -110,24 +105,24 @@ extension ShopDetailsViewController {
     ])
   }
 
-  private func imageLargeViewConstraints() {
+  private func imageViewConstraints() {
     NSLayoutConstraint.activate([
-      imageLargeView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
-      imageLargeView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
-      imageLargeView.trailingAnchor.constraint(lessThanOrEqualTo: scrollView.contentLayoutGuide.trailingAnchor),
-      imageLargeView.widthAnchor.constraint(
+      imageView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+      imageView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+      imageView.trailingAnchor.constraint(lessThanOrEqualTo: scrollView.contentLayoutGuide.trailingAnchor),
+      imageView.widthAnchor.constraint(
         equalTo: scrollView.frameLayoutGuide.widthAnchor, multiplier: isRegular ? 0.33 : 1
       ),
-      imageLargeView.heightAnchor.constraint(equalToConstant: isRegular ? 400 : 320),
+      imageView.heightAnchor.constraint(equalToConstant: isRegular ? 400 : 320),
     ])
   }
 
   private func redactedViewConstraints() {
     NSLayoutConstraint.activate([
-      redactedView.topAnchor.constraint(equalTo: imageLargeView.topAnchor),
-      redactedView.leadingAnchor.constraint(equalTo: imageLargeView.leadingAnchor),
-      redactedView.widthAnchor.constraint(equalTo: imageLargeView.widthAnchor),
-      redactedView.heightAnchor.constraint(equalTo: imageLargeView.heightAnchor)
+      redactedView.topAnchor.constraint(equalTo: imageView.topAnchor),
+      redactedView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
+      redactedView.widthAnchor.constraint(equalTo: imageView.widthAnchor),
+      redactedView.heightAnchor.constraint(equalTo: imageView.heightAnchor)
     ])
   }
 }

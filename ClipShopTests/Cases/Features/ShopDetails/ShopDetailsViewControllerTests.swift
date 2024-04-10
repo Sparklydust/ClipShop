@@ -45,29 +45,29 @@ final class ShopDetailsViewControllerTests: BaseXCTestCase {
     XCTAssertEqual(result, expected, "View `title` must be equal to `\(expected)`.")
   }
 
-  func testPipelines_viewModelItemImageIsNotNil_imageLargeViewImageIsNotNil() {
+  func testPipelines_viewModelItemImageIsNotNil_imageViewImageIsNotNil() {
     let expectation = expectation(description: "Going through the viewModel.$itemImage pipeline.")
     viewModelFake.itemImage = UIImage(systemName: "gear")
 
     viewModelFake.$itemImage.sink { _ in
-      let result = self.sut.imageLargeView.image
+      let result = self.sut.imageView.image
 
       expectation.fulfill()
-      XCTAssertNotNil(result, "`imageLargeView.image` must not be nil when view model load an `itemImage`.")
+      XCTAssertNotNil(result, "`imageView.image` must not be nil when view model load an `itemImage`.")
     }
     .store(in: &cancellables)
     waitForExpectations(timeout: 1)
   }
 
-  func testPipelines_viewModelItemImageIsNil_imageLargeViewImageIsNil() {
+  func testPipelines_viewModelItemImageIsNil_imageViewImageIsNil() {
     let expectation = expectation(description: "Going through the viewModel.$itemImage pipeline.")
     viewModelFake.itemImage = .none
 
     viewModelFake.$itemImage.sink { _ in
-      let result = self.sut.imageLargeView.image
+      let result = self.sut.imageView.image
 
       expectation.fulfill()
-      XCTAssertNil(result, "`imageLargeView.image` must be nil when view model did not load an `itemImage`.")
+      XCTAssertNil(result, "`imageView.image` must be nil when view model did not load an `itemImage`.")
     }
     .store(in: &cancellables)
     wait(for: [expectation], timeout: 1)
