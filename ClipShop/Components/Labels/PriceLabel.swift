@@ -4,8 +4,8 @@
 
 import UIKit
 
-/// Small title label to be presented on cells to showcase an item title.
-final class TitleLabel: UILabel {
+/// Price label to be presented on cells to showcase an item price.
+final class PriceLabel: UILabel {
 
   private let isRegular = UIDevice.current.userInterfaceIdiom == .pad
 
@@ -25,8 +25,6 @@ final class TitleLabel: UILabel {
   private func setupLabel() {
     translatesAutoresizingMaskIntoConstraints = false
     textAlignment = .left
-    numberOfLines = size == .small ? 3 : .zero
-    allowsDefaultTighteningForTruncation = true
     setupFont()
   }
 
@@ -34,12 +32,12 @@ final class TitleLabel: UILabel {
     switch size {
     case .small:
       font = isRegular
-      ? .preferredFont(forTextStyle: .title3, weight: .semibold)
-      : .preferredFont(forTextStyle: .callout, weight: .medium)
+      ? .preferredFont(forTextStyle: .headline)
+      : .preferredFont(forTextStyle: .subheadline, weight: .medium)
     case .large:
       font = isRegular
-      ? .preferredFont(forTextStyle: .largeTitle)
-      : .preferredFont(forTextStyle: .title1)
+      ? .preferredFont(forTextStyle: .title3)
+      : .preferredFont(forTextStyle: .headline)
     }
   }
 }

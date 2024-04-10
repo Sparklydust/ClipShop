@@ -47,13 +47,13 @@ final class PaperclipCellTests: XCTestCase {
     XCTAssertEqual(result, expected, "`titleLabel.text` must be equal to `\(expected)` when configured with model.")
   }
 
-  func testConfigurations_priceSmallLabelTextConfiguredWithPaperclipModel_priceIsEqualToModelPrice() {
+  func testConfigurations_priceLabelTextConfiguredWithPaperclipModel_priceIsEqualToModelPrice() {
     sut.configure(with: .fake())
     let expected = "\(PaperclipModel.fake().price)€"
 
-    let result = sut.priceSmallLabel.text
+    let result = sut.priceLabel.text
 
-    XCTAssertEqual(result, expected, "`priceSmallLabel.text` must be equal to `\(expected)` when configured with model.")
+    XCTAssertEqual(result, expected, "`priceLabel.text` must be equal to `\(expected)` when configured with model.")
   }
 
   func testConfigurations_categorySmallLabelTextConfiguredWithPaperclipModel_categoryIsEqualToModelCategory() {
