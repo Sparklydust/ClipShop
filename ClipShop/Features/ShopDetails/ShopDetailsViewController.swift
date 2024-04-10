@@ -2,11 +2,16 @@
 // Copyright © 2024 and confidential to ClipShop. All rights reserved.
 //
 
+import Combine
 import UIKit
 
 /// The view that populates details of a paperclip that can be purchased by users.
 final class ShopDetailsViewController: UIViewController {
 
+  var cancellables = Set<AnyCancellable>()
+
+  private(set) var imageLargeView = ImageLargeView(frame: .zero)
+  private(set) var redactedView = RedactedView()
   private(set) var scrollView = MainScrollView()
 
   // MARK: - Models
@@ -29,7 +34,32 @@ final class ShopDetailsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupViewController()
+    observeViewModelPipelines()
     Task { await viewModel.loadImage(for: paperclip) }
+  }
+}
+
+// MARK: - Pipelines
+extension ShopDetailsViewController {
+
+  /// Listening to Combine pipelines from the `viewModel` observing its changes to update `view`.
+  /// - Info: Reactive programming, making the UI responsive and dynamic.
+  @MainActor private func observeViewModelPipelines() {
+    viewModel.$itemImage
+      .sink { [weak self] image in self?.imageConfiguration(with: image) }
+      .store(in: &cancellables)
+  }
+}
+
+// MARK: - Configurations
+extension ShopDetailsViewController {
+
+  /// Define the image to be populated on the view.
+  /// - Parameter image: The image to be shown if any else, `redactedView` is presented.
+  func imageConfiguration(with image: UIImage?) {
+    imageLargeView.image = image
+    imageLargeView.isHidden = image == .none
+    redactedView.isHidden = image != .none
   }
 }
 

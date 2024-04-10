@@ -72,7 +72,7 @@ final class ShopListViewControllerTests: BaseXCTestCase {
       XCTAssertTrue(result, "`progressView` must be animating when view model is loading data.")
     }
     .store(in: &cancellables)
-    wait(for: [expectation], timeout: 1)
+    waitForExpectations(timeout: 1)
   }
 
   func testPipelines_viewModelIsNotLoadingData_progressViewIsNotAnimating() {
@@ -86,7 +86,7 @@ final class ShopListViewControllerTests: BaseXCTestCase {
       XCTAssertFalse(result, "`progressView` must be not be animating when view model is not loading data.")
     }
     .store(in: &cancellables)
-    wait(for: [expectation], timeout: 1)
+    waitForExpectations(timeout: 1)
   }
 
   func testPipelines_viewModelTriggerShowError_errorAlertViewIsPresented() {
@@ -100,7 +100,7 @@ final class ShopListViewControllerTests: BaseXCTestCase {
       XCTAssertFalse(result, "`errorAlertView` must be not be hidden when view model trigger error from request.")
     }
     .store(in: &cancellables)
-    wait(for: [expectation], timeout: 1)
+    waitForExpectations(timeout: 1)
   }
 
   func testPipelines_viewModelDoesNotTriggerShowError_errorAlertViewIsNotPresented() {
@@ -114,7 +114,7 @@ final class ShopListViewControllerTests: BaseXCTestCase {
       XCTAssertTrue(result, "`errorAlertView` must be be hidden when view model trigger error from request.")
     }
     .store(in: &cancellables)
-    wait(for: [expectation], timeout: 1)
+    waitForExpectations(timeout: 1)
   }
 
   func testPipelines_viewModelSendPaperclipsItems_paperclipsIsNotEmpty() {
@@ -130,7 +130,7 @@ final class ShopListViewControllerTests: BaseXCTestCase {
       XCTAssertEqual(result, expected, "sut must have `\(expected)` paperclips items to be shown on view.")
     }
     .store(in: &cancellables)
-    wait(for: [expectation], timeout: 1)
+    waitForExpectations(timeout: 1)
   }
 
   func testPipelines_viewModelSend3PaperclipsItemsWith2Categories_paperclipsHas2LeftItemsFollowingFilterredByCategoryButtonSelectedItem() {
@@ -151,7 +151,7 @@ final class ShopListViewControllerTests: BaseXCTestCase {
       XCTAssertEqual(result, expected, "sut must have `\(expected)` paperclips items to be shown on view.")
     }
     .store(in: &cancellables)
-    wait(for: [expectation], timeout: 1)
+    waitForExpectations(timeout: 1)
   }
 
   func testPipelines_viewModelSendCategoriesCategories_filterCategoryButtonCategoriesValueIsNotEmpty() {
@@ -167,6 +167,6 @@ final class ShopListViewControllerTests: BaseXCTestCase {
       XCTAssertEqual(result, expected, "`filterCategoryButton` must have `\(expected)` categories items to be shown on its menu.")
     }
     .store(in: &cancellables)
-    wait(for: [expectation], timeout: 1)
+    waitForExpectations(timeout: 1)
   }
 }
