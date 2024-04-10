@@ -45,6 +45,46 @@ final class ShopDetailsViewControllerTests: BaseXCTestCase {
     XCTAssertEqual(result, expected, "View `title` must be equal to `\(expected)`.")
   }
 
+  func testConfigurations_dateLabel_isEqualToPaperclipModelDatePassedInParameter() {
+    let expected = PaperclipModel.fake().creationDate.toString()
+
+    let result = sut.dateLabel.text
+
+    XCTAssertEqual(result, expected, "`dateLabel.text` must be equal to `\(expected)` when configured.")
+  }
+
+  func testConfigurations_descriptionLabel_isEqualToPaperclipModelValuePassedInParameter() {
+    let expected = PaperclipModel.fake().description
+
+    let result = sut.descriptionLabel.text
+
+    XCTAssertEqual(result, expected, "`descriptionLabel.text` must be equal to `\(expected)` when configured.")
+  }
+
+  func testConfigurations_priceLabel_isEqualToPaperclipModelValuePassedInParameter() {
+    let expected = "\(PaperclipModel.fake().price)€"
+
+    let result = sut.priceLabel.text
+
+    XCTAssertEqual(result, expected, "`priceLabel.text` must be equal to `\(expected)` when configured.")
+  }
+
+  func testConfigurations_siretLabel_isEqualToPaperclipModelValuePassedInParameter() {
+    let expected = PaperclipModel.fake().siret
+
+    let result = sut.siretLabel.text
+
+    XCTAssertEqual(result, expected, "`siretLabel.text` must be equal to `\(expected)` when configured.")
+  }
+
+  func testConfigurations_titleLabel_isEqualToPaperclipModelValuePassedInParameter() {
+    let expected = PaperclipModel.fake().title
+
+    let result = sut.titleLabel.text
+
+    XCTAssertEqual(result, expected, "`titleLabel.text` must be equal to `\(expected)` when configured.")
+  }
+
   func testPipelines_viewModelItemImageIsNotNil_imageViewImageIsNotNil() {
     let expectation = expectation(description: "Going through the viewModel.$itemImage pipeline.")
     viewModelFake.itemImage = UIImage(systemName: "gear")

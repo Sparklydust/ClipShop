@@ -41,6 +41,7 @@ final class ShopDetailsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupViewController()
+    configureLabels()
     observeViewModelPipelines()
     Task { await viewModel.loadImage(for: paperclip) }
   }
@@ -63,11 +64,19 @@ extension ShopDetailsViewController {
 
   /// Define the image to be populated on the view.
   /// - Parameter image: The image to be shown if any else, `redactedView` is presented.
-  func imageConfiguration(with image: UIImage?) {
+  private func imageConfiguration(with image: UIImage?) {
     imageView.image = image
     imageView.isHidden = image == .none
     redactedView.isHidden = image != .none
     redactedView.layer.cornerRadius = .zero
+  }
+
+  @MainActor private func configureLabels() {
+    dateLabel.text = paperclip.creationDate.toString()
+    descriptionLabel.text = paperclip.description
+    priceLabel.text = "\(paperclip.price)€"
+    siretLabel.text = paperclip.siret
+    titleLabel.text = paperclip.title
   }
 }
 
