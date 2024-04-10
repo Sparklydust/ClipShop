@@ -5,13 +5,13 @@
 import XCTest
 @testable import ClipShop
 
-final class UrgentSmallIconTests: XCTestCase {
+final class UrgentIconTests: XCTestCase {
 
-  var sut: UrgentSmallIcon!
+  var sut: UrgentIcon!
 
   override func setUp() async throws {
     try await super.setUp()
-    sut = await UrgentSmallIcon(frame: .zero)
+    sut = await UrgentIcon(frame: .zero)
   }
 
   override func tearDown() async throws {

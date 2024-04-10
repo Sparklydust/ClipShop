@@ -16,7 +16,7 @@ final class PaperclipCell: UICollectionViewCell {
   private(set) var priceSmallLabel = PriceSmallLabel()
   private(set) var titleSmallLabel = TitleSmallLabel()
   private(set) var imageSmallView = ImageSmallView(frame: .zero)
-  private(set) var urgentSmallIcon = UrgentSmallIcon(frame: .zero)
+  private(set) var urgentIcon = UrgentIcon(frame: .zero)
   private(set) var redactedView = RedactedView()
 
   override init(frame: CGRect) {
@@ -40,7 +40,7 @@ extension PaperclipCell {
     titleSmallLabel.text = model.title
     priceSmallLabel.text = "\(model.price)€"
     categorySmallLabel.text = model.category.name
-    urgentSmallIcon.isHidden = !model.isUrgent
+    urgentIcon.isHidden = !model.isUrgent
   }
 
   /// Define the image to be populated on the cell.
@@ -77,7 +77,7 @@ extension PaperclipCell {
     addSubview(priceSmallLabel)
     addSubview(redactedView)
     addSubview(titleSmallLabel)
-    addSubview(urgentSmallIcon)
+    addSubview(urgentIcon)
   }
 
   private func activateConstraints() {
@@ -86,7 +86,7 @@ extension PaperclipCell {
     priceSmallLabelConstraints()
     redactedViewConstraints()
     titleSmallLabelConstraints()
-    urgentSmallIconConstraints()
+    urgentIconConstraints()
   }
 }
 
@@ -143,14 +143,14 @@ extension PaperclipCell {
     ])
   }
 
-  private func urgentSmallIconConstraints() {
+  private func urgentIconConstraints() {
     NSLayoutConstraint.activate([
-      urgentSmallIcon.trailingAnchor.constraint(
+      urgentIcon.trailingAnchor.constraint(
         equalTo: contentView.trailingAnchor, constant: isRegular ? -8 : -4
       ),
-      urgentSmallIcon.topAnchor.constraint(equalTo: topAnchor, constant: isRegular ? 8 : 4),
-      urgentSmallIcon.widthAnchor.constraint(equalToConstant: isRegular ? 32 : 24),
-      urgentSmallIcon.heightAnchor.constraint(equalToConstant: isRegular ? 32 : 24)
+      urgentIcon.topAnchor.constraint(equalTo: topAnchor, constant: isRegular ? 8 : 4),
+      urgentIcon.widthAnchor.constraint(equalToConstant: isRegular ? 32 : 24),
+      urgentIcon.heightAnchor.constraint(equalToConstant: isRegular ? 32 : 24)
     ])
   }
 }

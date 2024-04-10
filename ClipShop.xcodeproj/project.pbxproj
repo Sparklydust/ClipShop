@@ -35,8 +35,8 @@
 		2A64B6FF2BC3E5CC00BE267D /* RedactedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B6FE2BC3E5CC00BE267D /* RedactedView.swift */; };
 		2A64B7012BC3E70800BE267D /* TitleSmallLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7002BC3E70800BE267D /* TitleSmallLabelTests.swift */; };
 		2A64B7032BC3E72C00BE267D /* TitleSmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7022BC3E72C00BE267D /* TitleSmallLabel.swift */; };
-		2A64B7062BC3E93A00BE267D /* UrgentSmallIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7052BC3E93A00BE267D /* UrgentSmallIconTests.swift */; };
-		2A64B7092BC3E9B100BE267D /* UrgentSmallIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7082BC3E9B100BE267D /* UrgentSmallIcon.swift */; };
+		2A64B7062BC3E93A00BE267D /* UrgentIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7052BC3E93A00BE267D /* UrgentIconTests.swift */; };
+		2A64B7092BC3E9B100BE267D /* UrgentIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7082BC3E9B100BE267D /* UrgentIcon.swift */; };
 		2A64B7112BC3F3FE00BE267D /* UIAlertController+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64B7102BC3F3FE00BE267D /* UIAlertController+Server.swift */; };
 		2AB92DA02BC3F60500DB1DCA /* ProgressLargeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92D9F2BC3F60500DB1DCA /* ProgressLargeViewTests.swift */; };
 		2AB92DA22BC3F6A000DB1DCA /* ProgressLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB92DA12BC3F6A000DB1DCA /* ProgressLargeView.swift */; };
@@ -158,8 +158,8 @@
 		2A64B6FE2BC3E5CC00BE267D /* RedactedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactedView.swift; sourceTree = "<group>"; };
 		2A64B7002BC3E70800BE267D /* TitleSmallLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSmallLabelTests.swift; sourceTree = "<group>"; };
 		2A64B7022BC3E72C00BE267D /* TitleSmallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSmallLabel.swift; sourceTree = "<group>"; };
-		2A64B7052BC3E93A00BE267D /* UrgentSmallIconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrgentSmallIconTests.swift; sourceTree = "<group>"; };
-		2A64B7082BC3E9B100BE267D /* UrgentSmallIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrgentSmallIcon.swift; sourceTree = "<group>"; };
+		2A64B7052BC3E93A00BE267D /* UrgentIconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrgentIconTests.swift; sourceTree = "<group>"; };
+		2A64B7082BC3E9B100BE267D /* UrgentIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrgentIcon.swift; sourceTree = "<group>"; };
 		2A64B7102BC3F3FE00BE267D /* UIAlertController+Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Server.swift"; sourceTree = "<group>"; };
 		2AB92D9F2BC3F60500DB1DCA /* ProgressLargeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressLargeViewTests.swift; sourceTree = "<group>"; };
 		2AB92DA12BC3F6A000DB1DCA /* ProgressLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressLargeView.swift; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 		2A64B7042BC3E91D00BE267D /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				2A64B7052BC3E93A00BE267D /* UrgentSmallIconTests.swift */,
+				2A64B7052BC3E93A00BE267D /* UrgentIconTests.swift */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -409,7 +409,7 @@
 		2A64B7072BC3E99400BE267D /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				2A64B7082BC3E9B100BE267D /* UrgentSmallIcon.swift */,
+				2A64B7082BC3E9B100BE267D /* UrgentIcon.swift */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -1022,7 +1022,7 @@
 				2ABBD37E2BC57B17004B6068 /* ShopDetailsViewModel.swift in Sources */,
 				2A64B6F12BC3D9C500BE267D /* CategorySmallLabel.swift in Sources */,
 				2ABBD3992BC6B94D004B6068 /* TitleLargeLabel.swift in Sources */,
-				2A64B7092BC3E9B100BE267D /* UrgentSmallIcon.swift in Sources */,
+				2A64B7092BC3E9B100BE267D /* UrgentIcon.swift in Sources */,
 				2A64B6CF2BC2CCB200BE267D /* FileManagerProtocol.swift in Sources */,
 				2A64B6FF2BC3E5CC00BE267D /* RedactedView.swift in Sources */,
 				2AF5F83C2BBF20BB00479E54 /* PaperclipData.swift in Sources */,
@@ -1069,7 +1069,7 @@
 				2AF5F8612BBFF04B00479E54 /* URLSessionMock.swift in Sources */,
 				2AF5F82C2BBEE91A00479E54 /* ShopListViewModelTests.swift in Sources */,
 				2A64B6D92BC2DB1F00BE267D /* ImageCacheDummy.swift in Sources */,
-				2A64B7062BC3E93A00BE267D /* UrgentSmallIconTests.swift in Sources */,
+				2A64B7062BC3E93A00BE267D /* UrgentIconTests.swift in Sources */,
 				2AB92DC92BC5497400DB1DCA /* NavigationControllerSpy.swift in Sources */,
 				2AF5F8532BBFE7BF00479E54 /* ServerSpy.swift in Sources */,
 				2AF5F8782BC07C9700479E54 /* PaperclipModel+Fakes.swift in Sources */,
