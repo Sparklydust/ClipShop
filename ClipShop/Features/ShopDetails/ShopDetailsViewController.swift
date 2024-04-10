@@ -19,7 +19,7 @@ final class ShopDetailsViewController: UIViewController {
   private(set) var priceLabel = PriceLabel(size: .large)
   private(set) var siretLabel = SiretLabel()
   private(set) var titleLabel = TitleLabel(size: .large)
-  private(set) var iconView = UrgentIcon(frame: .zero)
+  private(set) var urgentIcon = UrgentIcon(frame: .zero)
 
   // MARK: - Models
   private var viewModel: ShopDetailsViewModel
@@ -85,14 +85,21 @@ extension ShopDetailsViewController {
 
   private func addSubviews() {
     view.addSubview(scrollView)
+    view.addSubview(urgentIcon)
     scrollView.addSubview(imageView)
     scrollView.addSubview(redactedView)
+    scrollView.addSubview(dateLabel)
+    scrollView.addSubview(descriptionLabel)
+    scrollView.addSubview(priceLabel)
+    scrollView.addSubview(siretLabel)
+    scrollView.addSubview(titleLabel)
   }
 
   private func activateConstraints() {
     scrollViewConstraints()
     imageViewConstraints()
     redactedViewConstraints()
+    urgentIconConstraints()
   }
 
   private func scrollViewConstraints() {
@@ -123,6 +130,20 @@ extension ShopDetailsViewController {
       redactedView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
       redactedView.widthAnchor.constraint(equalTo: imageView.widthAnchor),
       redactedView.heightAnchor.constraint(equalTo: imageView.heightAnchor)
+    ])
+  }
+
+  private func urgentIconConstraints() {
+    NSLayoutConstraint.activate([
+      urgentIcon.trailingAnchor.constraint(
+        equalTo: view.trailingAnchor, constant: isRegular ? -8 : -4
+      ),
+      urgentIcon.topAnchor.constraint(
+        equalTo: view.safeAreaLayoutGuide.topAnchor,
+        constant: isRegular ? .zero : 4
+      ),
+      urgentIcon.widthAnchor.constraint(equalToConstant: isRegular ? 44 : 36),
+      urgentIcon.heightAnchor.constraint(equalToConstant: isRegular ? 44 : 36)
     ])
   }
 }
