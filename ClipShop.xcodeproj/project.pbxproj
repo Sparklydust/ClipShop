@@ -70,6 +70,8 @@
 		2ABBD38D2BC677CA004B6068 /* HStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD38C2BC677CA004B6068 /* HStackViewTests.swift */; };
 		2ABBD38F2BC67841004B6068 /* VStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD38E2BC67841004B6068 /* VStackView.swift */; };
 		2ABBD3912BC67914004B6068 /* HStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3902BC67914004B6068 /* HStackView.swift */; };
+		2ABBD3932BC67A8D004B6068 /* ImageLargeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3922BC67A8D004B6068 /* ImageLargeViewTests.swift */; };
+		2ABBD3952BC67AB7004B6068 /* ImageLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBD3942BC67AB7004B6068 /* ImageLargeView.swift */; };
 		2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */; };
 		2AF5F81F2BBED05900479E54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F81E2BBED05900479E54 /* main.swift */; };
 		2AF5F8242BBED13800479E54 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5F8232BBED13800479E54 /* AppDelegateTests.swift */; };
@@ -185,6 +187,8 @@
 		2ABBD38C2BC677CA004B6068 /* HStackViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackViewTests.swift; sourceTree = "<group>"; };
 		2ABBD38E2BC67841004B6068 /* VStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VStackView.swift; sourceTree = "<group>"; };
 		2ABBD3902BC67914004B6068 /* HStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackView.swift; sourceTree = "<group>"; };
+		2ABBD3922BC67A8D004B6068 /* ImageLargeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLargeViewTests.swift; sourceTree = "<group>"; };
+		2ABBD3942BC67AB7004B6068 /* ImageLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLargeView.swift; sourceTree = "<group>"; };
 		2AF5F80F2BBE90E600479E54 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		2AF5F8122BBE912000479E54 /* Develop.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Develop.xctestplan; sourceTree = "<group>"; };
 		2AF5F81E2BBED05900479E54 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -360,6 +364,7 @@
 		2A64B6F22BC3DF1200BE267D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2ABBD3922BC67A8D004B6068 /* ImageLargeViewTests.swift */,
 				2A64B6F32BC3DF8E00BE267D /* ImageSmallViewTests.swift */,
 				2A64B6FC2BC3E55D00BE267D /* RedactedViewTests.swift */,
 			);
@@ -369,6 +374,7 @@
 		2A64B6F52BC3DFCC00BE267D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2ABBD3942BC67AB7004B6068 /* ImageLargeView.swift */,
 				2A64B6F62BC3DFDF00BE267D /* ImageSmallView.swift */,
 				2A64B6FE2BC3E5CC00BE267D /* RedactedView.swift */,
 			);
@@ -985,6 +991,7 @@
 				2A64B6FF2BC3E5CC00BE267D /* RedactedView.swift in Sources */,
 				2AF5F83C2BBF20BB00479E54 /* PaperclipData.swift in Sources */,
 				2AF5F82E2BBEE94700479E54 /* ShopListViewModel.swift in Sources */,
+				2ABBD3952BC67AB7004B6068 /* ImageLargeView.swift in Sources */,
 				2AB92DA82BC3F95B00DB1DCA /* ShopListCollectionView.swift in Sources */,
 				2AB92DAF2BC408F000DB1DCA /* FilterCategoryNavButton.swift in Sources */,
 				2ABBD3782BC56237004B6068 /* ShopListViewControllerDelegate.swift in Sources */,
@@ -1070,6 +1077,7 @@
 				2AB92DD72BC5554100DB1DCA /* CoordinatorSpy.swift in Sources */,
 				2A64B6F92BC3E36F00BE267D /* PriceSmallLabelTests.swift in Sources */,
 				2A64B6DB2BC2DB2C00BE267D /* ImageCacheSpy.swift in Sources */,
+				2ABBD3932BC67A8D004B6068 /* ImageLargeViewTests.swift in Sources */,
 				2AF5F84C2BBFE27200479E54 /* ServerServiceTests.swift in Sources */,
 				2AF5F8102BBE90E600479E54 /* BaseXCTestCase.swift in Sources */,
 				2AB92DC02BC544B200DB1DCA /* ShopDetailsViewControllerTests.swift in Sources */,
