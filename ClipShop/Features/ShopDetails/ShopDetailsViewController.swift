@@ -188,6 +188,8 @@ extension ShopDetailsViewController {
       .isActive = true
     descriptionLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -mainPadding * 2)
       .isActive = true
+    descriptionLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -mainPadding)
+      .isActive = true
   }
 
   private func priceLabelConstraints() {
