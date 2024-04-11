@@ -4,8 +4,8 @@
 
 import UIKit
 
-/// Small icon view to be presented on cells to showcase an item's urgent status.
-final class UrgentSmallIcon: UIImageView {
+/// Icon view to be presented on views to showcase an item's urgent status.
+final class UrgentIcon: UIImageView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)

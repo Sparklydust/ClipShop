@@ -5,15 +5,17 @@
 import UIKit
 
 /// Small image view to be presented on cells to showcase an item.
-final class ImageSmallView: UIImageView {
+final class ImageView: UIImageView {
 
-  override init(frame: CGRect) {
-    super.init(frame: frame)
+  private let size: ComponentSize
+
+  init(size: ComponentSize) {
+    self.size = size
+    super.init(frame: .zero)
     self.setupImage()
   }
 
   required init?(coder: NSCoder) {
-    super.init(coder: coder)
     fatalError("init(coder:) has not been implemented")
   }
 
@@ -21,7 +23,7 @@ final class ImageSmallView: UIImageView {
   private func setupImage() {
     translatesAutoresizingMaskIntoConstraints = false
     contentMode = .scaleAspectFill
-    layer.cornerRadius = 8
+    layer.cornerRadius = size == .small ? 8 : .zero
     clipsToBounds = true
   }
 }

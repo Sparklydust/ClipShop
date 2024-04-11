@@ -33,27 +33,27 @@ final class PaperclipCellTests: XCTestCase {
     fake.image = expected
     sut.configure(with: fake)
 
-    let result = sut.imageSmallView.image
+    let result = sut.imageView.image
 
     XCTAssertEqual(result, expected, "cell image must be equal to `\(expected)` when configured with model image.")
   }
 
-  func testConfigurations_titleSmallLabelTextConfiguredWithPaperclipModel_titleIsEqualToModelTitle() {
+  func testConfigurations_titleLabelTextConfiguredWithPaperclipModel_titleIsEqualToModelTitle() {
     sut.configure(with: .fake())
     let expected = PaperclipModel.fake().title
 
-    let result = sut.titleSmallLabel.text
+    let result = sut.titleLabel.text
 
-    XCTAssertEqual(result, expected, "`titleSmallLabel.text` must be equal to `\(expected)` when configured with model.")
+    XCTAssertEqual(result, expected, "`titleLabel.text` must be equal to `\(expected)` when configured with model.")
   }
 
-  func testConfigurations_priceSmallLabelTextConfiguredWithPaperclipModel_priceIsEqualToModelPrice() {
+  func testConfigurations_priceLabelTextConfiguredWithPaperclipModel_priceIsEqualToModelPrice() {
     sut.configure(with: .fake())
     let expected = "\(PaperclipModel.fake().price)€"
 
-    let result = sut.priceSmallLabel.text
+    let result = sut.priceLabel.text
 
-    XCTAssertEqual(result, expected, "`priceSmallLabel.text` must be equal to `\(expected)` when configured with model.")
+    XCTAssertEqual(result, expected, "`priceLabel.text` must be equal to `\(expected)` when configured with model.")
   }
 
   func testConfigurations_categorySmallLabelTextConfiguredWithPaperclipModel_categoryIsEqualToModelCategory() {
@@ -65,19 +65,19 @@ final class PaperclipCellTests: XCTestCase {
     XCTAssertEqual(result, expected, "`categorySmallLabel.text` must be equal to `\(expected)` when configured with model.")
   }
 
-  func testConfigurations_urgentSmallIconConfiguredWithPaperclipModelThatIsUrgent_urgentSmallIconIsNotHiddent() {
+  func testConfigurations_urgentIconConfiguredWithPaperclipModelThatIsUrgent_urgentIconIsNotHiddent() {
     sut.configure(with: .fake(with: (.fake(isUrgent: true), [.fake()])))
 
-    let result = sut.urgentSmallIcon.isHidden
+    let result = sut.urgentIcon.isHidden
 
-    XCTAssertFalse(result, "`urgentSmallIcon` must be not be hidden when configured with model that is urgent.")
+    XCTAssertFalse(result, "`urgentIcon` must be not be hidden when configured with model that is urgent.")
   }
 
-  func testConfigurations_urgentSmallIconConfiguredWithPaperclipModelThatIsNotUrgent_urgentSmallIconIsHiddent() {
+  func testConfigurations_urgentIconConfiguredWithPaperclipModelThatIsNotUrgent_urgentIconIsHiddent() {
     sut.configure(with: .fake(with: (.fake(isUrgent: false), [.fake()])))
 
-    let result = sut.urgentSmallIcon.isHidden
+    let result = sut.urgentIcon.isHidden
 
-    XCTAssertTrue(result, "`urgentSmallIcon` must be be hidden when configured with model that is not urgent.")
+    XCTAssertTrue(result, "`urgentIcon` must be be hidden when configured with model that is not urgent.")
   }
 }

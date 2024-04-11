@@ -8,13 +8,17 @@ import UIKit
 final class Coordinator: CoordinatorProtocol {
 
   var navigationController: UINavigationController
-  var shopListViewModel: ShopListViewModel
+  var shopListViewModel: ShopListViewModel?
+  var shopDetailsViewModel: ShopDetailsViewModel?
 
+  /// - Warning: View models injection is used for unit tests only to inject mocks.
   init(
     navigationController: UINavigationController,
-    shopListViewModel: ShopListViewModel = ShopListViewModel()
+    shopDetailsViewModel: ShopDetailsViewModel? = .none,
+    shopListViewModel: ShopListViewModel? = .none
   ) {
     self.navigationController = navigationController
+    self.shopDetailsViewModel = shopDetailsViewModel
     self.shopListViewModel = shopListViewModel
   }
 }
@@ -23,16 +27,21 @@ final class Coordinator: CoordinatorProtocol {
 extension Coordinator {
 
   func start() {
-    let viewController = ShopListViewController(viewModel: shopListViewModel)
+    let viewModel = shopListViewModel == nil ? ShopListViewModel() : shopListViewModel!
+    let viewController = ShopListViewController(viewModel: viewModel)
     viewController.delegate = self
     navigationController.pushViewController(viewController, animated: true)
   }
-  
+
   /// Trigger the navigation to the ``ShopDetailsViewController`` to see all informations about a
   /// `paperclip`.
   /// - Parameter paperclip: The selected item from the shop list.
   private func showDetails(for paperclip: PaperclipModel) {
-    let shopDetailsVC = ShopDetailsViewController(paperclip: paperclip)
+    let viewModel = shopDetailsViewModel == nil ? ShopDetailsViewModel() : shopDetailsViewModel!
+    let shopDetailsVC = ShopDetailsViewController(
+      viewModel: viewModel,
+      paperclip: paperclip
+    )
     navigationController.pushViewController(shopDetailsVC, animated: true)
   }
 }

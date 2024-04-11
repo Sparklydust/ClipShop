@@ -21,7 +21,7 @@ final class ShopListViewController: UIViewController {
   private(set) var paperclips = [PaperclipModel]()
   private var viewModel: ShopListViewModel
 
-  init(viewModel: ShopListViewModel = ShopListViewModel()) {
+  init(viewModel: ShopListViewModel) {
     self.viewModel = viewModel
     super.init(nibName: .none, bundle: .none)
   }
@@ -123,7 +123,7 @@ extension ShopListViewController: UICollectionViewDelegate, UICollectionViewData
     willDisplay cell: UICollectionViewCell,
     forItemAt indexPath: IndexPath
   ) {
-    guard let cell = cell as? PaperclipCell, cell.imageSmallView.image == .none else { return }
+    guard let cell = cell as? PaperclipCell, cell.imageView.image == .none else { return }
     let paperclip = paperclips[indexPath.item]
     populateImage(paperclip: paperclip, on: cell)
   }
@@ -183,6 +183,7 @@ extension ShopListViewController {
 
   private func setupViewController() {
     view.backgroundColor = .systemBackground
+    title = "Boutique"
     setupDelegates()
     setupNavigationBar()
     collectionViewConstraints()

@@ -5,13 +5,13 @@
 import XCTest
 @testable import ClipShop
 
-final class ImageSmallViewTests: XCTestCase {
+final class ImageViewTests: XCTestCase {
 
-  var sut: ImageSmallView!
+  var sut: ImageView!
 
   override func setUp() async throws {
     try await super.setUp()
-    sut = await ImageSmallView(frame: .zero)
+    sut = await ImageView(size: .small)
   }
 
   override func tearDown() async throws {
@@ -27,8 +27,18 @@ final class ImageSmallViewTests: XCTestCase {
     XCTAssertEqual(result, expected, "`contentMode` must be equal to `\(expected)` when initialized.")
   }
 
-  func testInitialization_layerCornerRadius_isEqualTo8() {
+  func testInitialization_layerCornerRadiusForSmallView_isEqualTo8() {
+    sut = ImageView(size: .small)
     let expected: CGFloat = 8
+
+    let result = sut.layer.cornerRadius
+
+    XCTAssertEqual(result, expected, "`layer.cornerRadius` must be equal to `\(expected)` when initialized.")
+  }
+
+  func testInitialization_layerCornerRadiusForLargeView_isEqualToZero() {
+    sut = ImageView(size: .large)
+    let expected: CGFloat = .zero
 
     let result = sut.layer.cornerRadius
 

@@ -4,8 +4,8 @@
 
 import UIKit
 
-/// Small price label to be presented on cells to showcase an item price.
-final class PriceSmallLabel: UILabel {
+/// Date label to be presented on details view to showcase an item creation date.
+final class DateLabel: UILabel {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -20,9 +20,8 @@ final class PriceSmallLabel: UILabel {
   /// Setup the label attributes.
   private func setupLabel() {
     translatesAutoresizingMaskIntoConstraints = false
-    textAlignment = .left
     font = UIDevice.current.userInterfaceIdiom == .pad
-    ? .preferredFont(forTextStyle: .headline)
-    : .preferredFont(forTextStyle: .subheadline, weight: .medium)
+    ? .preferredFont(forTextStyle: .callout)
+    : .preferredFont(forTextStyle: .footnote)
   }
 }

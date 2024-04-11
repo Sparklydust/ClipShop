@@ -4,8 +4,8 @@
 
 import UIKit
 
-/// Small title label to be presented on cells to showcase an item title.
-final class TitleSmallLabel: UILabel {
+/// Description label to be presented on cells to showcase an item description.
+final class DescriptionLabel: UILabel {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -21,10 +21,7 @@ final class TitleSmallLabel: UILabel {
   private func setupLabel() {
     translatesAutoresizingMaskIntoConstraints = false
     textAlignment = .left
-    font = UIDevice.current.userInterfaceIdiom == .pad
-    ? .preferredFont(forTextStyle: .title3, weight: .semibold)
-    : .preferredFont(forTextStyle: .callout, weight: .medium)
-    numberOfLines = 3
-    allowsDefaultTighteningForTruncation = true
+    font = .preferredFont(forTextStyle: .body)
+    numberOfLines = .zero
   }
 }

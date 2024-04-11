@@ -8,7 +8,7 @@ import XCTest
 final class String_FileNameTests: XCTestCase {
 
   func testFileName_imageNameAssigned_returnImageName() {
-    let fakeName = ["http://example.com/photos/image.png?size=large": "image.png"]
+    let fakeName = ["http://example.com/thumb/image.png": "thumb-image.png"]
 
     for (result, expected) in fakeName {
       XCTAssertEqual(result.extractedFileName, expected, "`extractedFileName` must match `\(expected)` value.")

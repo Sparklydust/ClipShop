@@ -90,4 +90,29 @@ final class PaperclipModelTests: XCTestCase {
 
     XCTAssertEqual(result, expected, "`isUrgent` value must be equal to `\(expected)` data object value from init parameter.")
   }
+
+  func testInitialization_description_isEqualToValueFromPassedDataObjectInInit() {
+    let expected = PaperclipData.fake().description
+
+    let result = sut.description
+
+    XCTAssertEqual(result, expected, "`description` value must be equal to `\(expected)` data object value from init parameter.")
+  }
+
+  func testInitialization_siretWhenPaperclipDataOneIsOptional_isEqualToEmptyString() {
+    sut = PaperclipModel(with: (.fake(siret: .none), [.fake()]))
+    let expected = String()
+
+    let result = sut.siret
+
+    XCTAssertEqual(result, expected, "`siret` value must be equal to `\(expected)` when data value is nil.")
+  }
+
+  func testInitialization_siret_isEqualToValueFromPassedDataObjectInInit() throws {
+    let expected = try XCTUnwrap(PaperclipData.fake().siret)
+
+    let result = sut.siret
+
+    XCTAssertEqual(result, expected, "`siret` value must be equal to `\(expected)` data object value from init parameter.")
+  }
 }

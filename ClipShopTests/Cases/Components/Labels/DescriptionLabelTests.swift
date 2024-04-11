@@ -5,13 +5,13 @@
 import XCTest
 @testable import ClipShop
 
-final class PriceSmallLabelTests: XCTestCase {
+final class DescriptionLabelTests: XCTestCase {
 
-  var sut: PriceSmallLabel!
+  var sut: DescriptionLabel!
 
   override func setUp() async throws {
     try await super.setUp()
-    sut = await PriceSmallLabel(frame: .zero)
+    sut = await DescriptionLabel(frame: .zero)
   }
 
   override func tearDown() async throws {
@@ -27,13 +27,19 @@ final class PriceSmallLabelTests: XCTestCase {
     XCTAssertEqual(result, expected, "`textAlignment` must be equal to `\(expected)` when initialized.")
   }
 
-  func testInitialization_font_isEqualToHeadlineForRegularElseSubheadlineWeightMedium() {
-    let expected = UIDevice.current.userInterfaceIdiom == .pad
-    ? UIFont.preferredFont(forTextStyle: .headline)
-    : .preferredFont(forTextStyle: .subheadline, weight: .medium)
+  func testInitialization_font_isEqualToBody() {
+    let expected: UIFont = .preferredFont(forTextStyle: .body)
 
     let result = sut.font
 
     XCTAssertEqual(result, expected, "`font` must be equal to `\(expected)` when initialized.")
+  }
+
+  func testInitialization_numberOfLines_isEqualToZero() {
+    let expected: Int = .zero
+
+    let result = sut.numberOfLines
+
+    XCTAssertEqual(result, expected, "`numberOfLines` must be equal to `\(expected)` when initialized.")
   }
 }
