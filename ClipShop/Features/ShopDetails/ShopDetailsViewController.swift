@@ -184,7 +184,10 @@ extension ShopDetailsViewController {
   }
 
   private func descriptionLabelConstraints() {
-    // Intentionally empty
+    descriptionLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: mainPadding * 2)
+      .isActive = true
+    descriptionLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -mainPadding * 2)
+      .isActive = true
   }
 
   private func priceLabelConstraints() {
@@ -220,7 +223,7 @@ extension ShopDetailsViewController {
   private func divider2Constraints() {
     divider2.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: mainPadding * 1.5)
       .isActive = true
-    divider2.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -(mainPadding * 1.5))
+    divider2.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -(mainPadding * 2))
       .isActive = true
     divider2.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
   }
