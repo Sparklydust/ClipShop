@@ -38,11 +38,11 @@ final class TitleLabelTests: XCTestCase {
     XCTAssertEqual(result, expected, "`font` must be equal to `\(expected)` when initialized.")
   }
 
-  func testInitialization_fontForLargeSize_isEqualToLargeTitleForRegularElseTitle1() {
+  func testInitialization_fontForLargeSize_isEqualToLargeTitle1WeightBoldForRegularElseTitle2WeightSeminBold() {
     sut = TitleLabel(size: .large)
     let expected: UIFont = UIDevice.current.userInterfaceIdiom == .pad
-    ? .preferredFont(forTextStyle: .largeTitle)
-    : .preferredFont(forTextStyle: .title1)
+    ? .preferredFont(forTextStyle: .title1, weight: .bold)
+    : .preferredFont(forTextStyle: .title2, weight: .semibold)
 
     let result = sut.font
 

@@ -38,8 +38,8 @@ final class TitleLabel: UILabel {
       : .preferredFont(forTextStyle: .callout, weight: .medium)
     case .large:
       font = isRegular
-      ? .preferredFont(forTextStyle: .largeTitle)
-      : .preferredFont(forTextStyle: .title1)
+      ? .preferredFont(forTextStyle: .title1, weight: .bold)
+      : .preferredFont(forTextStyle: .title2, weight: .semibold)
     }
   }
 }

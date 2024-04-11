@@ -109,15 +109,29 @@ extension ShopDetailsViewController {
     imageViewConstraints()
     redactedViewConstraints()
     urgentIconConstraints()
+    dateLabelConstraints()
+    descriptionLabelConstraints()
+    priceLabelConstraints()
+    siretLabelConstraints()
+    titleLabelConstraints()
   }
 
   private func scrollViewConstraints() {
-    let layoutMargins = view.layoutMarginsGuide
-    NSLayoutConstraint.activate([
-      scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      scrollView.topAnchor.constraint(equalTo: layoutMargins.topAnchor),
-      scrollView.bottomAnchor.constraint(equalTo: layoutMargins.bottomAnchor)
+    let contentView = UIView()
+    contentView.translatesAutoresizingMaskIntoConstraints = false
+    scrollView.addSubview(contentView)
+
+    let safeArea = view.safeAreaLayoutGuide
+    NSLayoutConstraint.activate([      
+      scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+      scrollView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+      scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+      scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+      contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+      contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+      contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+      contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+      contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
     ])
   }
 
@@ -127,7 +141,7 @@ extension ShopDetailsViewController {
       imageView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
       imageView.trailingAnchor.constraint(lessThanOrEqualTo: scrollView.contentLayoutGuide.trailingAnchor),
       imageView.widthAnchor.constraint(
-        equalTo: scrollView.frameLayoutGuide.widthAnchor, multiplier: isRegular ? 0.33 : 1
+        equalTo: scrollView.frameLayoutGuide.widthAnchor, multiplier: isRegular ? 0.44 : 1
       ),
       imageView.heightAnchor.constraint(equalToConstant: isRegular ? 400 : 320),
     ])
@@ -154,5 +168,34 @@ extension ShopDetailsViewController {
       urgentIcon.widthAnchor.constraint(equalToConstant: isRegular ? 44 : 36),
       urgentIcon.heightAnchor.constraint(equalToConstant: isRegular ? 44 : 36)
     ])
+  }
+
+  private func dateLabelConstraints() {
+    // Intentionally empty
+  }
+
+  private func descriptionLabelConstraints() {
+    // Intentionally empty
+  }
+
+  private func priceLabelConstraints() {
+    // Intentionally empty
+  }
+
+  private func siretLabelConstraints() {
+    // Intentionally empty
+  }
+
+  private func titleLabelConstraints() {
+    titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16)
+      .isActive = isRegular ? false : true
+    titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 16)
+      .isActive = isRegular ? true : false
+    titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16)
+      .isActive = isRegular ? false : true
+    titleLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16)
+      .isActive = true
+    titleLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor)
+      .isActive = isRegular ? true : false
   }
 }
