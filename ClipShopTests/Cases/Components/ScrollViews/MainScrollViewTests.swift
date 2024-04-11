@@ -19,7 +19,7 @@ final class MainScrollViewTests: XCTestCase {
     try await super.tearDown()
   }
 
-  func testInitialization_backgroundColor_isEqualToSystemGray4() {
+  func testInitialization_backgroundColor_isEqualToClear() {
     let expected: UIColor = .clear
 
     let result = sut.backgroundColor
