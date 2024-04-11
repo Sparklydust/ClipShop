@@ -22,6 +22,7 @@ final class ShopDetailsViewController: UIViewController {
   private(set) var titleLabel = TitleLabel(size: .large)
   private(set) var urgentIcon = UrgentIcon(frame: .zero)
   private(set) var divider1 = DividerView()
+  private(set) var divider2 = DividerView()
 
   // MARK: - Models
   private var viewModel: ShopDetailsViewModel
@@ -105,6 +106,7 @@ extension ShopDetailsViewController {
     scrollView.addSubview(siretLabel)
     scrollView.addSubview(titleLabel)
     scrollView.addSubview(divider1)
+    scrollView.addSubview(divider2)
   }
 
   private func activateConstraints() {
@@ -118,6 +120,7 @@ extension ShopDetailsViewController {
     siretLabelConstraints()
     titleLabelConstraints()
     divider1Constraints()
+    divider2Constraints()
   }
 
   private func scrollViewConstraints() {
@@ -185,7 +188,8 @@ extension ShopDetailsViewController {
   }
 
   private func priceLabelConstraints() {
-    // Intentionally empty
+    priceLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: mainPadding * 2)
+      .isActive = true
   }
 
   private func siretLabelConstraints() {
@@ -206,8 +210,18 @@ extension ShopDetailsViewController {
   }
 
   private func divider1Constraints() {
-    divider1.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: mainPadding * 2)
+    divider1.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: mainPadding * 1.5)
+      .isActive = true
+    divider1.bottomAnchor.constraint(equalTo: priceLabel.topAnchor, constant: -(mainPadding * 1.5))
       .isActive = true
     divider1.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+  }
+
+  private func divider2Constraints() {
+    divider2.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: mainPadding * 1.5)
+      .isActive = true
+    divider2.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -(mainPadding * 1.5))
+      .isActive = true
+    divider2.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
   }
 }

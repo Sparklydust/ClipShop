@@ -38,11 +38,11 @@ final class PriceLabelTests: XCTestCase {
     XCTAssertEqual(result, expected, "`font` must be equal to `\(expected)` when initialized.")
   }
 
-  func testInitialization_fontForLargeLabel_isEqualToTitle3ForRegularElseHeadline() {
+  func testInitialization_fontForLargeLabel_isEqualToTitle2WeightSemiboldForRegularElseHeadlineWeightSemibold() {
     sut = PriceLabel(size: .large)
     let expected: UIFont = UIDevice.current.userInterfaceIdiom == .pad
-    ? .preferredFont(forTextStyle: .title3)
-    : .preferredFont(forTextStyle: .headline)
+    ? .preferredFont(forTextStyle: .title2, weight: .semibold)
+    : .preferredFont(forTextStyle: .headline, weight: .semibold)
 
     let result = sut.font
 

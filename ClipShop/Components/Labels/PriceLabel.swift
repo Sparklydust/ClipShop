@@ -36,8 +36,8 @@ final class PriceLabel: UILabel {
       : .preferredFont(forTextStyle: .subheadline, weight: .medium)
     case .large:
       font = isRegular
-      ? .preferredFont(forTextStyle: .title3)
-      : .preferredFont(forTextStyle: .headline)
+      ? .preferredFont(forTextStyle: .title2, weight: .semibold)
+      : .preferredFont(forTextStyle: .headline, weight: .semibold)
     }
   }
 }
