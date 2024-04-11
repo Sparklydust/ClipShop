@@ -5,7 +5,7 @@
 import Foundation
 
 /// Enumeration of possible errors from ``ImageCacheService`` requests.
-enum ImageCacheError: Error {
+@frozen enum ImageCacheError: Error {
 
   case dataNotFound
 }

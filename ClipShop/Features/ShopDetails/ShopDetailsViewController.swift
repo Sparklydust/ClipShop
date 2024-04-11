@@ -173,9 +173,9 @@ extension ShopDetailsViewController {
   }
 
   private func dateLabelConstraints() {
-    dateLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16)
+    dateLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 24)
       .isActive = isRegular ? true : false
-    dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8)
+    dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12)
       .isActive = isRegular ? false : true
     dateLabel.leadingAnchor.constraint(
       equalTo: paperclip.isUrgent ? urgentIcon.trailingAnchor : scrollView.leadingAnchor,
@@ -221,21 +221,25 @@ extension ShopDetailsViewController {
   }
 
   private func divider1Constraints() {
-    divider1.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: mainPadding * 1.5)
-      .isActive = true
-    divider1.bottomAnchor.constraint(equalTo: priceLabel.topAnchor, constant: -(mainPadding * 1.5))
-      .isActive = true
+    divider1.topAnchor.constraint(
+      equalTo: dateLabel.bottomAnchor,
+      constant: 24
+    ).isActive = true
+    divider1.bottomAnchor.constraint(
+      equalTo: priceLabel.topAnchor,
+      constant: -16
+    ).isActive = true
     divider1.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
   }
 
   private func divider2Constraints() {
     divider2.topAnchor.constraint(
       equalTo: priceLabel.bottomAnchor,
-      constant: mainPadding * 1.5
+      constant: 16
     ).isActive = paperclip.siret.isEmpty ? true : false
     divider2.bottomAnchor.constraint(
       equalTo: descriptionLabel.topAnchor,
-      constant: -(mainPadding * 2)
+      constant: -20
     ).isActive = true
     divider2.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
   }
