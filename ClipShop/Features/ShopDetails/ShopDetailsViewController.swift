@@ -10,6 +10,7 @@ final class ShopDetailsViewController: UIViewController {
 
   var cancellables = Set<AnyCancellable>()
   private let isRegular = UIDevice.current.userInterfaceIdiom == .pad
+  private var mainPadding: CGFloat { isRegular ? 16 : 8 }
 
   private(set) var dateLabel = DateLabel()
   private(set) var descriptionLabel = DescriptionLabel()
@@ -171,7 +172,12 @@ extension ShopDetailsViewController {
   }
 
   private func dateLabelConstraints() {
-    // Intentionally empty
+    dateLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16)
+      .isActive = isRegular ? true : false
+    dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8)
+      .isActive = isRegular ? false : true
+    dateLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: mainPadding)
+      .isActive = true 
   }
 
   private func descriptionLabelConstraints() {
@@ -189,11 +195,11 @@ extension ShopDetailsViewController {
   private func titleLabelConstraints() {
     titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16)
       .isActive = isRegular ? false : true
-    titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 16)
+    titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: mainPadding)
       .isActive = isRegular ? true : false
-    titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16)
+    titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: mainPadding)
       .isActive = isRegular ? false : true
-    titleLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16)
+    titleLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -mainPadding)
       .isActive = true
     titleLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor)
       .isActive = isRegular ? true : false

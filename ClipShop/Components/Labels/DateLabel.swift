@@ -20,6 +20,8 @@ final class DateLabel: UILabel {
   /// Setup the label attributes.
   private func setupLabel() {
     translatesAutoresizingMaskIntoConstraints = false
-    font = .preferredFont(forTextStyle: .body)
+    font = UIDevice.current.userInterfaceIdiom == .pad
+    ? .preferredFont(forTextStyle: .callout)
+    : .preferredFont(forTextStyle: .footnote)
   }
 }

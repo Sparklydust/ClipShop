@@ -19,8 +19,10 @@ final class DateLabelTests: XCTestCase {
     try await super.tearDown()
   }
 
-  func testInitialization_font_isEqualToBody() {
-    let expected: UIFont = .preferredFont(forTextStyle: .body)
+  func testInitialization_font_isEqualToCalloutForRegularElseFootnote() {
+    let expected: UIFont = UIDevice.current.userInterfaceIdiom == .pad
+    ? .preferredFont(forTextStyle: .callout)
+    : .preferredFont(forTextStyle: .footnote)
 
     let result = sut.font
 
