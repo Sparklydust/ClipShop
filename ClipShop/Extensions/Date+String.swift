@@ -11,7 +11,7 @@ extension Date {
   func toString() -> String {
     let formatter = DateFormatter()
     formatter.dateStyle = .full
-    formatter.locale = .current
+    formatter.locale = .init(identifier: "fr-FR")
     return formatter.string(from: self)
   }
 }

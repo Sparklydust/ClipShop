@@ -9,7 +9,7 @@ final class Date_StringTests: XCTestCase {
 
   func testExtension_WithVariousDates_returnsExpectedFullDateString() {
     let dateFake = Date(timeIntervalSince1970: .zero)
-    let expected = "Thursday 1 January 1970"
+    let expected = "jeudi 1 janvier 1970"
 
     let result = dateFake.toString()
 

@@ -73,7 +73,7 @@ extension ShopDetailsViewController {
   }
 
   @MainActor private func configureLabels() {
-    dateLabel.text = paperclip.creationDate.toString()
+    dateLabel.text = "Publié le \(paperclip.creationDate.toString())"
     descriptionLabel.text = paperclip.description
     priceLabel.text = "\(paperclip.price)€"
     siretLabel.text = paperclip.siret
@@ -95,7 +95,7 @@ extension ShopDetailsViewController {
 
   private func addSubviews() {
     view.addSubview(scrollView)
-    view.addSubview(urgentIcon)
+    scrollView.addSubview(urgentIcon)
     scrollView.addSubview(imageView)
     scrollView.addSubview(redactedView)
     scrollView.addSubview(dateLabel)
@@ -158,17 +158,12 @@ extension ShopDetailsViewController {
   }
 
   private func urgentIconConstraints() {
-    NSLayoutConstraint.activate([
-      urgentIcon.trailingAnchor.constraint(
-        equalTo: view.trailingAnchor, constant: isRegular ? -8 : -4
-      ),
-      urgentIcon.topAnchor.constraint(
-        equalTo: view.safeAreaLayoutGuide.topAnchor,
-        constant: isRegular ? .zero : 4
-      ),
-      urgentIcon.widthAnchor.constraint(equalToConstant: isRegular ? 44 : 36),
-      urgentIcon.heightAnchor.constraint(equalToConstant: isRegular ? 44 : 36)
-    ])
+    urgentIcon.isHidden = !paperclip.isUrgent
+    urgentIcon.widthAnchor.constraint(equalToConstant: isRegular ? 36 : 24).isActive = true
+    urgentIcon.heightAnchor.constraint(equalToConstant: isRegular ? 36 : 24).isActive = true
+    urgentIcon.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: mainPadding)
+      .isActive = paperclip.isUrgent
+    urgentIcon.centerYAnchor.constraint(equalTo: dateLabel.centerYAnchor).isActive = true
   }
 
   private func dateLabelConstraints() {
@@ -176,8 +171,10 @@ extension ShopDetailsViewController {
       .isActive = isRegular ? true : false
     dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8)
       .isActive = isRegular ? false : true
-    dateLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: mainPadding)
-      .isActive = true 
+    dateLabel.leadingAnchor.constraint(
+      equalTo: paperclip.isUrgent ? urgentIcon.trailingAnchor : scrollView.leadingAnchor,
+      constant: paperclip.isUrgent ? isRegular ? 8 : 4 : mainPadding)
+      .isActive = true
   }
 
   private func descriptionLabelConstraints() {

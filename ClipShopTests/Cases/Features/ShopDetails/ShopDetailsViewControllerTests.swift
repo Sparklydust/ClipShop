@@ -46,7 +46,7 @@ final class ShopDetailsViewControllerTests: BaseXCTestCase {
   }
 
   func testConfigurations_dateLabel_isEqualToPaperclipModelDatePassedInParameter() {
-    let expected = PaperclipModel.fake().creationDate.toString()
+    let expected = "Publié le \(PaperclipModel.fake().creationDate.toString())"
 
     let result = sut.dateLabel.text
 
