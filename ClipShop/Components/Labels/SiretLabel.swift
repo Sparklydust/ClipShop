@@ -21,7 +21,9 @@ final class SiretLabel: UILabel {
   private func setupLabel() {
     translatesAutoresizingMaskIntoConstraints = false
     textAlignment = .left
-    font = .preferredFont(forTextStyle: .caption1)
     numberOfLines = 1
+    font = UIDevice.current.userInterfaceIdiom == .pad
+    ? .preferredFont(forTextStyle: .footnote)
+    : .preferredFont(forTextStyle: .caption1)
   }
 }

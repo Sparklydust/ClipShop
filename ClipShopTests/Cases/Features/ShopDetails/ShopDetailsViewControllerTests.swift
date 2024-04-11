@@ -70,7 +70,7 @@ final class ShopDetailsViewControllerTests: BaseXCTestCase {
   }
 
   func testConfigurations_siretLabel_isEqualToPaperclipModelValuePassedInParameter() {
-    let expected = PaperclipModel.fake().siret
+    let expected = "SIRET: \(PaperclipModel.fake().siret)"
 
     let result = sut.siretLabel.text
 

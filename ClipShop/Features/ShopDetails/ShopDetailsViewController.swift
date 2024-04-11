@@ -78,7 +78,7 @@ extension ShopDetailsViewController {
     dateLabel.text = "Publié le \(paperclip.creationDate.toString())"
     descriptionLabel.text = paperclip.description
     priceLabel.text = "\(paperclip.price)€"
-    siretLabel.text = paperclip.siret
+    siretLabel.text = "SIRET: \(paperclip.siret)"
     titleLabel.text = paperclip.title
   }
 }
@@ -196,7 +196,13 @@ extension ShopDetailsViewController {
   }
 
   private func siretLabelConstraints() {
-    // Intentionally empty
+    siretLabel.isHidden = paperclip.siret.isEmpty
+    siretLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: mainPadding)
+      .isActive = !paperclip.siret.isEmpty
+    siretLabel.bottomAnchor.constraint(equalTo: divider2.topAnchor, constant: -(mainPadding * 2))
+      .isActive = !paperclip.siret.isEmpty
+    siretLabel.leadingAnchor.constraint(equalTo: priceLabel.leadingAnchor)
+      .isActive = !paperclip.siret.isEmpty
   }
 
   private func titleLabelConstraints() {
@@ -221,10 +227,14 @@ extension ShopDetailsViewController {
   }
 
   private func divider2Constraints() {
-    divider2.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: mainPadding * 1.5)
-      .isActive = true
-    divider2.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -(mainPadding * 2))
-      .isActive = true
+    divider2.topAnchor.constraint(
+      equalTo: priceLabel.bottomAnchor,
+      constant: mainPadding * 1.5
+    ).isActive = paperclip.siret.isEmpty ? true : false
+    divider2.bottomAnchor.constraint(
+      equalTo: descriptionLabel.topAnchor,
+      constant: -(mainPadding * 2)
+    ).isActive = true
     divider2.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
   }
 }
