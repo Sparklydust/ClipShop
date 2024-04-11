@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A361C302BC80ED900053DDC /* DividerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A361C2F2BC80ED900053DDC /* DividerViewTests.swift */; };
+		2A361C332BC80F2300053DDC /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A361C322BC80F2300053DDC /* DividerView.swift */; };
 		2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4237C62BBE8D2E00C94A0B /* AppDelegate.swift */; };
 		2A4237C92BBE8D2E00C94A0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4237C82BBE8D2E00C94A0B /* SceneDelegate.swift */; };
 		2A4237D02BBE8D2F00C94A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4237CF2BBE8D2F00C94A0B /* Assets.xcassets */; };
@@ -125,6 +127,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A361C2F2BC80ED900053DDC /* DividerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerViewTests.swift; sourceTree = "<group>"; };
+		2A361C322BC80F2300053DDC /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		2A4237C32BBE8D2E00C94A0B /* ClipShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A4237C62BBE8D2E00C94A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A4237C82BBE8D2E00C94A0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -254,6 +258,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A361C2E2BC80EC100053DDC /* Dividers */ = {
+			isa = PBXGroup;
+			children = (
+				2A361C2F2BC80ED900053DDC /* DividerViewTests.swift */,
+			);
+			path = Dividers;
+			sourceTree = "<group>";
+		};
+		2A361C312BC80F1500053DDC /* Dividers */ = {
+			isa = PBXGroup;
+			children = (
+				2A361C322BC80F2300053DDC /* DividerView.swift */,
+			);
+			path = Dividers;
+			sourceTree = "<group>";
+		};
 		2A4237BA2BBE8D2E00C94A0B = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +352,7 @@
 			children = (
 				2AB92DAA2BC4086D00DB1DCA /* Buttons */,
 				2A64B6E92BC3D79200BE267D /* Cells */,
+				2A361C2E2BC80EC100053DDC /* Dividers */,
 				2A64B7042BC3E91D00BE267D /* Icons */,
 				2A64B6F22BC3DF1200BE267D /* Images */,
 				2A64B6EC2BC3D91700BE267D /* Labels */,
@@ -855,6 +876,7 @@
 			children = (
 				2AB92DAD2BC408E100DB1DCA /* Buttons */,
 				2AFC0B5D2BC0C0A60057BB66 /* Cells */,
+				2A361C312BC80F1500053DDC /* Dividers */,
 				2A64B7072BC3E99400BE267D /* Icons */,
 				2A64B6F52BC3DFCC00BE267D /* Images */,
 				2A64B6EF2BC3D9AF00BE267D /* Labels */,
@@ -999,6 +1021,7 @@
 				2A4237C72BBE8D2E00C94A0B /* AppDelegate.swift in Sources */,
 				2AF5F81F2BBED05900479E54 /* main.swift in Sources */,
 				2A64B7112BC3F3FE00BE267D /* UIAlertController+Server.swift in Sources */,
+				2A361C332BC80F2300053DDC /* DividerView.swift in Sources */,
 				2ABBD3AD2BC6C021004B6068 /* DateLabel.swift in Sources */,
 				2AF5F8492BBFDFAF00479E54 /* ServerProtocol.swift in Sources */,
 				2A64B6DE2BC2DFBB00BE267D /* String+FileName.swift in Sources */,
@@ -1074,6 +1097,7 @@
 				2ABBD3B52BC6D8CE004B6068 /* Date+StringTests.swift in Sources */,
 				2AB92DCB2BC549FF00DB1DCA /* NavigationControllerDummy.swift in Sources */,
 				2AB92DB52BC4217D00DB1DCA /* CategoryModel+Fakes.swift in Sources */,
+				2A361C302BC80ED900053DDC /* DividerViewTests.swift in Sources */,
 				2AF5F83A2BBF208500479E54 /* PaperclipDataTests.swift in Sources */,
 				2AB92DD72BC5554100DB1DCA /* CoordinatorSpy.swift in Sources */,
 				2A64B6F92BC3E36F00BE267D /* PriceLabelTests.swift in Sources */,

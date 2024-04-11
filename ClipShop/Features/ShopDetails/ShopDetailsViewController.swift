@@ -21,6 +21,7 @@ final class ShopDetailsViewController: UIViewController {
   private(set) var siretLabel = SiretLabel()
   private(set) var titleLabel = TitleLabel(size: .large)
   private(set) var urgentIcon = UrgentIcon(frame: .zero)
+  private(set) var divider1 = DividerView()
 
   // MARK: - Models
   private var viewModel: ShopDetailsViewModel
@@ -103,6 +104,7 @@ extension ShopDetailsViewController {
     scrollView.addSubview(priceLabel)
     scrollView.addSubview(siretLabel)
     scrollView.addSubview(titleLabel)
+    scrollView.addSubview(divider1)
   }
 
   private func activateConstraints() {
@@ -115,6 +117,7 @@ extension ShopDetailsViewController {
     priceLabelConstraints()
     siretLabelConstraints()
     titleLabelConstraints()
+    divider1Constraints()
   }
 
   private func scrollViewConstraints() {
@@ -200,5 +203,11 @@ extension ShopDetailsViewController {
       .isActive = true
     titleLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor)
       .isActive = isRegular ? true : false
+  }
+
+  private func divider1Constraints() {
+    divider1.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: mainPadding * 2)
+      .isActive = true
+    divider1.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
   }
 }
